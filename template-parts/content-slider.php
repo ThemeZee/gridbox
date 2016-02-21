@@ -2,7 +2,7 @@
 /**
  * The template for displaying articles in the slideshow loop
  *
- * @package Poseidon
+ * @package Gridbox
  */
 ?>
 
@@ -11,7 +11,7 @@
 		<?php // Display Post Thumbnail or default thumbnail
 		if( '' != get_the_post_thumbnail() ) :
 
-			the_post_thumbnail('poseidon-header-image', array('class' => 'slide-image'));
+			the_post_thumbnail('gridbox-header-image', array('class' => 'slide-image'));
 
 		else: ?>
 
@@ -25,7 +25,7 @@
 
 				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 				
-				<?php poseidon_entry_meta(); ?>
+				<?php gridbox_entry_meta(); ?>
 			
 			</div>
 						

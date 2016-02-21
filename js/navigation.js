@@ -8,7 +8,7 @@
  *
  * Author: Thomas Weichselbaumer (themezee.com)
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 (function($) {

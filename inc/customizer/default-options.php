@@ -4,7 +4,7 @@
  *
  * Uses sane defaults in case the user has not configured any theme options yet.
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 
@@ -13,16 +13,16 @@
  *
  * @return array
  */
-function poseidon_theme_options() {
+function gridbox_theme_options() {
     
 	// Merge Theme Options Array from Database with Default Options Array
 	$theme_options = wp_parse_args( 
 		
 		// Get saved theme options from WP database
-		get_option( 'poseidon_theme_options', array() ), 
+		get_option( 'gridbox_theme_options', array() ), 
 		
 		// Merge with Default Options if setting was not saved yet
-		poseidon_default_options() 
+		gridbox_default_options() 
 		
 	);
 
@@ -37,7 +37,7 @@ function poseidon_theme_options() {
  *
  * @return array
  */
-function poseidon_default_options() {
+function gridbox_default_options() {
 
 	$default_options = array(
 		'custom_header_link'				=> '',
@@ -46,7 +46,7 @@ function poseidon_default_options() {
 		'sticky_header'						=> false,
 		'post_layout_archives'				=> 'left',
 		'post_layout_single' 				=> 'header',
-		'latest_posts_title'				=> esc_html__( 'Latest Posts', 'poseidon' ),
+		'latest_posts_title'				=> esc_html__( 'Latest Posts', 'gridbox' ),
 		'post_content' 						=> 'excerpt',
 		'excerpt_length' 					=> 20,
 		'meta_date'							=> true,

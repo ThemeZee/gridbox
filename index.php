@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 				endwhile; ?>
 
 				<?php // Display Pagination	
-				poseidon_pagination();
+				gridbox_pagination();
 
 			endif; ?>
 			

@@ -5,10 +5,10 @@
  * Display the latest posts from a selected category in a boxed layout. 
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
-class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
+class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -17,11 +17,11 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		
 		// Setup Widget
 		parent::__construct(
-			'poseidon-magazine-posts-boxed', // ID
-			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'poseidon' ), wp_get_theme()->Name ), // Name
+			'gridbox-magazine-posts-boxed', // ID
+			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'gridbox' ), wp_get_theme()->Name ), // Name
 			array( 
-				'classname' => 'poseidon_magazine_posts_boxed', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'poseidon' ) 
+				'classname' => 'gridbox_magazine_posts_boxed', 
+				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox' ) 
 			) // Args
 		);
 
@@ -65,7 +65,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_poseidon_magazine_posts_boxed', 'widget' );
+			$cache = wp_cache_get( 'widget_gridbox_magazine_posts_boxed', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -104,7 +104,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_poseidon_magazine_posts_boxed', $cache, 'widget' );
+			wp_cache_set( 'widget_gridbox_magazine_posts_boxed', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -168,7 +168,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter( 'excerpt_length', 'poseidon_magazine_posts_excerpt_length' );
+			add_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -179,7 +179,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'poseidon-thumbnail-large' ); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-large' ); ?></a>
 						
 						<div class="post-content">
 
@@ -193,7 +193,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 							
 							<div class="entry-content">
 								<?php the_excerpt(); ?>
-								<?php poseidon_more_link(); ?>
+								<?php gridbox_more_link(); ?>
 							</div><!-- .entry-content -->
 							
 						</div>
@@ -207,7 +207,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'medium-post clearfix' ); ?>>
 
 						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'poseidon-thumbnail-medium' ); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-medium' ); ?></a>
 						<?php endif; ?>
 
 						<div class="medium-post-content">
@@ -229,7 +229,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter( 'excerpt_length', 'poseidon_magazine_posts_excerpt_length' );
+			remove_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 			
 		endif;
 		
@@ -261,7 +261,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter( 'excerpt_length', 'poseidon_magazine_posts_excerpt_length' );
+			add_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -274,7 +274,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 						<header class="entry-header">
 			
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'poseidon-thumbnail-large' ); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-large' ); ?></a>
 
 							<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 						
@@ -284,7 +284,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 						
 						<div class="entry-content">
 							<?php the_excerpt(); ?>
-							<?php poseidon_more_link(); ?>
+							<?php gridbox_more_link(); ?>
 						</div><!-- .entry-content -->
 
 					</article>
@@ -296,7 +296,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
 
 						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'poseidon-thumbnail-small' ); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'gridbox-thumbnail-small' ); ?></a>
 						<?php endif; ?>
 
 						<div class="small-post-content">
@@ -318,7 +318,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter( 'excerpt_length', 'poseidon_magazine_posts_excerpt_length' );
+			remove_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 			
 		endif;
 		
@@ -337,13 +337,13 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		
 		if( true == $settings['meta_date'] ) {
 		
-			$postmeta .= poseidon_meta_date();
+			$postmeta .= gridbox_meta_date();
 			
 		}
 		
 		if( true == $settings['meta_author'] ) {
 		
-			$postmeta .= poseidon_meta_author();
+			$postmeta .= gridbox_meta_author();
 			
 		}
 		
@@ -370,7 +370,7 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			if( $settings['category'] > 0 ) : 
 			
 				// Set Link URL and Title for Category
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'poseidon' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'gridbox' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 				
 				// Display Widget Title with link to category archive
@@ -423,16 +423,16 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		$settings = wp_parse_args( $instance, $this->default_settings() );
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:', 'poseidon' ); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:', 'gridbox' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $settings['title']; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category'); ?>"><?php esc_html_e( 'Category:', 'poseidon' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category'); ?>"><?php esc_html_e( 'Category:', 'gridbox' ); ?></label><br/>
 			<?php // Display Category Select
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'poseidon' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'gridbox' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $settings['category'],
@@ -444,24 +444,24 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Post Layout:', 'poseidon' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Post Layout:', 'gridbox' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
-				<option <?php selected( $settings['layout'], 'horizontal' ); ?> value="horizontal" ><?php esc_html_e( 'Horizontal Arrangement', 'poseidon' ); ?></option>
-				<option <?php selected( $settings['layout'], 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'poseidon' ); ?></option>
+				<option <?php selected( $settings['layout'], 'horizontal' ); ?> value="horizontal" ><?php esc_html_e( 'Horizontal Arrangement', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'gridbox' ); ?></option>
 			</select>
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'poseidon' ); ?>
+				<?php esc_html_e( 'Display post date', 'gridbox' ); ?>
 			</label>
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'poseidon' ); ?>
+				<?php esc_html_e( 'Display post author', 'gridbox' ); ?>
 			</label>
 		</p>
 		
@@ -474,17 +474,17 @@ class Poseidon_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 		
-		wp_cache_delete( 'widget_poseidon_magazine_posts_boxed', 'widget' );
+		wp_cache_delete( 'widget_gridbox_magazine_posts_boxed', 'widget' );
 		
 	}
 	
 }
 
 // Register Widget
-add_action( 'widgets_init', 'poseidon_register_magazine_posts_boxed_widget' );
+add_action( 'widgets_init', 'gridbox_register_magazine_posts_boxed_widget' );
 
-function poseidon_register_magazine_posts_boxed_widget() {
+function gridbox_register_magazine_posts_boxed_widget() {
 
-	register_widget( 'Poseidon_Magazine_Posts_Boxed_Widget' );
+	register_widget( 'Gridbox_Magazine_Posts_Boxed_Widget' );
 	
 }

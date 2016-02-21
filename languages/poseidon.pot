@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Poseidon\n"
+"Project-Id-Version: Gridbox\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
 "POT-Creation-Date: 2016-01-29 11:10+0100\n"
 "PO-Revision-Date: 2016-01-29 11:10+0100\n"
@@ -130,7 +130,7 @@ msgstr ""
 #: inc/back-compat.php:49 inc/back-compat.php:61
 #, php-format
 msgid ""
-"Poseidon requires at least WordPress version 4.2. You are running version "
+"Gridbox requires at least WordPress version 4.2. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
 
@@ -162,7 +162,7 @@ msgid "Theme Links"
 msgstr ""
 
 #: inc/theme-info.php:50 inc/customizer/customizer.php:103
-msgid "https://themezee.com/themes/poseidon/"
+msgid "https://themezee.com/themes/gridbox/"
 msgstr ""
 
 #: inc/theme-info.php:50 inc/customizer/customizer.php:104
@@ -179,7 +179,7 @@ msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
 #: inc/customizer/customizer.php:105
-msgid "https://themezee.com/docs/poseidon-documentation/"
+msgid "https://themezee.com/docs/gridbox-documentation/"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
@@ -238,7 +238,7 @@ msgid ""
 msgstr ""
 
 #: inc/theme-info.php:120 inc/customizer/functions/custom-controls.php:101
-msgid "https://themezee.com/addons/poseidon-pro/"
+msgid "https://themezee.com/addons/gridbox-pro/"
 msgstr ""
 
 #: inc/theme-info.php:121 inc/customizer/functions/custom-controls.php:102

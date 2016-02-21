@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 /*
@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 		<header class="comments-header">
 			
 			<h2 class="comments-title">
-				<?php comments_number( '', esc_html__( 'One comment', 'poseidon' ), esc_html__( '% comments', 'poseidon' ) );?>
+				<?php comments_number( '', esc_html__( 'One comment', 'gridbox' ), esc_html__( '% comments', 'gridbox' ) );?>
 			</h2>
 			
 		</header><!-- .comment-header -->
@@ -35,11 +35,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="comment-navigation clearfix" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'poseidon' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'gridbox' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'poseidon' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'poseidon' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'gridbox' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'gridbox' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
@@ -57,11 +57,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="comment-navigation clearfix" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'poseidon' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'gridbox' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'poseidon' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'poseidon' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'gridbox' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'gridbox' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
@@ -73,11 +73,11 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'poseidon' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'gridbox' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form( array( 
-		'title_reply' => '<span>' . esc_html__( 'Leave a Reply', 'poseidon' ) . '</span>',
+		'title_reply' => '<span>' . esc_html__( 'Leave a Reply', 'gridbox' ) . '</span>',
 		'comment_notes_after' => ''
 		)
 	); ?>

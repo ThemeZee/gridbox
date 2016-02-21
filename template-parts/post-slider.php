@@ -4,11 +4,11 @@
  *
  * Queries posts by selected slider category and displays slideshow
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 // Get Theme Options from Database
-$theme_options = poseidon_theme_options();
+$theme_options = gridbox_theme_options();
 	
 // Get latest posts from database
 $query_arguments = array(
@@ -22,7 +22,7 @@ $slider_query = new WP_Query($query_arguments);
 if( $slider_query->have_posts() ) :
 	
 	// Limit the number of words in slideshow post excerpts
-	add_filter('excerpt_length', 'poseidon_slider_excerpt_length');
+	add_filter('excerpt_length', 'gridbox_slider_excerpt_length');
 	
 ?>
 	
@@ -53,7 +53,7 @@ if( $slider_query->have_posts() ) :
 <?php
 
 	// Remove excerpt filter
-	remove_filter('excerpt_length', 'poseidon_slider_excerpt_length');
+	remove_filter('excerpt_length', 'gridbox_slider_excerpt_length');
 
 endif;
 	

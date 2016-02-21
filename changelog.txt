@@ -1,5 +1,5 @@
 ===================================
-Poseidon Changelog
+Gridbox Changelog
 ===================================
 
 Version 1.0.3

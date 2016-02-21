@@ -2,17 +2,17 @@
 /**
  * Add Support for Theme Addons
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 
 // Register support for ThemeZee Addons
-add_action( 'after_setup_theme', 'poseidon_theme_addons_setup' );
+add_action( 'after_setup_theme', 'gridbox_theme_addons_setup' );
 
-function poseidon_theme_addons_setup() {
+function gridbox_theme_addons_setup() {
 
 	// Add Theme Support for Anderson Pro Plugin
-	add_theme_support( 'poseidon-pro' );
+	add_theme_support( 'gridbox-pro' );
 	
 	// Add Theme Support for ThemeZee Plugins
 	add_theme_support( 'themezee-widget-bundle' );
@@ -23,9 +23,9 @@ function poseidon_theme_addons_setup() {
 
 
 // Load addon stylesheets and scripts
-add_action( 'wp_enqueue_scripts', 'poseidon_theme_addons_scripts' );
+add_action( 'wp_enqueue_scripts', 'gridbox_theme_addons_scripts' );
 
-function poseidon_theme_addons_scripts() {
+function gridbox_theme_addons_scripts() {
 
 	// Load widget bundle styles if widgets are active
 	if ( is_active_widget('TZWB_Facebook_Likebox_Widget', false, 'tzwb-facebook-likebox')
@@ -52,9 +52,9 @@ function poseidon_theme_addons_scripts() {
 
 
 // Add custom Image Sizes for addons
-add_action( 'after_setup_theme', 'poseidon_theme_addons_image_sizes' );
+add_action( 'after_setup_theme', 'gridbox_theme_addons_image_sizes' );
 
-function poseidon_theme_addons_image_sizes() {
+function gridbox_theme_addons_image_sizes() {
 
 	// Add Widget Bundle Thumbnail
 	add_image_size( 'tzwb-thumbnail', 90, 65, true );

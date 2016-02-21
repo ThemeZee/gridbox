@@ -5,13 +5,13 @@
  * This file contains several template functions which are used to print out specific HTML markup
  * in the theme. You can override these template functions within your child theme.
  *
- * @package Poseidon
+ * @package Gridbox
  */
 	
 /**
  * Displays the site title in the header area
  */
-function poseidon_site_title() { ?>
+function gridbox_site_title() { ?>
 
 	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
@@ -19,30 +19,30 @@ function poseidon_site_title() { ?>
 
 <?php
 }
-add_action( 'poseidon_site_title', 'poseidon_site_title' );
+add_action( 'gridbox_site_title', 'gridbox_site_title' );
 
 
-if ( ! function_exists( 'poseidon_header_image' ) ):
+if ( ! function_exists( 'gridbox_header_image' ) ):
 /**
  * Displays the custom header image below the navigation menu
  */
-function poseidon_header_image() {
+function gridbox_header_image() {
 	
 	// Get theme options from database
-	$theme_options = poseidon_theme_options();	
+	$theme_options = gridbox_theme_options();	
 	
 	// Display featured image as header image on static pages
 	if( is_page() && has_post_thumbnail() ) : ?>
 		
 		<div id="headimg" class="header-image featured-image-header">
-			<?php the_post_thumbnail( 'poseidon-header-image' ); ?>
+			<?php the_post_thumbnail( 'gridbox-header-image' ); ?>
 		</div>
 	
 	<?php // Display Header Image on Single Posts
 	elseif( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) : ?>
 		
 		<div id="headimg" class="header-image featured-image-header">
-			<?php the_post_thumbnail( 'poseidon-header-image' ); ?>
+			<?php the_post_thumbnail( 'gridbox-header-image' ); ?>
 		</div>
 	
 	<?php // Display default header image set on Appearance > Header
@@ -77,14 +77,14 @@ function poseidon_header_image() {
 endif;
 
 
-if ( ! function_exists( 'poseidon_post_image_archives' ) ):
+if ( ! function_exists( 'gridbox_post_image_archives' ) ):
 /**
  * Displays the featured image on archive pages
  */
-function poseidon_post_image_archives() {
+function gridbox_post_image_archives() {
 	
 	// Get Theme Options from Database
-	$theme_options = poseidon_theme_options();
+	$theme_options = gridbox_theme_options();
 	
 	// Return early if no featured image should be displayed
 	if ( 'none' == $theme_options['post_layout_archives'] ) :
@@ -95,7 +95,7 @@ function poseidon_post_image_archives() {
 	if ( 'left' == $theme_options['post_layout_archives'] ) : ?>
 
 		<a class="post-thumbnail-small" href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail( 'poseidon-thumbnail-medium' ); ?>
+			<?php the_post_thumbnail( 'gridbox-thumbnail-medium' ); ?>
 		</a>
 
 <?php
@@ -109,18 +109,18 @@ function poseidon_post_image_archives() {
 <?php
 	endif;
 
-} // poseidon_post_image_archives()
+} // gridbox_post_image_archives()
 endif;
 
 
-if ( ! function_exists( 'poseidon_post_image_single' ) ):
+if ( ! function_exists( 'gridbox_post_image_single' ) ):
 /**
  * Displays the featured image on single posts
  */
-function poseidon_post_image_single() {
+function gridbox_post_image_single() {
 	
 	// Get Theme Options from Database
-	$theme_options = poseidon_theme_options();
+	$theme_options = gridbox_theme_options();
 	
 	// Display Post Thumbnail if activated
 	if ( 'top' == $theme_options['post_layout_single'] ) :
@@ -129,39 +129,39 @@ function poseidon_post_image_single() {
 
 	endif;
 
-} // poseidon_post_image_single()
+} // gridbox_post_image_single()
 endif;
 
 
-if ( ! function_exists( 'poseidon_entry_meta' ) ):	
+if ( ! function_exists( 'gridbox_entry_meta' ) ):	
 /**
  * Displays the date, author and categories of a post
  */
-function poseidon_entry_meta() {
+function gridbox_entry_meta() {
 
 	// Get Theme Options from Database
-	$theme_options = poseidon_theme_options();
+	$theme_options = gridbox_theme_options();
 	
 	$postmeta = '';
 	
 	// Display date unless user has deactivated it via settings
 	if ( true == $theme_options['meta_date'] ) {
 		
-		$postmeta .= poseidon_meta_date();
+		$postmeta .= gridbox_meta_date();
 		
 	}
 
 	// Display author unless user has deactivated it via settings
 	if ( true == $theme_options['meta_author'] ) {
 	
-		$postmeta .= poseidon_meta_author();
+		$postmeta .= gridbox_meta_author();
 	
 	}
 	
 	// Display categories unless user has deactivated it via settings
 	if ( true == $theme_options['meta_category'] ) {
 	
-		$postmeta .= poseidon_meta_category();
+		$postmeta .= gridbox_meta_category();
 	
 	}
 		
@@ -171,15 +171,15 @@ function poseidon_entry_meta() {
 			
 	}
 
-} // poseidon_entry_meta()
+} // gridbox_entry_meta()
 endif;
 
 
-if ( ! function_exists( 'poseidon_meta_date' ) ):
+if ( ! function_exists( 'gridbox_meta_date' ) ):
 /**
  * Displays the post date
  */
-function poseidon_meta_date() { 
+function gridbox_meta_date() { 
 
 	$time_string = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -190,48 +190,48 @@ function poseidon_meta_date() {
 
 	return '<span class="meta-date">' . $time_string . '</span>';
 
-}  // poseidon_meta_date()
+}  // gridbox_meta_date()
 endif;
 
 
-if ( ! function_exists( 'poseidon_meta_author' ) ):
+if ( ! function_exists( 'gridbox_meta_author' ) ):
 /**
  * Displays the post author
  */
-function poseidon_meta_author() {  
+function gridbox_meta_author() {  
 	
 	$author_string = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'poseidon' ), get_the_author() ) ),
+		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'gridbox' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 	
 	return '<span class="meta-author"> ' . $author_string . '</span>';
 
-}  // poseidon_meta_author()
+}  // gridbox_meta_author()
 endif;
 
 
-if ( ! function_exists( 'poseidon_meta_category' ) ):
+if ( ! function_exists( 'gridbox_meta_category' ) ):
 /**
  * Displays the category of posts
  */	
-function poseidon_meta_category() { 
+function gridbox_meta_category() { 
 
 	return '<span class="meta-category"> ' . get_the_category_list(', ') . '</span>';
 	
-} // poseidon_meta_category()
+} // gridbox_meta_category()
 endif;
 
 
-if ( ! function_exists( 'poseidon_entry_tags' ) ):
+if ( ! function_exists( 'gridbox_entry_tags' ) ):
 /**
  * Displays the post tags on single post view
  */
-function poseidon_entry_tags() {
+function gridbox_entry_tags() {
 	
 	// Get Theme Options from Database
-	$theme_options = poseidon_theme_options();
+	$theme_options = gridbox_theme_options();
 	
 	// Get Tags
 	$tag_list = get_the_tag_list('', '');
@@ -247,31 +247,31 @@ function poseidon_entry_tags() {
 <?php 
 	endif;
 
-} // poseidon_entry_tags()
+} // gridbox_entry_tags()
 endif;
 
 
-if ( ! function_exists( 'poseidon_more_link' ) ):
+if ( ! function_exists( 'gridbox_more_link' ) ):
 /**
  * Displays the more link on posts
  */
-function poseidon_more_link() { ?>
+function gridbox_more_link() { ?>
 
-	<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'poseidon' ); ?></a>
+	<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
 
 <?php
 }
 endif;
 
 
-if ( ! function_exists( 'poseidon_post_navigation' ) ):
+if ( ! function_exists( 'gridbox_post_navigation' ) ):
 /**
  * Displays Single Post Navigation
  */	
-function poseidon_post_navigation() { 
+function gridbox_post_navigation() { 
 	
 	// Get Theme Options from Database
-	$theme_options = poseidon_theme_options();
+	$theme_options = gridbox_theme_options();
 	
 	if ( true == $theme_options['post_navigation'] ) {
 
@@ -283,11 +283,11 @@ function poseidon_post_navigation() {
 endif;
 
 
-if ( ! function_exists( 'poseidon_breadcrumbs' ) ):
+if ( ! function_exists( 'gridbox_breadcrumbs' ) ):
 /**
  * Displays ThemeZee Breadcrumbs plugin
  */	
-function poseidon_breadcrumbs() { 
+function gridbox_breadcrumbs() { 
 	
 	if ( function_exists( 'themezee_breadcrumbs' ) ) {
 
@@ -301,11 +301,11 @@ function poseidon_breadcrumbs() {
 endif;
 
 
-if ( ! function_exists( 'poseidon_related_posts' ) ):
+if ( ! function_exists( 'gridbox_related_posts' ) ):
 /**
  * Displays ThemeZee Related Posts plugin
  */	
-function poseidon_related_posts() { 
+function gridbox_related_posts() { 
 	
 	if ( function_exists( 'themezee_related_posts' ) ) {
 
@@ -320,11 +320,11 @@ function poseidon_related_posts() {
 endif;
 
 
-if ( ! function_exists( 'poseidon_pagination' ) ):
+if ( ! function_exists( 'gridbox_pagination' ) ):
 /**
  * Displays pagination on archive pages
  */	
-function poseidon_pagination() { 
+function gridbox_pagination() { 
 	
 	global $wp_query;
 
@@ -350,22 +350,22 @@ function poseidon_pagination() {
 	<?php
 	endif;
 	
-} // poseidon_pagination()
+} // gridbox_pagination()
 endif;
 
 
 /**
  * Displays credit link on footer line
  */	
-function poseidon_footer_text() { ?>
+function gridbox_footer_text() { ?>
 
 	<span class="credit-link">
-		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'poseidon' ), 
+		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'gridbox' ), 
 			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
-			'<a href="https://themezee.com/themes/poseidon/" title="Poseidon WordPress Theme">Poseidon</a>'
+			'<a href="https://themezee.com/themes/gridbox/" title="Gridbox WordPress Theme">Gridbox</a>'
 		); ?>
 	</span>
 
 <?php
 }
-add_action( 'poseidon_footer_text', 'poseidon_footer_text' );
+add_action( 'gridbox_footer_text', 'gridbox_footer_text' );

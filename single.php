@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'single' );
 			
-			poseidon_related_posts();
+			gridbox_related_posts();
 		
 			comments_template();
 

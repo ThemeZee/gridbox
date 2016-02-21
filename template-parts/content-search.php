@@ -2,7 +2,7 @@
 /**
  * The template for displaying articles in the search loop
  *
- * @package Poseidon
+ * @package Gridbox
  */
 ?>
 
@@ -16,7 +16,7 @@
 
 		<div class="entry-content clearfix">
 			<?php the_excerpt(); ?>
-			<?php poseidon_more_link(); ?>
+			<?php gridbox_more_link(); ?>
 		</div><!-- .entry-content -->
 
 	</article>

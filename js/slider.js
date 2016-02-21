@@ -3,15 +3,15 @@
  *
  * Adds the Flexslider Plugin for the Featured Post Slideshow
  *
- * @package Poseidon
+ * @package Gridbox
  */
 
 jQuery(document).ready(function($) {
 
 	/* Add flexslider to #post-slider div */ 
 	$("#post-slider").flexslider({
-		animation: poseidon_slider_params.animation,
-		slideshowSpeed: poseidon_slider_params.speed,
+		animation: gridbox_slider_params.animation,
+		slideshowSpeed: gridbox_slider_params.speed,
 		namespace: "zeeflex-",
 		selector: ".zeeslides > li",
 		smoothHeight: true,

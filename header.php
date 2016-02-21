@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Poseidon
+ * @package Gridbox
  */
  
 ?><!DOCTYPE html>
@@ -23,9 +23,9 @@
 
 	<div id="page" class="hfeed site">
 		
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'poseidon' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gridbox' ); ?></a>
 		
-		<div id="header-top" class="header-bar-wrap"><?php do_action( 'poseidon_header_bar' ); ?></div>
+		<div id="header-top" class="header-bar-wrap"><?php do_action( 'gridbox_header_bar' ); ?></div>
 		
 		<header id="masthead" class="site-header clearfix" role="banner">
 			
@@ -33,7 +33,7 @@
 						
 				<div id="logo" class="site-branding clearfix">
 				
-					<?php do_action( 'poseidon_site_title' ); ?>
+					<?php do_action( 'gridbox_site_title' ); ?>
 				
 				</div><!-- .site-branding -->
 				
@@ -45,7 +45,7 @@
 							'container' => false, 
 							'menu_class' => 'main-navigation-menu', 
 							'echo' => true, 
-							'fallback_cb' => 'poseidon_default_menu')
+							'fallback_cb' => 'gridbox_default_menu')
 						);
 					?>
 				</nav><!-- #main-navigation -->
@@ -54,10 +54,10 @@
 		
 		</header><!-- #masthead -->
 		
-		<?php poseidon_header_image(); ?>
+		<?php gridbox_header_image(); ?>
 		
-		<?php poseidon_slider(); ?>
+		<?php gridbox_slider(); ?>
 		
-		<?php poseidon_breadcrumbs(); ?>
+		<?php gridbox_breadcrumbs(); ?>
 			
 		<div id="content" class="site-content container clearfix">

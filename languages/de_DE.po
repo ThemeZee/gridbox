@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes + Pro Versions + Add-ons package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Poseidon\n"
+"Project-Id-Version: Gridbox\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
 "POT-Creation-Date: 2016-01-29 11:10+0100\n"
 "PO-Revision-Date: 2016-01-29 11:13+0100\n"
@@ -140,10 +140,10 @@ msgstr ""
 #: inc/back-compat.php:49 inc/back-compat.php:61
 #, php-format
 msgid ""
-"Poseidon requires at least WordPress version 4.2. You are running version "
+"Gridbox requires at least WordPress version 4.2. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
-"Poseidon benötigt mindestens WordPress Version 4.2. Du verwendest Version "
+"Gridbox benötigt mindestens WordPress Version 4.2. Du verwendest Version "
 "%s. Bitte führe ein Update durch und versuche es erneut."
 
 #: inc/template-tags.php:205
@@ -174,8 +174,8 @@ msgid "Theme Links"
 msgstr "Theme Links"
 
 #: inc/theme-info.php:50 inc/customizer/customizer.php:103
-msgid "https://themezee.com/themes/poseidon/"
-msgstr "https://themezee.com/de/themes/poseidon/"
+msgid "https://themezee.com/themes/gridbox/"
+msgstr "https://themezee.com/de/themes/gridbox/"
 
 #: inc/theme-info.php:50 inc/customizer/customizer.php:104
 msgid "Theme Page"
@@ -191,8 +191,8 @@ msgstr "Theme Demo"
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
 #: inc/customizer/customizer.php:105
-msgid "https://themezee.com/docs/poseidon-documentation/"
-msgstr "https://themezee.com/de/docs/poseidon-dokumentation/"
+msgid "https://themezee.com/docs/gridbox-documentation/"
+msgstr "https://themezee.com/de/docs/gridbox-dokumentation/"
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
 #: inc/customizer/customizer.php:106
@@ -256,8 +256,8 @@ msgstr ""
 "erweiterte Anpassungsmöglichkeiten."
 
 #: inc/theme-info.php:120 inc/customizer/functions/custom-controls.php:101
-msgid "https://themezee.com/addons/poseidon-pro/"
-msgstr "https://themezee.com/de/addons/poseidon-pro/"
+msgid "https://themezee.com/addons/gridbox-pro/"
+msgstr "https://themezee.com/de/addons/gridbox-pro/"
 
 #: inc/theme-info.php:121 inc/customizer/functions/custom-controls.php:102
 #, php-format
