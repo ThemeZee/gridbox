@@ -117,18 +117,18 @@
 	display: block;
 	margin: 0;
 	padding: 0.8em 0.8em 0.5em;
-	font-family: 'Raleway', Tahoma, Arial;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
-	color: #404040;
+	color: #111144;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:link, 
 .tzwb-tabbed-content .tzwb-tabnavi li a:visited  {
-	color: #404040;
+	color: #111144;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -138,12 +138,12 @@
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
 .tzwb-tabbed-content .tzwb-tabnavi li a:active {
-	color: #22aadd;
+	color: #4477aa;
 	text-decoration: none;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	color: #22aadd;
+	color: #4477aa;
 }
 
 .tzwb-tabbed-content .tzwb-tabcontent {
@@ -166,7 +166,7 @@
 
 .tzwb-social-icons .social-icons-menu li a {
 	padding: 0.75em;
-	background: #22aadd;
+	background: #4477aa;
 }
 
 .tzwb-social-icons .social-icons-menu li a:before {
@@ -175,7 +175,7 @@
 
 .tzwb-social-icons .social-icons-menu li a:hover {
 	text-decoration: none;
-	background: #404040;
+	background: #111144;
 }
 
 /*--------------------------------------------------------------

@@ -30,8 +30,8 @@ body {
 # 2.0 - Typography
 --------------------------------------------------------------*/
 body {
-	color: #404040;
-	font-family: 'Ubuntu', Tahoma, Arial;
+	color: #111144;
+	font-family: 'PT Serif', Tahoma, Arial;
 	font-size: 17px;
 	font-size: 1.0625rem;
 	line-height: 1.5;
@@ -176,19 +176,19 @@ table {
 }
 
 a {
-	color: #22aadd;
+	color: #4477aa;
 	text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: #22aadd;
+	color: #4477aa;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #404040;
+	color: #111144;
 }
 
 a:focus {

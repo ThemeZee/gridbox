@@ -56,8 +56,6 @@
 		
 		<?php gridbox_header_image(); ?>
 		
-		<?php gridbox_slider(); ?>
-		
 		<?php gridbox_breadcrumbs(); ?>
-			
+		
 		<div id="content" class="site-content container clearfix">

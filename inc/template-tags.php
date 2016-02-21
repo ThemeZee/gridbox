@@ -31,22 +31,8 @@ function gridbox_header_image() {
 	// Get theme options from database
 	$theme_options = gridbox_theme_options();	
 	
-	// Display featured image as header image on static pages
-	if( is_page() && has_post_thumbnail() ) : ?>
-		
-		<div id="headimg" class="header-image featured-image-header">
-			<?php the_post_thumbnail( 'gridbox-header-image' ); ?>
-		</div>
-	
-	<?php // Display Header Image on Single Posts
-	elseif( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) : ?>
-		
-		<div id="headimg" class="header-image featured-image-header">
-			<?php the_post_thumbnail( 'gridbox-header-image' ); ?>
-		</div>
-	
-	<?php // Display default header image set on Appearance > Header
-	elseif( get_header_image() ) : 
+	// Display default header image set on Appearance > Header
+	if( get_header_image() ) : 
 
 		// Hide header image on front page
 		if ( true == $theme_options['custom_header_hide'] and is_front_page() ) {
@@ -95,7 +81,7 @@ function gridbox_post_image_archives() {
 	if ( 'left' == $theme_options['post_layout_archives'] ) : ?>
 
 		<a class="post-thumbnail-small" href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail( 'gridbox-thumbnail-medium' ); ?>
+			<?php the_post_thumbnail(); ?>
 		</a>
 
 <?php

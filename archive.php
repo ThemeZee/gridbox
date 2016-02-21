@@ -7,38 +7,33 @@
  * @package Gridbox
  */
  
-get_header(); 
-
-// Get Theme Options from Database
-$theme_options = gridbox_theme_options();
-?>
+get_header(); ?>
 	
+	<header class="page-header clearfix">
+		
+		<?php the_archive_title( '<h1 class="archive-title">', '</h1>' ); ?>
+		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+
+	</header>
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+	
+			<div id="homepage-posts" class="post-columns clearfix">
+					
+			<?php if (have_posts()) : while (have_posts()) : the_post();
 		
-		<?php if ( have_posts() ) : ?>
+				get_template_part( 'template-parts/content' );
 		
-			<header class="page-header">
-				<?php the_archive_title( '<h1 class="archive-title">', '</h1>' ); ?>
-			</header><!-- .page-header -->
+				endwhile;
+
+			endif; ?>
 			
-			<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-
-			<?php /* Start the Loop */ 
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', esc_attr( $theme_options['post_content'] ) );
-
-			endwhile;
+			</div>
 			
-			// Display Pagination	
-			gridbox_pagination();
-
-		endif; ?>
+			<?php gridbox_pagination(); ?>
 			
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
-	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

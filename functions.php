@@ -36,7 +36,7 @@ function gridbox_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Set detfault Post Thumbnail size
-	set_post_thumbnail_size( 840, 560, true );
+	set_post_thumbnail_size( 800, 500, true );
 
 	// Register Navigation Menu
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'gridbox' ) );
@@ -148,7 +148,7 @@ add_action( 'wp_enqueue_scripts', 'gridbox_scripts' );
 function gridbox_google_fonts_url() {
     
 	// Set default Fonts
-	$font_families = array( 'Ubuntu:400,400italic,700,700italic', 'Raleway:400,700' );
+	$font_families = array( 'PT+Serif:400,400italic,700,700italic', 'Bree+Serif:400,400italic,700,700italic' );
 
 	// Build Fonts URL
 	$query_args = array(

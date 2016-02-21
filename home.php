@@ -11,38 +11,37 @@ get_header();
 
 // Get Theme Options from Database
 $theme_options = gridbox_theme_options();
-?>
-		
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-					
-			<?php
-			// Display Latest Posts Title
-			if ( isset( $theme_options['latest_posts_title'] ) and $theme_options['latest_posts_title'] <> '' ) : ?>
-						
-				<header class="page-header">
-					
-					<h1 class="archive-title"><?php echo wp_kses_post( $theme_options['latest_posts_title'] ); ?></h1>
 
-				</header><!-- .page-header -->
+// Display Homepage Title
+if ( isset( $theme_options['homepage_title'] ) and $theme_options['homepage_title'] <> '' ) : ?>
 		
-			<?php endif; ?>
-			
-		 
+	<header class="page-header clearfix">
+		
+		<h1 class="page-title"><?php echo wp_kses_post( $theme_options['homepage_title'] ); ?></h1>
+		<p class="homepage-description"><?php echo wp_kses_post( $theme_options['homepage_description'] ); ?></p>
+		
+	</header>
+
+<?php endif; ?>
+
+	<section id="primary" class="content-area content-full">
+		<main id="main" class="site-main" role="main">
+		
+			<div id="homepage-posts" class="post-columns clearfix">
+					
 			<?php if (have_posts()) : while (have_posts()) : the_post();
 		
-				get_template_part( 'template-parts/content', esc_attr( $theme_options['post_content'] ) );
+				get_template_part( 'template-parts/content' );
 		
 				endwhile;
 
-				// Display Pagination	
-				gridbox_pagination();
-
 			endif; ?>
+			
+			</div>
+			
+			<?php gridbox_pagination(); ?>
 			
 		</main><!-- #main -->
 	</section><!-- #primary -->
-	
-	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

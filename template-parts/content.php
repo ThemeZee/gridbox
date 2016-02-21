@@ -1,25 +1,30 @@
 <?php
 /**
- * The template for displaying articles in the loop with full content
+ * The template for displaying articles in the loop with post excerpts
  *
  * @package Gridbox
  */
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
-		<?php gridbox_post_image_archives(); ?>
-		
-		<header class="entry-header">
-		
-			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+	<div class="post-col clearfix">
+	
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
-			<?php gridbox_entry_meta(); ?>
+			<?php gridbox_post_image_archives(); ?>
+			
+			<header class="entry-header">
 
-		</header><!-- .entry-header -->
+				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+				
+				<?php gridbox_entry_meta(); ?>
+			
+			</header><!-- .entry-header -->
 
-		<div class="entry-content clearfix">
-			<?php the_content( esc_html__( 'Read more', 'gridbox' ) ); ?>
-		</div><!-- .entry-content -->
+			<div class="entry-content entry-excerpt clearfix">
+				<?php the_excerpt(); ?>
+				<?php gridbox_more_link(); ?>
+			</div><!-- .entry-content -->
 
-	</article>
+		</article>
+		
+	</div>

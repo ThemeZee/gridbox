@@ -287,11 +287,11 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: 'Ubuntu', Tahoma, Arial;
+	color: #111144;
+	font-family: 'PT Serif', Tahoma, Arial;
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.6;
 }
 
 h1,
@@ -433,19 +433,19 @@ table {
 }
 
 a {
-	color: #22aadd;
+	color: #4477aa;
 	text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: #22aadd;
+	color: #4477aa;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #404040;
+	color: #111144;
 }
 
 a:focus {
@@ -465,12 +465,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	padding: 0.4em 0.8em;
-	font-family: 'Raleway', Tahoma, Arial;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: bold;
 	color: #fff;
-	background: #22aadd;
+	background: #111144;
 	border: none;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -493,7 +493,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	background: #404040;
+	background: #4477aa;
 }
 
 input[type="text"],
@@ -607,11 +607,11 @@ textarea {
 }
 
 .site-content {
-	padding-top: 3em;
+	padding-top: 2.5em;
 	background: #fff;
 }
 
-.content-area {
+.content-single {
 	float: left;
 	width: 70%;
 	padding-right: 4em;
@@ -623,6 +623,7 @@ textarea {
 .sidebar {
 	float: right;
 	width: 30%;
+	margin-top: 1.5em;
 }
 
 /* Fullwidth Template */
@@ -636,14 +637,14 @@ textarea {
 # 9.0 - Header
 --------------------------------------------------------------*/
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid #ddd;
+	background: #111144;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .site-branding {
 	float: left;
 	max-width: 100%;
-	margin: 1em 0;
+	margin: 1.25em 0;
 	padding: 0;
 }
 
@@ -659,10 +660,10 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	color: #404040;
-	font-family: 'Raleway', sans-serif;
-	font-size: 38px;
-	font-size: 2.375rem;
+	color: #fff;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
+	font-size: 28px;
+	font-size: 1.75rem;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -672,7 +673,7 @@ textarea {
 }
 
 .site-branding a:hover .site-title {
-	color: #22aadd;
+	color: #ddd;
 }
 
 /* Custom Header Image */
@@ -717,22 +718,18 @@ textarea {
 .main-navigation-menu li {
 	float: left;
 	position: relative;
+	margin: 0.3em 1.2em;
 }
 
 .main-navigation-menu a {
 	display: block;
-	font-family: 'Raleway', Tahoma, Arial;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: bold;
-	padding: 1.2em;
+	padding: 0.3rem 0;
 	text-transform: uppercase;
 	text-decoration: none;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
+	border-bottom: 4px solid transparent;
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
@@ -746,18 +743,18 @@ textarea {
 	text-decoration: inherit;
 	vertical-align: top;
 	content: '\f431';
-	color: #404040;
+	color: #fff;
+	
 }
 
 .main-navigation-menu a:link, 
 .main-navigation-menu a:visited {
-	color: #404040;
+	color: #fff;
 	text-decoration: none;
 }
 
-.main-navigation-menu a:hover,
-.main-navigation-menu a:hover:after {
-	color: #22aadd;
+.main-navigation-menu li a:hover {
+	border-color: #fff;
 }
 
 .main-navigation-menu ul {
@@ -765,12 +762,10 @@ textarea {
 	display: none;
 	z-index: 99;
 	margin: 0;
-	padding: 0;
+	padding: 1.2em 0 0;
 	list-style-type: none;
 	list-style-position: outside;
-	background: #fff;
-	border: 1px solid #ddd;
-	border-top: 4px solid #404040;
+	background: #111144;
 }
 
 .main-navigation-menu ul li{
@@ -784,7 +779,7 @@ textarea {
 	float: left;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 	-webkit-transition: none;
 	-moz-transition: none;
 	-ms-transition: none;
@@ -794,6 +789,11 @@ textarea {
 
 .main-navigation-menu ul li:last-child a {
 	border-bottom: none;
+}
+
+.main-navigation-menu ul li a:hover {
+	text-decoration: underline;
+	border-color: rgba(255,255,255,0.2);
 }
 
 .main-navigation-menu ul .menu-item-has-children > a:after {
@@ -807,7 +807,7 @@ textarea {
 	text-decoration: inherit;
 	vertical-align: top;
 	content: '\f431';
-	color: #404040;
+	color: #fff;
 	-webkit-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
 	-o-transform:rotate(270deg);
@@ -817,7 +817,7 @@ textarea {
 .main-navigation-menu li ul ul {
 	margin-left: 250px;
 	margin-left: 16rem;
-	margin-top: -4px;
+	padding: 0;
 }
 
 .main-navigation-menu li:hover ul ul, 
@@ -834,7 +834,7 @@ textarea {
 }
 
 .main-navigation-menu li.current-menu-item > a {
-	color: #22aadd;
+	border-bottom: 4px solid #fff;
 }
 
 /*--------------------------------------------------------------
@@ -923,19 +923,18 @@ textarea {
 
 .widget-header {
 	margin: 0 0 1.5em 0;
+	border-bottom: 4px solid #111144;
 }
 
 .widget-title {
 	display: inline-block;
 	margin: 0;
-	padding: 0;
-	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 18px;
-	font-size: 1.125rem;
+	padding: 0 0 0.4em;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #404040;
-	border-bottom: 4px solid #eee;
+	color: #111144;
 }
 
 .widget ul {
@@ -952,7 +951,7 @@ textarea {
 
 .widget-title a:link, 
 .widget-title a:visited  {
-	color: #404040;
+	color: #111144;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -962,7 +961,7 @@ textarea {
 
 .widget-title a:hover, 
 .widget-title a:active  {
-	color: #22aadd;
+	color: #4477aa;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -1014,7 +1013,7 @@ textarea {
 .widget_tag_cloud .tagcloud a:hover, 
 .widget_tag_cloud .tagcloud a:active {
 	color: #fff;
-	background: #22aadd;
+	background: #4477aa;
 }
 
 /* Theme Search Widget */
@@ -1073,210 +1072,53 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## 11.2 - Magazine Posts Widgets
---------------------------------------------------------------*/
-
-.widget-magazine-posts {
-	margin-bottom: -1em;
-}
-
-.widget-magazine-posts .type-post {
-	margin: 0 0 2em 0;
-	padding: 0;
-	border: none;
-	background: none;
-}
-
-.widget-magazine-posts .type-post .wp-post-image {
-	margin: 0 0 0.5em;
-	max-width: 100%;
-}
-
-.widget-magazine-posts .type-post .entry-content {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-.widget-magazine-posts .type-post .entry-content p {
-	margin: 1em 0 0;
-}
-
-.widget-magazine-posts .type-post .more-link {
-	margin: 1em 0 0;
-}
-
-.widget-magazine-posts .large-post .entry-title {
-	font-size: 24px;
-	font-size: 1.5rem;
-}
-
-.widget-magazine-posts .medium-post {
-	float: left;
-	display: block;
-	width: 33.33333333%;
-	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts .medium-post .entry-title {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-.widget-magazine-posts .small-post {
-	float: left;
-	display: block;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts .small-post .wp-post-image {
-	float: left;
-	margin: 0 1em 0 0;
-	max-width: 40%;
-}
-
-.widget-magazine-posts .small-post .entry-title {
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-.widget-magazine-posts .medium-post .entry-meta,
-.widget-magazine-posts .small-post .entry-meta {
-	font-size: 12px;
-	font-size: 0.75rem;
-}
-
-/* Magazine Posts Boxed Widget Horizontal Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
-	float: left;	
-	width: 50%;
-	margin: 0;
-	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
-	float: right;
-	width: 50%;
-	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
-	margin-right: -2em;
-}
-
-/* Magazine Posts Boxed Widget Vertical Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
-	float: left;
-	width: 50%;
-	margin-bottom: 1em;
-	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
-	width: 50%;
-	margin-left: 50%;
-	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Magazine Posts Grid Widget */
-.widget-magazine-posts-grid .magazine-posts-grid-row {
-	margin-right: -2em;
-}
-
-.widget-magazine-posts-grid .magazine-posts-grid-row .large-post {
-	float: left;
-	width: 50%;
-	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Magazine Posts Columns Widget */
-.gridbox-magazine-posts-columns {
-	padding: 0;
-}
-
-.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content .magazine-posts-columns-post-list {
-	float: left;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content {
-	float: left;
-	width: 100%;
-}
-
-.widget-magazine-posts-columns .magazine-posts-column-left {
-	float: left;
-	width: 50%;
-	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-columns .magazine-posts-column-right {
-	margin-left: 50%;
-	width: 50%;
-	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.widget-magazine-posts-columns .medium-post {
-	width: 100%;
-	padding-right: 0;
-}
-
-/*--------------------------------------------------------------
 # 12.0 - Posts and pages
 --------------------------------------------------------------*/
+
+/* Post Columns */
+.post-columns {
+	margin-right: -2.5em;
+}
+
+.post-columns .post-col {
+	float: left;
+	width: 33.3333333333333%;
+	padding-right: 2.5em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.post-columns .post-col:nth-child(3n + 1) {
+	clear: left;
+}
+
+/* Post Styling */
 .type-post, 
 .type-page, 
 .type-attachment  {
-	margin: 0 0 3em 0;
+	margin: 0 0 2.5em 0;
 	max-width: 100%;
 }
 
-.page-title, 
+.archive-title,
+.page-title,
 .entry-title {
 	display: inline;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 40px;
 	font-size: 2.5rem;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	color: #404040;
+	color: #111144;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .entry-title a:link, 
 .entry-title a:visited {
-	color: #404040;
+	color: #111144;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -1287,11 +1129,7 @@ textarea {
 
 .entry-title a:hover, 
 .entry-title a:active{
-	color: #22aadd;
-}
-
-.type-post .wp-post-image {
-	margin: 0 0 0.5em;
+	color: #4477aa;
 }
 
 .entry-content {
@@ -1299,44 +1137,37 @@ textarea {
 	font-size: 1.0625rem;
 }
 
+.type-post .wp-post-image,
+.type-page .wp-post-image {
+	margin: 1.5em 0 0;
+}
+
 /* Read more Link */
 .more-link {
 	display: inline-block;
 	margin: 0;
-	padding: 0;
-	font-family: 'Raleway', Tahoma, Arial;
+	padding: 0.3em 0.8em;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
+	color: #fff;
+	background: #111144;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
-
-/* Small Post Layout */
-.post-layout-small .type-post .wp-post-image {
-	float: left;
-	max-width: 40%;
-	margin: 0 1.5em 1.5em 0;
-	padding: 0.3em 0 0;
+.more-link:link, 
+.more-link:visited  {
+	color: #fff;
 }
 
-.post-layout-small .type-post .entry-title {
-	font-size: 28px;
-	font-size: 1.75rem;
-}
-
-.post-layout-small .type-post .entry-content {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-.post-layout-small .type-post .entry-excerpt p {
-	margin-bottom: 1em;
+.more-link:hover, 
+.more-link:active {
+	background: #4477aa;
 }
 
 /* Page Links | wp_link_pages() */
@@ -1348,35 +1179,54 @@ textarea {
 
 /* Entry Meta */
 .entry-meta {
-	margin: 0.5em 0.2em 0;
-	color: #aaa;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	text-transform: uppercase;
+	margin: 0.25em 0 0;
+	color: #888;
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 .entry-meta a:link, 
 .entry-meta a:visited {
-	color: #aaa;
+	color: #888;
 }
 
 .entry-meta a:hover, 
 .entry-meta a:active {
-	color: #777;
+	color: #444;
 }
 
 .entry-meta span:after {
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 16px 'Genericons';
-	vertical-align: middle;
-	color: #aaa;
-	content: '\f428';
+	content: "\002F";
 	margin-left: 0.2em;
 }
 
 .entry-meta span:last-child:after {
 	display: none;
+}
+
+/* Small Post Layout */
+.post-col .type-post .entry-title {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+.post-col .type-post .entry-content {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.post-col .type-post .entry-excerpt p {
+	margin-bottom: 1em;
+}
+
+.post-col .type-post .entry-meta {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.post-col .type-post .wp-post-image,
+.post-col .type-page .wp-post-image {
+	margin: 0 0 0.5em;
 }
 
 /* Entry Tags */
@@ -1414,7 +1264,19 @@ textarea {
 .entry-tags .meta-tags a:hover, 
 .entry-tags .meta-tags a:active {
 	color: #fff;
-	background: #22aadd;
+	background: #4477aa;
+}
+
+/* Archive Title */
+.page-header {
+	margin-bottom: 2.5em;
+}
+
+.page-header .homepage-description,
+.page-header .archive-description {
+	margin: 0.5em 0 1em;
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 /* Post Navigation */
@@ -1457,7 +1319,7 @@ textarea {
 	padding: 0.5em 0.9em;
     text-align: center;
 	text-decoration: none;
-	font-family: 'Raleway', Tahoma, Arial;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: bold;
@@ -1471,28 +1333,6 @@ textarea {
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
-}
-
-/* Archives and Search Heading */
-.page-header {
-	margin: 0 0 1.5em 0;
-}
-
-.page-header .archive-title {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 18px;
-	font-size: 1.125rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #404040;
-	border-bottom: 4px solid #eee;
-}
-
-.archive-description {
-	color: #666;
 }
 
 /* Breadcrumbs */
@@ -1559,12 +1399,12 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	font-family: 'Raleway', Tahoma, Arial;
+	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 18px;
 	font-size: 1.125rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #404040;
+	color: #111144;
 	border-bottom: 4px solid #eee;
 }
 
@@ -1945,11 +1785,11 @@ object {
 		text-decoration: inherit;
 		vertical-align: middle;
 		content: '\f419';
-		color: #404040;
+		color: #111144;
 	}
 	
 	.main-navigation-toggle:hover:after {
-		color: #22aadd;
+		color: #4477aa;
 	}
 	
 	/* Main Navigation Menu */
@@ -1958,7 +1798,7 @@ object {
 		width: 100%;
 		display: none;
 		margin-bottom: 1em;
-		border-top: 4px solid #404040;
+		border-top: 4px solid #111144;
 	}
 	
 	.main-navigation-menu a {
@@ -2027,11 +1867,11 @@ object {
 		text-decoration: inherit;
 		vertical-align: middle;
 		content: '\f431';
-		color: #404040;
+		color: #111144;
 	}
 	
 	.main-navigation-menu .submenu-dropdown-toggle:hover:before {
-		color: #22aadd;
+		color: #4477aa;
 	}
 	
 	.main-navigation-menu .submenu-dropdown-toggle.active:before {

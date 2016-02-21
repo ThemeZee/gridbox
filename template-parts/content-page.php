@@ -13,7 +13,9 @@
 			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 			
 		</header><!-- .entry-header -->
-
+		
+		<?php gridbox_post_image_single(); ?>
+		
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>
 			<!-- <?php trackback_rdf(); ?> -->

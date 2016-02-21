@@ -23,23 +23,6 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
-	// Add Title for latest posts setting
-	$wp_customize->add_setting( 'gridbox_theme_options[latest_posts_title]', array(
-        'default'           => esc_html__( 'Latest Posts', 'gridbox' ),
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_html'
-		)
-	);
-    $wp_customize->add_control( 'gridbox_theme_options[latest_posts_title]', array(
-        'label'    => esc_html__( 'Title above Latest Posts', 'gridbox' ),
-        'section'  => 'gridbox_section_post',
-        'settings' => 'gridbox_theme_options[latest_posts_title]',
-        'type'     => 'text',
-		'priority' => 1
-		)
-	);
-
 	// Add Settings and Controls for post content
 	$wp_customize->add_setting( 'gridbox_theme_options[post_content]', array(
         'default'           => 'excerpt',

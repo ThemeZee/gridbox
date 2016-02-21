@@ -16,7 +16,7 @@
 function gridbox_customize_register_general_settings( $wp_customize ) {
 
 	// Add Section for Theme Options
-	$wp_customize->add_section( 'beetle_section_general', array(
+	$wp_customize->add_section( 'gridbox_section_general', array(
         'title'    => esc_html__( 'General Settings', 'gridbox' ),
         'priority' => 10,
 		'panel' => 'gridbox_options_panel' 
@@ -33,7 +33,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 	);
     $wp_customize->add_control( 'gridbox_theme_options[layout]', array(
         'label'    => esc_html__( 'Theme Layout', 'gridbox' ),
-        'section'  => 'beetle_section_general',
+        'section'  => 'gridbox_section_general',
         'settings' => 'gridbox_theme_options[layout]',
         'type'     => 'radio',
 		'priority' => 1,
@@ -55,7 +55,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
     $wp_customize->add_control( new Gridbox_Customize_Header_Control(
         $wp_customize, 'gridbox_theme_options[sticky_header_title]', array(
             'label' => esc_html__( 'Sticky Header', 'gridbox' ),
-            'section' => 'beetle_section_general',
+            'section' => 'gridbox_section_general',
             'settings' => 'gridbox_theme_options[sticky_header_title]',
             'priority' => 2
             )
@@ -70,55 +70,44 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 	);
     $wp_customize->add_control( 'gridbox_theme_options[sticky_header]', array(
         'label'    => esc_html__( 'Enable sticky header feature', 'gridbox' ),
-        'section'  => 'beetle_section_general',
+        'section'  => 'gridbox_section_general',
         'settings' => 'gridbox_theme_options[sticky_header]',
         'type'     => 'checkbox',
 		'priority' => 3
 		)
 	);
 	
-	
-	// Add Post Layout Settings for archive posts
-	$wp_customize->add_setting( 'gridbox_theme_options[post_layout_archives]', array(
-        'default'           => 'left',
+	// Add Homepage Title
+	$wp_customize->add_setting( 'gridbox_theme_options[homepage_title]', array(
+        'default'           => esc_html__( 'Welcome to Gridbox', 'gridbox' ),
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'gridbox_sanitize_select'
+        'sanitize_callback' => 'wp_kses_post'
 		)
 	);
-    $wp_customize->add_control( 'gridbox_theme_options[post_layout_archives]', array(
-        'label'    => esc_html__( 'Post Layout (archive pages)', 'gridbox' ),
-        'section'  => 'beetle_section_general',
-        'settings' => 'gridbox_theme_options[post_layout_archives]',
-        'type'     => 'select',
-		'priority' => 4,
-        'choices'  => array(
-            'left' => esc_html__( 'Show featured image beside content', 'gridbox' ),
-            'top' => esc_html__( 'Show featured image above content', 'gridbox' ),
-			'none' => esc_html__( 'Hide featured image', 'gridbox' )
-			)
+    $wp_customize->add_control( 'gridbox_theme_options[homepage_title]', array(
+        'label'    => esc_html__( 'Home Page Title', 'gridbox' ),
+        'section'  => 'gridbox_section_general',
+        'settings' => 'gridbox_theme_options[homepage_title]',
+        'type'     => 'text',
+		'priority' => 4
 		)
 	);
 	
-	// Add Post Layout Settings for single posts
-	$wp_customize->add_setting( 'gridbox_theme_options[post_layout_single]', array(
-        'default'           => 'header',
+	// Add Homepage Title
+	$wp_customize->add_setting( 'gridbox_theme_options[homepage_description]', array(
+        'default'           => esc_html__( 'An elegant designed WordPress theme featuring a splendid fullscreen image slideshow.', 'gridbox' ),
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'gridbox_sanitize_select'
+        'sanitize_callback' => 'wp_kses_post'
 		)
 	);
-    $wp_customize->add_control( 'gridbox_theme_options[post_layout_single]', array(
-        'label'    => esc_html__( 'Post Layout (single post)', 'gridbox' ),
-        'section'  => 'beetle_section_general',
-        'settings' => 'gridbox_theme_options[post_layout_single]',
-        'type'     => 'select',
-		'priority' => 5,
-        'choices'  => array(
-            'header' => esc_html__( 'Show featured image as header image', 'gridbox' ),
-            'top' => esc_html__( 'Show featured image above content', 'gridbox' ),
-			'none' => esc_html__( 'Hide featured image', 'gridbox' )
-			)
+    $wp_customize->add_control( 'gridbox_theme_options[homepage_description]', array(
+        'label'    => esc_html__( 'Home Page Description', 'gridbox' ),
+        'section'  => 'gridbox_section_general',
+        'settings' => 'gridbox_theme_options[homepage_description]',
+        'type'     => 'textarea',
+		'priority' => 5
 		)
 	);
 
