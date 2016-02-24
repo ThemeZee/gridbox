@@ -63,42 +63,6 @@ function gridbox_header_image() {
 endif;
 
 
-if ( ! function_exists( 'gridbox_post_image_archives' ) ):
-/**
- * Displays the featured image on archive pages
- */
-function gridbox_post_image_archives() {
-	
-	// Get Theme Options from Database
-	$theme_options = gridbox_theme_options();
-	
-	// Return early if no featured image should be displayed
-	if ( 'none' == $theme_options['post_layout_archives'] ) :
-		return;
-	endif;
-	
-	// Display Featured Image beside post content
-	if ( 'left' == $theme_options['post_layout_archives'] ) : ?>
-
-		<a class="post-thumbnail-small" href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail(); ?>
-		</a>
-
-<?php
-	// Display Featured Image above post content
-	else: ?>
-
-		<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail(); ?>
-		</a>
-
-<?php
-	endif;
-
-} // gridbox_post_image_archives()
-endif;
-
-
 if ( ! function_exists( 'gridbox_post_image_single' ) ):
 /**
  * Displays the featured image on single posts
@@ -109,11 +73,11 @@ function gridbox_post_image_single() {
 	$theme_options = gridbox_theme_options();
 	
 	// Display Post Thumbnail if activated
-	if ( 'top' == $theme_options['post_layout_single'] ) :
+	if ( true == $theme_options['featured_image'] ) {
 
 		the_post_thumbnail();
 
-	endif;
+	}
 
 } // gridbox_post_image_single()
 endif;
@@ -151,6 +115,7 @@ function gridbox_entry_meta() {
 	
 	}
 		
+	// Display Post Meta
 	if( $postmeta ) {
 		
 		echo '<div class="entry-meta">' . $postmeta . '</div>';
@@ -241,11 +206,19 @@ if ( ! function_exists( 'gridbox_more_link' ) ):
 /**
  * Displays the more link on posts
  */
-function gridbox_more_link() { ?>
+function gridbox_more_link() { 
 
-	<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+	// Get Theme Options from Database
+	$theme_options = gridbox_theme_options();
+	
+	// Display Read More Button if there is excerpt
+	if ( $theme_options['excerpt_length'] > 0 ) : ?>
 
-<?php
+		<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+
+		<?php
+	endif;
+
 }
 endif;
 

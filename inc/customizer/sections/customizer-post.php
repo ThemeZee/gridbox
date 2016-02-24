@@ -23,30 +23,30 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
-	// Add Settings and Controls for post content
-	$wp_customize->add_setting( 'gridbox_theme_options[post_content]', array(
-        'default'           => 'excerpt',
+	// Add Post Layout Setting for archive posts
+	$wp_customize->add_setting( 'gridbox_theme_options[post_layout]', array(
+        'default'           => 'three',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'gridbox_sanitize_select'
 		)
 	);
-    $wp_customize->add_control( 'gridbox_theme_options[post_content]', array(
-        'label'    => esc_html__( 'Post length on archives', 'gridbox' ),
+    $wp_customize->add_control( 'gridbox_theme_options[post_layout]', array(
+        'label'    => esc_html__( 'Post Layout', 'gridbox' ),
         'section'  => 'gridbox_section_post',
-        'settings' => 'gridbox_theme_options[post_content]',
-        'type'     => 'radio',
-		'priority' => 2,
+        'settings' => 'gridbox_theme_options[post_layout]',
+        'type'     => 'select',
+		'priority' => 1,
         'choices'  => array(
-            'index' => esc_html__( 'Show full posts', 'gridbox' ),
-            'excerpt' => esc_html__( 'Show post excerpts', 'gridbox' )
+            'three' => esc_html__( 'Three Column Grid', 'gridbox' ),
+            'four' => esc_html__( 'Four Column Grid', 'gridbox' ),
 			)
 		)
 	);
 	
 	// Add Setting and Control for Excerpt Length
 	$wp_customize->add_setting( 'gridbox_theme_options[excerpt_length]', array(
-        'default'           => 30,
+        'default'           => 25,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'absint'
@@ -57,7 +57,23 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
         'section'  => 'gridbox_section_post',
         'settings' => 'gridbox_theme_options[excerpt_length]',
         'type'     => 'text',
-		'active_callback' => 'gridbox_control_post_content_callback',
+		'priority' => 2
+		)
+	);
+	
+	// Add Setting and Control for Excerpt More
+	$wp_customize->add_setting( 'gridbox_theme_options[excerpt_more]', array(
+        'default'           => '[...]',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_html'
+		)
+	);
+    $wp_customize->add_control( 'gridbox_theme_options[excerpt_more]', array(
+        'label'    => esc_html__( 'Excerpt More Text', 'gridbox' ),
+        'section'  => 'gridbox_section_post',
+        'settings' => 'gridbox_theme_options[excerpt_more]',
+        'type'     => 'text',
 		'priority' => 3
 		)
 	);
@@ -127,7 +143,42 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'priority' => 7
 		)
 	);
-
+	
+	// Add Single Post Settings
+	$wp_customize->add_setting( 'gridbox_theme_options[single_post_headline]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_attr'
+        )
+    );
+    $wp_customize->add_control( new Gridbox_Customize_Header_Control(
+        $wp_customize, 'gridbox_theme_options[single_post_headline]', array(
+            'label' => esc_html__( 'Single Posts', 'gridbox' ),
+            'section' => 'gridbox_section_post',
+            'settings' => 'gridbox_theme_options[single_post_headline]',
+            'priority' => 8
+            )
+        )
+    );
+	
+	// Featured Image Setting
+	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
+        'default'           => false,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'gridbox_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'gridbox_theme_options[featured_image]', array(
+        'label'    => esc_html__( 'Display featured image on single posts', 'gridbox' ),
+        'section'  => 'gridbox_section_post',
+        'settings' => 'gridbox_theme_options[featured_image]',
+        'type'     => 'checkbox',
+		'priority' => 9
+		)
+	);
+	
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_tags]', array(
         'default'           => false,
 		'type'           	=> 'option',
@@ -140,27 +191,10 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
         'section'  => 'gridbox_section_post',
         'settings' => 'gridbox_theme_options[meta_tags]',
         'type'     => 'checkbox',
-		'priority' => 8
+		'priority' => 710
 		)
 	);
 	
-	// Add Post Footer Settings
-	$wp_customize->add_setting( 'gridbox_theme_options[post_footer_headline]', array(
-        'default'           => '',
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
-        )
-    );
-    $wp_customize->add_control( new Gridbox_Customize_Header_Control(
-        $wp_customize, 'gridbox_theme_options[post_footer_headline]', array(
-            'label' => esc_html__( 'Post Footer', 'gridbox' ),
-            'section' => 'gridbox_section_post',
-            'settings' => 'gridbox_theme_options[post_footer_headline]',
-            'priority' => 9
-            )
-        )
-    );
 	$wp_customize->add_setting( 'gridbox_theme_options[post_navigation]', array(
         'default'           => true,
 		'type'           	=> 'option',
@@ -173,7 +207,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
         'section'  => 'gridbox_section_post',
         'settings' => 'gridbox_theme_options[post_navigation]',
         'type'     => 'checkbox',
-		'priority' => 10
+		'priority' => 11
 		)
 	);
 	

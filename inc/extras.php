@@ -56,30 +56,48 @@ add_filter( 'body_class', 'gridbox_body_classes' );
  * @param int $length Length of excerpt in number of words
  * @return int
  */
-function gridbox_excerpt_length($length) {
+function gridbox_excerpt_length( $length ) {
 	
 	// Get Theme Options from Database
 	$theme_options = gridbox_theme_options();
 
 	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_length']) and $theme_options['excerpt_length'] >= 0 ) :
+	if ( $theme_options['excerpt_length'] >= 0 ) {
+		
 		return absint( $theme_options['excerpt_length'] );
-	else :
+	
+	} else {
+		
 		return 30; // number of words
-	endif;
+	
+	}
 }
 add_filter('excerpt_length', 'gridbox_excerpt_length');
 
 
 /**
- * Function to change excerpt length for posts in category posts widgets
+ * Change excerpt more text for posts
  *
- * @param int $length Length of excerpt in number of words
- * @return int
+ * @param string $more_text Excerpt More Text
+ * @return string
  */
-function gridbox_magazine_posts_excerpt_length($length) {
-    return 15;
+function gridbox_excerpt_more( $more_text ) {
+	
+	// Get Theme Options from Database
+	$theme_options = gridbox_theme_options();
+
+	// Return Excerpt More Text
+	if ( $theme_options['excerpt_more'] <> '' ) {
+		
+		return esc_html( $theme_options['excerpt_more'] );
+	
+	} else {
+		
+		return '';
+	
+	}
 }
+add_filter('excerpt_more', 'gridbox_excerpt_more');
 
 
 /**

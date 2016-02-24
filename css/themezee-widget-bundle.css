@@ -53,9 +53,8 @@
 }
 
 .tzwb-posts-list .tzwb-entry-meta {
-	margin: 0.4em 0.2em 0;
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 /*--------------------------------------------------------------
@@ -77,11 +76,10 @@
 }
 
 .tzwb-comments-list .tzwb-comment-date {
-	margin: 0.4em 0.2em 0;
-	font-size: 12px;
-	font-size: 0.75rem;
-	color: #aaa;
-	text-transform: uppercase;
+	margin: 0;
+	font-size: 14px;
+	font-size: 0.875rem;
+	color: #888;
 }
 
 
@@ -101,34 +99,32 @@
 	list-style: none;
 	list-style-position: outside;
 	position: relative;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li {
 	float: left;
 	list-style: none;
 	position: relative;
-	margin: 0;
+	margin: 0 3px 3px 0;
 	padding: 0;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a {
-	display: block;
+	display: inline-block;
 	margin: 0;
-	padding: 0.8em 0.8em 0.5em;
-	font-family: 'Bree Serif', Georgia, Times New Roman;
+	padding: 0.3em 0.8em;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
-	color: #111144;
 	text-transform: uppercase;
 	text-decoration: none;
+	color: #fff;
+	background: #111133;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:link, 
 .tzwb-tabbed-content .tzwb-tabnavi li a:visited  {
-	color: #111144;
+	color: #fff;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -138,12 +134,12 @@
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
 .tzwb-tabbed-content .tzwb-tabnavi li a:active {
-	color: #4477aa;
+	background: #4477aa;
 	text-decoration: none;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	color: #4477aa;
+	background: #4477aa;
 }
 
 .tzwb-tabbed-content .tzwb-tabcontent {
@@ -175,7 +171,7 @@
 
 .tzwb-social-icons .social-icons-menu li a:hover {
 	text-decoration: none;
-	background: #111144;
+	background: #111133;
 }
 
 /*--------------------------------------------------------------

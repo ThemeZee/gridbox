@@ -18,7 +18,7 @@
 
 .related-posts-header {
 	margin: 0 0 1.5em 0;
-	border-bottom: 4px solid #111144;
+	border-bottom: 4px solid #111133;
 }
 
 .related-posts-title {
@@ -29,7 +29,7 @@
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #111144;
+	color: #111133;
 }
 
 /*--------------------------------------------------------------
@@ -125,13 +125,6 @@ ul.related-posts-list {
 	font-size: 0.9375rem;
 }
 
-.related-posts-three-columns .related-post-column .entry-meta, 
-.related-posts-four-columns .related-post-column .entry-meta {
-	font-size: 12px;
-	font-size: 0.75rem;
-}
-
-
 .related-posts-four-columns .related-post-column .entry-meta .meta-date,
 .related-posts-four-columns .related-post-column .entry-meta .meta-author  {
 	display: block;
@@ -145,6 +138,18 @@ ul.related-posts-list {
 	margin: 0 0 0.5em 0;
 	padding: 0;
 	border: none;
+}
+
+.related-posts-columns .related-post-column .entry-meta {
+	margin: 0;
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.related-posts-three-columns .related-post-column .entry-meta, 
+.related-posts-four-columns .related-post-column .entry-meta {
+	font-size: 13px;
+	font-size: 0.8125rem;
 }
 
 /*--------------------------------------------------------------
