@@ -296,8 +296,8 @@ function gridbox_related_posts() {
 	if ( function_exists( 'themezee_related_posts' ) ) {
 
 		themezee_related_posts( array( 
-			'class' => 'related-posts type-page clearfix',
-			'before_title' => '<header class="page-header"><h2 class="archive-title related-posts-title">',
+			'class' => 'related-posts clearfix',
+			'before_title' => '<header class="related-posts-header"><h2 class="related-posts-title">',
 			'after_title' => '</h2></header>'
 		) );
 		

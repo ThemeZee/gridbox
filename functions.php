@@ -97,16 +97,6 @@ function gridbox_widgets_init() {
 		'after_title' => '</h3></div>',
 	));
 	
-	register_sidebar( array(
-		'name' => esc_html__( 'Magazine Homepage', 'gridbox' ),
-		'id' => 'magazine-homepage',
-		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'gridbox' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="widget-header"><h1 class="widget-title">',
-		'after_title' => '</h1></div>',
-	));
-	
 } // gridbox_widgets_init
 add_action( 'widgets_init', 'gridbox_widgets_init' );
 
@@ -169,11 +159,6 @@ function gridbox_add_image_sizes() {
 	// Add Custom Header Image Size
 	add_image_size( 'gridbox-header-image', 1920, 480, true );
 	
-	// Add different thumbnail sizes for widgets and post layouts
-	add_image_size( 'gridbox-thumbnail-small', 120, 80, true );
-	add_image_size( 'gridbox-thumbnail-medium', 360, 240, true );
-	add_image_size( 'gridbox-thumbnail-large', 600, 400, true );
-	
 }
 add_action( 'after_setup_theme', 'gridbox_add_image_sizes' );
 
@@ -197,11 +182,3 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Include support functions for Theme Addons
 require get_template_directory() . '/inc/addons.php';
-
-// Include Post Slider Setup
-require get_template_directory() . '/inc/slider.php';
-
-// include Widget Files
-require get_template_directory() . '/inc/widgets/widget-magazine-posts-boxed.php';
-require get_template_directory() . '/inc/widgets/widget-magazine-posts-columns.php';
-require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';

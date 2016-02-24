@@ -644,7 +644,7 @@ textarea {
 .site-branding {
 	float: left;
 	max-width: 100%;
-	margin: 1.25em 0;
+	margin: 1.25em 0 1em;
 	padding: 0;
 }
 
@@ -665,15 +665,11 @@ textarea {
 	font-size: 28px;
 	font-size: 1.75rem;
 	text-decoration: none;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
+	border-bottom: 4px solid transparent;
 }
 
 .site-branding a:hover .site-title {
-	color: #ddd;
+	border-color: #fff;
 }
 
 /* Custom Header Image */
@@ -762,7 +758,7 @@ textarea {
 	display: none;
 	z-index: 99;
 	margin: 0;
-	padding: 1.2em 0 0;
+	padding: 1.5em 0 0;
 	list-style-type: none;
 	list-style-position: outside;
 	background: #111144;
@@ -814,6 +810,10 @@ textarea {
 	-ms-transform:rotate(270deg);
 }
 
+.main-navigation-menu ul .menu-item-has-children > a:hover:after {
+	text-decoration: none;
+}
+
 .main-navigation-menu li ul ul {
 	margin-left: 250px;
 	margin-left: 16rem;
@@ -835,6 +835,15 @@ textarea {
 
 .main-navigation-menu li.current-menu-item > a {
 	border-bottom: 4px solid #fff;
+}
+
+.main-navigation-menu ul li.current-menu-item > a {
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	text-decoration: underline;
+}
+
+.main-navigation-menu ul li.current-menu-item > a:after {
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -1160,6 +1169,7 @@ textarea {
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
+
 .more-link:link, 
 .more-link:visited  {
 	color: #fff;
@@ -1281,10 +1291,9 @@ textarea {
 
 /* Post Navigation */
 .post-navigation {
-	margin: 1em 0 0;
-	padding: 0.6em 0;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
+	margin: 0;
+	padding: 1em 0;
+	border-top: 2px solid #eee;
 }
 
 .post-navigation .nav-links:before,
@@ -1305,34 +1314,63 @@ textarea {
 	float: right;
 }
 
-/* Theme Pagination */
-.post-pagination {
-	display: inline-block;
-	border-top: 4px solid #eee;
-	margin: 0 0 3em;
-}
-
-.post-pagination a,
-.post-pagination .current {
+.post-navigation .nav-links a {
 	display: inline-block;
 	margin: 0;
-	padding: 0.5em 0.9em;
-    text-align: center;
-	text-decoration: none;
-	font-family: 'Bree Serif', Georgia, Times New Roman;
-	font-size: 16px;
-	font-size: 1rem;
+	padding: 0.3em 0.8em;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: bold;
 	text-transform: uppercase;
-}
-
-.post-pagination a:link, 
-.post-pagination a:visited {
+	text-decoration: none;
+	color: #fff;
+	background: #111144;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+}
+
+.post-navigation .nav-links a:link, 
+.post-navigation .nav-links a:visited  {
+	color: #fff;
+}
+
+.post-navigation .nav-links a:hover, 
+.post-navigation .nav-links a:active {
+	background: #4477aa;
+}
+
+/* Theme Pagination */
+.post-pagination {
+	margin: 0 0 2.5em;
+}
+
+.post-pagination a,
+.post-pagination .current {
+	display: inline-block;
+	margin: 0 2px 2px 0;
+	padding: 0.4em 0.9em;
+    text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background: #111144;
+}
+
+.post-pagination a:link, 
+.post-pagination a:visited {
+	color: #fff;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.post-pagination a:hover,
+.post-pagination .current {
+	background: #4477aa;
 }
 
 /* Breadcrumbs */
@@ -1388,24 +1426,27 @@ textarea {
 # 11.0 - Comments
 --------------------------------------------------------------*/
 
+.comments-area {
+	margin: 0 0 2.5em;
+}
+
 /* Comment Header */
 .comments-header,
 .comment-reply-title {
 	margin: 0 0 1.5em 0;
+	border-bottom: 4px solid #111144;
 }
 
 .comments-header .comments-title,
 .comment-reply-title span {
 	display: inline-block;
 	margin: 0;
-	padding: 0;
-	font-family: 'Bree Serif', Georgia, Times New Roman;
-	font-size: 18px;
-	font-size: 1.125rem;
+	padding: 0 0 0.4em;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #111144;
-	border-bottom: 4px solid #eee;
 }
 
 /* Comment List */
@@ -1417,8 +1458,8 @@ textarea {
 
 .comment {
 	margin: 0 0 1.5em;
-	padding: 1.5em;
-	border: 2px solid #eee;
+	padding: 0 0 1.5em;
+	border-bottom: 2px solid #eee;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1461,6 +1502,13 @@ textarea {
 	list-style: none;
 }
 
+.comment ol.children .comment {
+	margin: 1.5em 0 0;
+	padding: 1.5em 0 0;
+	border-top: 2px solid #eee;
+	border-bottom: none;
+}
+
 .comment .comment-respond {
 	margin-top: 2em;
 }
@@ -1469,8 +1517,8 @@ textarea {
 .comment-navigation {
 	margin: 0 0 1.5em;
 	padding: 0.5em 0;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -1481,6 +1529,34 @@ textarea {
 
 .comment-navigation .nav-next {
 	float: right;
+}
+
+.reply .comment-reply-link {
+	display: inline-block;
+	margin: 0;
+	padding: 0.2em 0.6em;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	background: #111144;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.reply .comment-reply-link:link, 
+.reply .comment-reply-link:visited  {
+	color: #fff;
+}
+
+.reply .comment-reply-link:hover, 
+.reply .comment-reply-link:active {
+	background: #4477aa;
 }
 
 /* Comment Form */
@@ -1514,7 +1590,8 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	border-top: 1px solid #ddd;
+	color: #fff;
+	background: #111144;
 }
 
 .site-footer {
@@ -1668,25 +1745,6 @@ object {
 		padding: 1.5em 1em;
 	}
 	
-	.widget-magazine-posts .large-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
-	.widget-magazine-posts .medium-post .entry-title {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-	
-	.widget-magazine-posts .small-post .entry-title {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link  {
-		display: none;
-	}
-	
 }
 
 /*--------------------------------------------------------------
@@ -1694,9 +1752,7 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
 	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
-		display: none;
-	}
+
 
 }
 
@@ -1908,27 +1964,6 @@ object {
 		background: #fdfdfd;
 	}
 	
-	/* Magazine Post Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link {
-		display: inline-block;
-	}
-	
-	.widget-magazine-posts .large-post .entry-title 	{
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
-	.widget-magazine-posts .medium-post .entry-title {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-	
-	.widget-magazine-posts .small-post .entry-title {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-	
 }
 
 /*--------------------------------------------------------------
@@ -1945,26 +1980,6 @@ object {
 		font-size: 29px;
 	}
 	
-	/* Magazine Post Widgets */
-	.widget-magazine-posts .large-post .entry-title 	{
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
-	.widget-magazine-posts .medium-post .entry-title {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-	
-	.widget-magazine-posts .small-post .entry-title {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link {
-		display: none;
-	}
-	
 }
 
 /*--------------------------------------------------------------
@@ -1972,9 +1987,7 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 45em) {
 	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
-		display: none;
-	}
+
 	
 }
 
@@ -1999,61 +2012,6 @@ object {
 		font-size: 1rem;
 	}
 	
-	/* Magazine Post Widgets */
-	.widget-magazine-posts-grid .magazine-posts-grid-row {
-		margin-right: 0;
-	}
-	
-	.widget-magazine-posts-grid .medium-post-row {
-		margin-right: -1.2em;
-	}
-	
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post,
-	.widget-magazine-posts-columns .magazine-posts-column-left {
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts,
-	.widget-magazine-posts-columns .magazine-posts-column-right {
-		width: 100%;
-		padding-top: 1em;
-		margin-left: 0;
-		padding-left: 0;
-	}
-	
-	.widget-magazine-posts .large-post .wp-post-image {
-		float: left;
-		margin: 0 1.5em 0 0;
-		max-width: 50%;
-	}
-	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
-		float: right;
-		width: 50%;
-		padding-left: 1.5em;
-	}
-	
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post {
-		clear: left;
-	}
-	
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post .wp-post-image {
-		margin-bottom: 1em;
-	}
-
-	.widget-magazine-posts .large-post .entry-content {
-		display: none;
-	}
-	
-	.widget-magazine-posts .small-post .entry-title {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-	
 }
 
 /*--------------------------------------------------------------
@@ -2068,27 +2026,6 @@ object {
 	
 	.main-navigation-toggle:after {
 		font-size: 26px;
-	}
-	
-	.widget-magazine-posts-grid .medium-post-row {
-		margin-right: 0;
-	}
-	
-	.widget-magazine-posts .medium-post {
-		float: none;
-		width: 100%;
-		padding-right: 0;
-	}
-	
-	.widget-magazine-posts .medium-post .wp-post-image {
-		float: left;
-		margin: 0 1em 0 0;
-		max-width: 120px;
-	}
-	
-	.widget-magazine-posts .large-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
 	}
 	
 }
@@ -2117,40 +2054,6 @@ object {
 	.alignright, .alignleft {
 		float: none;
 		margin: 1em 0;
-	}
-	
-	/* Magazine Homepage: Category Post Widgets */
-	.widget-magazine-posts .medium-post .wp-post-image,
-	.widget-magazine-posts .small-post .wp-post-image {
-		max-width: 30%;
-	}
-	
-	.widget-magazine-posts .medium-post .entry-title {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-	
-	.widget-magazine-posts .large-post .wp-post-image,
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post .wp-post-image {
-		float: none;
-		margin: 0 0 0.5em 0;
-		max-width: 100%;
-	}
-	
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-	
-	.widget-magazine-posts .large-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-	
-	.widget-magazine-posts .large-post .entry-content,
-	.widget-magazine-posts .large-post .entry-content .more-link {
-		display: inline-block;
 	}
 	
 }
