@@ -84,47 +84,39 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the MIT License (http://opensource.org/licenses/MIT)
 	Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 	
-	4. FlexSlider - https://github.com/woothemes/FlexSlider
-	License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
-	Copyright: 2015 WooThemes, http://www.woothemes.com
+	4. PT Serif Font - https://www.google.com/fonts/specimen/Alice
+	License: Distributed under the terms of the SIL Open Font License 1.1 (http://scripts.sil.org/OFL)
+	Copyright: 2010 Alexandra Korolkova, Olga Umpeleva, Vladimir Yefimov
 	
-	5. Alice Font - https://www.google.com/fonts/specimen/Alice
-	License: Distributed under the terms of the Alice Font License (http://font.ubuntu.com/ufl/)
-	Copyright: 2015 Dalton Maag
+	5. Bree Serif Font - https://www.google.com/fonts/specimen/Bree+Serif
+	License: Distributed under the terms of the SIL Open Font License 1.1 (http://scripts.sil.org/OFL)
+	Copyright: 2008 Veronika Burian, José Scaglione
 	
-	6. Bree Serif Font - https://www.google.com/fonts/specimen/Bree+Serif
-	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-	Copyright: 2015 Matt McInerney, Pablo Impallari
+	6. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
 	
-	7. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
-	
-	Image 1: https://pixabay.com/en/sea-ocean-water-light-diver-79606/
+	Image 1: https://pixabay.com/en/still-life-teddy-white-read-book-1037378/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2012 David Mark (https://pixabay.com/en/users/tpsdave-12019/)
+	Copyright: 2015 Christiane Oldiefan (https://pixabay.com/en/users/Oldiefan-740865/)
 	
-	Image 2: https://pixabay.com/en/beach-hut-beach-vacation-holidays-237489/
+	Image 2: https://pixabay.com/en/drop-of-water-drip-close-grass-7720/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2011 Sharon Ang (https://pixabay.com/en/users/sharonang-99559/)
+	Copyright: 2011 LoggaWiggler (https://pixabay.com/en/users/LoggaWiggler-15/)
 	
-	Image 3: https://pixabay.com/en/dolphin-marine-mammals-water-sea-203875/
+	Image 3: https://pixabay.com/en/flower-pink-nature-blossom-petals-1181865/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2011 Claudia Beer (https://pixabay.com/en/users/Claudia14-80737/)
+	Copyright: 2009 Marybeth (https://pixabay.com/en/users/msandersmusic-1972097/)
 	
-	Image 4: https://pixabay.com/en/mallorca-cala-blue-water-beach-109204/
+	Image 4: https://pixabay.com/en/zebra-wildlife-africa-animal-1141302/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2013 mruizdeassin (https://pixabay.com/en/users/mruizdeassin-33807/)
+	Copyright: 2015 Ajay Lalu (https://pixabay.com/en/users/AjayLalu-1897335/)
 	
-	Image 5: https://pixabay.com/en/shells-massage-therapy-sand-beach-792912/
+	Image 5: https://pixabay.com/en/telephone-london-red-england-1055044/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2011 Julia Roman (https://pixabay.com/en/users/julesroman-359800/)
+	Copyright: 2010 luxstorm (https://pixabay.com/en/users/luxstorm-1216826/)
 	
-	Image 6: https://pixabay.com/en/universal-studios-island-of-adventure-241597/
+	Image 6: https://pixabay.com/en/bananas-fruit-yellow-healthy-1119790/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2012 Rafael (https://pixabay.com/en/users/rafaelsamir-127598/)
-	
-	Image 7: https://pixabay.com/en/dubrovnik-croatia-kings-landing-512798/
-	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2014 Ivan Ivankovic (https://pixabay.com/en/users/fjaka-551782/)
+	Copyright: 2016 Pete Linforth (https://pixabay.com/en/users/PeteLinforth-202249/)
 
 ===================================
 Enjoy!

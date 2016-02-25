@@ -79,7 +79,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 	
 	// Add Homepage Title
 	$wp_customize->add_setting( 'gridbox_theme_options[homepage_title]', array(
-        'default'           => esc_html__( 'Welcome to Gridbox', 'gridbox' ),
+        'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'wp_kses_post'
@@ -96,7 +96,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 	
 	// Add Homepage Title
 	$wp_customize->add_setting( 'gridbox_theme_options[homepage_description]', array(
-        'default'           => esc_html__( 'An elegant designed WordPress theme featuring a splendid fullscreen image slideshow.', 'gridbox' ),
+        'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'wp_kses_post'

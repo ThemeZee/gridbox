@@ -152,18 +152,6 @@ function gridbox_google_fonts_url() {
 
 
 /**
- * Add custom sizes for featured images
- */
-function gridbox_add_image_sizes() {
-	
-	// Add Custom Header Image Size
-	add_image_size( 'gridbox-header-image', 1920, 480, true );
-	
-}
-add_action( 'after_setup_theme', 'gridbox_add_image_sizes' );
-
-
-/**
  * Include Files
  */
  

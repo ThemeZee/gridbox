@@ -126,7 +126,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	
 	// Featured Image Setting
 	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
-        'default'           => false,
+        'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'gridbox_sanitize_checkbox'
@@ -142,7 +142,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_tags]', array(
-        'default'           => false,
+        'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'gridbox_sanitize_checkbox'
@@ -153,7 +153,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
         'section'  => 'gridbox_section_post',
         'settings' => 'gridbox_theme_options[meta_tags]',
         'type'     => 'checkbox',
-		'priority' => 710
+		'priority' => 10
 		)
 	);
 	
