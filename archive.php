@@ -16,10 +16,10 @@ get_header(); ?>
 
 	</header>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-full content-area">
 		<main id="main" class="site-main" role="main">
 	
-			<div id="homepage-posts" class="post-columns clearfix">
+			<div id="archive-posts" class="post-columns clearfix">
 					
 			<?php if (have_posts()) : while (have_posts()) : the_post();
 		

@@ -607,13 +607,18 @@ textarea {
 	background: #fff;
 }
 
+.content-area {
+	width: 100%;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 .content-single {
 	float: left;
 	width: 70%;
 	padding-right: 4em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 .sidebar {
@@ -622,19 +627,11 @@ textarea {
 	margin-top: 1em;
 }
 
-/* Fullwidth Template */
-.site-content .fullwidth-content-area {
-	float: none;
-	width: 100%;
-	padding: 0;
-}
-
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
 .site-header {
 	background: #111133;
-	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .site-branding {
@@ -670,7 +667,6 @@ textarea {
 
 /* Custom Header Image */
 .header-image {
-	margin-top: -1px;
 	text-align: center;
 }
 
@@ -920,7 +916,7 @@ textarea {
 # 11.0 - Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 3em 0;
+	margin: 0 0 2.5em 0;
 	color: #333;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1236,7 +1232,7 @@ textarea {
 
 .post-navigation .nav-links a {
 	display: inline-block;
-	margin: 0;
+	margin: 0 0 3px;
 	padding: 0.3em 0.8em;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1273,9 +1269,13 @@ textarea {
 
 .page-header .homepage-description,
 .page-header .archive-description {
-	margin: 0.5em 0 1em;
 	font-size: 20px;
 	font-size: 1.25rem;
+}
+
+.page-header .homepage-description,
+.page-header .archive-description p {
+	margin: 0.5em 0 0;
 }
 
 /* Post Columns */
@@ -1297,28 +1297,27 @@ textarea {
 }
 
 /* Small Post Layout */
-.post-col .type-post .entry-title {
+.post-col .entry-title {
 	font-size: 24px;
 	font-size: 1.5rem;
 }
 
-.post-col .type-post .entry-content {
+.post-col .entry-content {
 	font-size: 16px;
 	font-size: 1rem;
 }
 
-.post-col .type-post .entry-excerpt p {
+.post-col .entry-excerpt p {
 	margin: 0.5em 0 1em;
 }
 
-.post-col .type-post .entry-meta {
+.post-col .entry-meta {
 	font-size: 14px;
 	font-size: 0.875rem;
 	margin-bottom: 0.5em;
 }
 
-.post-col .type-post .wp-post-image,
-.post-col .type-page .wp-post-image {
+.post-col .wp-post-image {
 	margin: 0 0 0.5em;
 }
 
@@ -1698,29 +1697,31 @@ object {
 		padding-top: 2em;
 	}
 	
-	.content-area {
-		padding-right: 3em;
+	.sidebar {
+		margin-top: 0;
 	}
 	
-}
+	.content-single {
+		padding-right: 2em;
+	}
+	
+	.widget,
+	.page-header, 
+	.type-post, 
+	.type-page, 
+	.type-attachment,
+	.post-pagination,
+	.comments-area {
+		margin-bottom: 2em;
+	}
 
-@media only screen and (max-width: 75em) {
+	/* Post Columns */
+	.post-columns {
+		margin-right: -2em;
+	}
 
-	.main-navigation-menu a {
-		font-size: 14px;
-		font-size: 0.875rem;
-		padding: 1.3em 1.1em;
-	}
-	
-	.page-title, 
-	.entry-title {
-		font-size: 36px;
-		font-size: 2.25rem;
-	}
-	
-	.post-layout-small .type-post .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
+	.post-columns .post-col {
+		padding-right: 2em;
 	}
 	
 }
@@ -1730,20 +1731,23 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
 	
-	.main-navigation-menu a {
-		font-size: 13px;
-		font-size: 0.8125rem;
-		padding: 1.5em 1em;
+	.archive-title,
+	.page-title, 
+	.entry-title {
+		font-size: 36px;
+		font-size: 2.25rem;
 	}
 	
-}
-
-/*--------------------------------------------------------------
-## 14.2 - Desktop Medium ( < 1040px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 65em) {
+	.page-header .homepage-description,
+	.page-header .archive-description {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
 	
-
+	.post-col .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
 
 }
 
@@ -1752,15 +1756,22 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 	
+	.archive-title,
 	.page-title, 
 	.entry-title {
 		font-size: 32px;
 		font-size: 2rem;
 	}
 	
-	.post-layout-small .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
+	.page-header .homepage-description,
+	.page-header .archive-description {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+	
+	.post-col .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
 	}
 	
 	/*** Mobile Main Navigation ***/
@@ -1832,11 +1843,7 @@ object {
 		text-decoration: inherit;
 		vertical-align: middle;
 		content: '\f419';
-		color: #111133;
-	}
-	
-	.main-navigation-toggle:hover:after {
-		color: #4477aa;
+		color: #fff;
 	}
 	
 	/* Main Navigation Menu */
@@ -1845,7 +1852,11 @@ object {
 		width: 100%;
 		display: none;
 		margin-bottom: 1em;
-		border-top: 4px solid #111133;
+		border-top: 4px solid #fff;
+	}
+	
+	.main-navigation-menu li {
+		margin: 0;
 	}
 	
 	.main-navigation-menu a {
@@ -1854,9 +1865,14 @@ object {
 		font-size: 15px;
 		font-size: 0.9375rem;
 		padding: 1.2em;
-		border-bottom: 1px dotted #ccc;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
 	
+	.main-navigation-menu li a:hover {
+		text-decoration: underline;
+		border-color: rgba(255,255,255,0.2);
+	}
+
 	.main-navigation-menu li:last-child a {
 		border-bottom: none;
 	}
@@ -1865,6 +1881,7 @@ object {
 		float: none;
 		width: 100%;
 		border: none;
+		padding: 0;
 	}
 	
 	.main-navigation-menu ul a {
@@ -1886,11 +1903,12 @@ object {
 	}
 	
 	.main-navigation-menu ul li:last-child a {
-		border-bottom: 1px dotted #ccc;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
-	
-	.main-navigation-menu ul ul {
-		border-top: 1px dotted #ccc;
+
+	.main-navigation-menu li.current-menu-item > a {
+		text-decoration: underline;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
 	
 	/* Mobile Submenu Dropdowns */
@@ -1914,11 +1932,7 @@ object {
 		text-decoration: inherit;
 		vertical-align: middle;
 		content: '\f431';
-		color: #111133;
-	}
-	
-	.main-navigation-menu .submenu-dropdown-toggle:hover:before {
-		color: #4477aa;
+		color: #fff;
 	}
 	
 	.main-navigation-menu .submenu-dropdown-toggle.active:before {
@@ -1940,8 +1954,7 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
 	
-	.content-area, 
-	.site-content .fullwidth-content-area {
+	.content-single {
 		float: none;
 		width: 100%;
 		padding: 0;
@@ -1962,23 +1975,18 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	
-	.site-branding .site-title {
-		font-size: 35px;
-		font-size: 2.1875rem;
+	/* Post Columns */
+	.post-columns .post-col {
+		width: 50%;
 	}
 	
-	.main-navigation-toggle:after {
-		font-size: 29px;
+	.post-columns .post-col:nth-child(3n + 1) {
+		clear: none;
 	}
 	
-}
-
-/*--------------------------------------------------------------
-## 14.6 - Tablet Small ( < 720px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 45em) {
-	
-
+	.post-columns .post-col:nth-child(2n + 1) {
+		clear: left;
+	}
 	
 }
 
@@ -1987,36 +1995,16 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	
+	.archive-title,
 	.page-title, 
 	.entry-title {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
 	
-	.post-layout-small .type-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-	
-	.entry-content {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-	
-}
-
-/*--------------------------------------------------------------
-## 14.8 - Mobile Large ( < 560px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 35em) {
-
-	.site-branding .site-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
-	
-	.main-navigation-toggle:after {
-		font-size: 26px;
+	.post-col .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	
 }
@@ -2031,15 +2019,25 @@ object {
 		padding-right: 1.5em;
 	}
 	
+	.site-content {
+		padding-top: 1.5em;
+	}
+
+	.widget,
+	.page-header, 
+	.type-post, 
+	.type-page, 
+	.type-attachment,
+	.post-pagination,
+	.comments-area {
+		margin-bottom: 1.5em;
+	}
+	
+	.archive-title,
 	.page-title,
 	.entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
-	}
-	
-	.post-layout-small .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
 	}
 	
 	.alignright, .alignleft {
@@ -2047,18 +2045,20 @@ object {
 		margin: 1em 0;
 	}
 	
-}
+	/* Post Columns */
+	.post-columns {
+		margin-right: 0;
+	}
 
-/*--------------------------------------------------------------
-## 14.9.5 - Mobile Small ( < 320px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 25em) {
-	
-	.post-layout-small .type-post .wp-post-image {
+	.post-columns .post-col {
 		float: none;
-		max-width: 100%;
-		margin: 0 0 0.5em;
-		padding: 0;
+		width: 100%;
+		padding-right: 0;
+	}
+	
+	.post-col .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	
 }
@@ -2069,34 +2069,23 @@ object {
 @media only screen and (max-width: 20em) {
 	
 	.site-branding .site-title {
-		font-size: 28px;
-		font-size: 1.75rem;
-	}
-	
-	.main-navigation-toggle {
-		padding: 0.75em;
+		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	
 	.main-navigation-toggle:after {
 		font-size: 24px;
 	}
 	
+	.archive-title,
 	.page-title,
-	.entry-title {
+	.entry-title,
+	.post-col .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-	
-	.entry-meta span {
-		display: block;
-	}
-	
-	.entry-meta span:after {
-		display: none;
-	}
 
 }
-
 
 /*--------------------------------------------------------------
 # 15.0 - Theme Option Styles
@@ -2105,7 +2094,7 @@ object {
 /*--------------------------------------------------------------
 ## 15.1 - Sidebar Left Layout
 --------------------------------------------------------------*/
-.sidebar-left .content-area {
+.sidebar-left .content-single {
 	float: right;
 	padding-right: 0;
 	padding-left: 4em;
@@ -2113,6 +2102,24 @@ object {
 	
 .sidebar-left .sidebar {
 	float: left;
+}
+
+@media only screen and (max-width: 80em) {
+
+	.sidebar-left .content-single {
+		padding-left: 2em;
+	}
+	
+}
+
+@media only screen and (max-width: 55em) {
+	
+	.sidebar-left .content-single {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	
 }
 
 /*--------------------------------------------------------------
@@ -2135,6 +2142,7 @@ object {
 	.sticky-header.admin-bar .site-header {
 		top: 32px;
 	}
+	
 }
 
 /*--------------------------------------------------------------

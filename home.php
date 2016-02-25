@@ -24,7 +24,7 @@ if ( isset( $theme_options['homepage_title'] ) and $theme_options['homepage_titl
 
 <?php endif; ?>
 
-	<section id="primary" class="content-area content-full">
+	<section id="primary" class="content-full content-area">
 		<main id="main" class="site-main" role="main">
 		
 			<div id="homepage-posts" class="post-columns clearfix">

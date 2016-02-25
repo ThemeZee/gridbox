@@ -39,11 +39,6 @@ function gridbox_body_classes( $classes ) {
 	if ( true == $theme_options['sticky_header'] ) {
 		$classes[] = 'sticky-header';
 	}
-	
-	// Add Small Post Layout class
-	if ( ( is_archive() or is_home() ) and 'left' == $theme_options['post_layout_archives'] ) {
-		$classes[] = 'post-layout-small';
-	}
 
 	return $classes;
 }
@@ -83,19 +78,8 @@ add_filter('excerpt_length', 'gridbox_excerpt_length');
  */
 function gridbox_excerpt_more( $more_text ) {
 	
-	// Get Theme Options from Database
-	$theme_options = gridbox_theme_options();
+	return '';
 
-	// Return Excerpt More Text
-	if ( $theme_options['excerpt_more'] <> '' ) {
-		
-		return esc_html( $theme_options['excerpt_more'] );
-	
-	} else {
-		
-		return '';
-	
-	}
 }
 add_filter('excerpt_more', 'gridbox_excerpt_more');
 
