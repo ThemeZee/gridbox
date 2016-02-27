@@ -347,7 +347,6 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 
@@ -1349,6 +1348,43 @@ textarea {
 .post-pagination a:hover,
 .post-pagination .current {
 	background: #4477aa;
+}
+
+/* Infinite Scroll Pagination */
+.infinite-scroll .post-pagination {
+	display: none;
+}
+
+.infinite-scroll .post-columns:before,
+.infinite-scroll .post-columns:after {
+	content: "";
+	display: table;
+}
+
+.infinite-scroll .post-columns:after {
+	clear: both;
+}
+
+.infinite-scroll #infinite-handle span {
+	display: inline-block;
+	margin: 0 0 2.5em;
+	padding: 0.3em 0.8em;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	background: #111133;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.infinite-scroll #infinite-handle span:hover {
+	background-color: #4477aa;
 }
 
 /* Breadcrumbs */

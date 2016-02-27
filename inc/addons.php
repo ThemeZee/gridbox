@@ -19,6 +19,14 @@ function gridbox_theme_addons_setup() {
 	add_theme_support( 'themezee-breadcrumbs' );
 	add_theme_support( 'themezee-related-posts' );
 	
+	// Add Support for Infinite Scroll
+	add_theme_support( 'infinite-scroll', array(
+		'type' 		=> 'click',
+		'container' => 'main',
+		'wrapper' => 'post-columns',
+		'render'    => 'gridbox_infinite_scroll_render',
+	) );
+	
 }
 
 
@@ -63,3 +71,16 @@ function gridbox_theme_addons_image_sizes() {
 	add_image_size( 'themezee-related-posts', 480, 320, true );
 
 }
+
+
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function gridbox_infinite_scroll_render() {
+
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'template-parts/content' );
+	}
+	
+} // gridbox_infinite_scroll_render()
