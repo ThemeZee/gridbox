@@ -33,7 +33,8 @@
 						
 				<div id="logo" class="site-branding clearfix">
 				
-					<?php do_action( 'gridbox_site_title' ); ?>
+					<?php gridbox_site_logo(); ?>
+					<?php gridbox_site_title(); ?>
 				
 				</div><!-- .site-branding -->
 				

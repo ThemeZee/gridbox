@@ -7,19 +7,50 @@
  *
  * @package Gridbox
  */
+
+ 
+if ( ! function_exists( 'gridbox_site_logo' ) ): 
+/**
+ * Displays the site logo in the header area
+ */
+function gridbox_site_logo() {
+
+	if ( function_exists( 'the_custom_logo' ) ) {
+		
+		the_custom_logo();
 	
+	} 
+	
+}
+endif;
+
+
+if ( ! function_exists( 'gridbox_site_title' ) ): 
 /**
  * Displays the site title in the header area
  */
-function gridbox_site_title() { ?>
-
-	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
-	</a>
-
-<?php
+function gridbox_site_title() {
+	
+	// Get theme options from database
+	$theme_options = gridbox_theme_options();	
+	
+	// Return early if site title is deactivated
+	if( false == $theme_options['site_title'] ) {
+		return;
+	}
+	
+	if ( is_home() or is_page_template( 'template-magazine.php' )  ) : ?>
+		
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	
+	<?php else : ?>
+		
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	
+	<?php endif; 
+	
 }
-add_action( 'gridbox_site_title', 'gridbox_site_title' );
+endif;
 
 
 if ( ! function_exists( 'gridbox_header_image' ) ):

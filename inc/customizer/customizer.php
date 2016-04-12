@@ -39,6 +39,23 @@ function gridbox_customize_register_options( $wp_customize ) {
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'gridbox' );
 	
+	// Add Display Site Title Setting
+	$wp_customize->add_setting( 'gridbox_theme_options[site_title]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'gridbox_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'gridbox_theme_options[site_title]', array(
+        'label'    => esc_html__( 'Display Site Title', 'gridbox' ),
+        'section'  => 'title_tagline',
+        'settings' => 'gridbox_theme_options[site_title]',
+        'type'     => 'checkbox',
+		'priority' => 10
+		)
+	);
+	
 	// Add Header Image Link
 	$wp_customize->add_setting( 'gridbox_theme_options[custom_header_link]', array(
         'default'           => '',
