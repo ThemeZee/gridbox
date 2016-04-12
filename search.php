@@ -47,7 +47,7 @@ get_header(); ?>
 					
 					<header class="entry-header">
 			
-						<h1 class="page-title"><?php esc_html_e( 'No matches', 'gridbox' ); ?></h1>
+						<h2 class="page-title"><?php esc_html_e( 'No matches', 'gridbox' ); ?></h2>
 						
 					</header><!-- .entry-header -->
 					
