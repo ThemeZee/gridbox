@@ -98,7 +98,7 @@ function gridbox_widgets_init() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'gridbox' ),
 		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on posts and pages except full width template.', 'gridbox' ),
+		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'gridbox' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
