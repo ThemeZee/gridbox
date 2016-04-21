@@ -44,7 +44,7 @@ function gridbox_theme_addons_scripts() {
 	) {
 	
 		// Enqueue Widget Bundle Stylesheet
-		wp_enqueue_style( 'themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css' );
+		wp_enqueue_style( 'themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css', array(), '20160421' );
 
 	}
 	
@@ -52,7 +52,7 @@ function gridbox_theme_addons_scripts() {
 	if( is_singular( 'post' ) ) {
 	
 		// Enqueue Related Post Stylesheet
-		wp_enqueue_style( 'themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css' );
+		wp_enqueue_style( 'themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css', array(), '20160421' );
 
 	}
 	
