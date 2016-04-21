@@ -655,12 +655,28 @@ textarea {
 	font-family: 'Bree Serif', Georgia, Times New Roman;
 	font-size: 28px;
 	font-size: 1.75rem;
+	font-weight: bold;
 	text-decoration: none;
+}
+
+.site-title a:link, 
+.site-title a:visited {
+	color: #fff;
 	border-bottom: 4px solid transparent;
 }
 
-.site-branding a:hover .site-title {
+.site-title a:hover,
+.site-title a:active {
 	border-color: #fff;
+}
+
+.site-branding .custom-logo {
+	margin: 0 1em 0 0;
+	padding: 0;
+	border: none;
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Custom Header Image */

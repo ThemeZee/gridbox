@@ -51,8 +51,8 @@ function gridbox_setup() {
 	
 	// Set up the WordPress core custom logo feature
 	add_theme_support( 'custom-logo', apply_filters( 'gridbox_custom_logo_args', array(
-		'height' => 50,
-		'width' => 350,
+		'height' => 40,
+		'width' => 200,
 		'flex-height' => true,
 		'flex-width' => true,
 	) ) );
