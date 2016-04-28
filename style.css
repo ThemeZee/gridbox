@@ -284,7 +284,7 @@ input,
 select,
 textarea {
 	color: #111133;
-	font-family: 'PT Serif', Tahoma, Arial;
+	font-family: 'Roboto', Tahoma, Arial;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.6;
@@ -668,7 +668,7 @@ textarea {
 .site-branding {
 	float: left;
 	max-width: 100%;
-	margin: 1.25em 0 1em;
+	margin: 1.25em 0;
 	padding: 0;
 }
 
@@ -684,8 +684,8 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	color: #fff;
-	font-family: 'Bree Serif', Georgia, Times New Roman;
+	color: #e5e5e5;
+	font-family: 'Roboto Slab', Georgia, Times New Roman;
 	font-size: 28px;
 	font-size: 1.75rem;
 	font-weight: bold;
@@ -694,13 +694,12 @@ textarea {
 
 .site-title a:link, 
 .site-title a:visited {
-	color: #fff;
-	border-bottom: 4px solid transparent;
+	color: #e5e5e5;
 }
 
 .site-title a:hover,
 .site-title a:active {
-	border-color: #fff;
+	color: #fff;
 }
 
 .site-branding .custom-logo {
@@ -753,23 +752,20 @@ textarea {
 .main-navigation-menu li {
 	float: left;
 	position: relative;
-	margin: 0.3em 1.2em;
+	margin: 0;
 }
 
 .main-navigation-menu a {
 	display: block;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	font-weight: bold;
-	padding: 0.3rem 0;
-	text-transform: uppercase;
+	font-size: 16px;
+	font-size: 1rem;
+	padding: 0.75em 1.25em;
 	text-decoration: none;
-	border-bottom: 4px solid transparent;
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
 	display: inline-block;
-	margin: 0.2em 0 0 0.2em;
+	margin: 0.4em 0 0 0.2em;
 	font-size: 16px;
 	line-height: 1;
 	font-family: 'Genericons';
@@ -778,18 +774,18 @@ textarea {
 	text-decoration: inherit;
 	vertical-align: top;
 	content: '\f431';
-	color: #fff;
+	color: #e5e5e5;
 	
 }
 
 .main-navigation-menu a:link, 
 .main-navigation-menu a:visited {
-	color: #fff;
+	color: #e5e5e5;
 	text-decoration: none;
 }
 
 .main-navigation-menu li a:hover {
-	border-color: #fff;
+	color: #fff;
 }
 
 .main-navigation-menu ul {
@@ -797,10 +793,11 @@ textarea {
 	display: none;
 	z-index: 99;
 	margin: 0;
-	padding: 1.5em 0 0;
+	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
 	background: #111133;
+	border-top: 3px solid rgba(255,255,255,0.3);
 }
 
 .main-navigation-menu ul li{
@@ -824,11 +821,6 @@ textarea {
 
 .main-navigation-menu ul li:last-child a {
 	border-bottom: none;
-}
-
-.main-navigation-menu ul li a:hover {
-	text-decoration: underline;
-	border-color: rgba(255,255,255,0.2);
 }
 
 .main-navigation-menu ul .menu-item-has-children > a:after {
@@ -873,11 +865,6 @@ textarea {
 }
 
 .main-navigation-menu li.current-menu-item > a {
-	border-bottom: 4px solid #fff;
-}
-
-.main-navigation-menu ul li.current-menu-item > a {
-	border-bottom: 1px solid rgba(255,255,255,0.2);
 	text-decoration: underline;
 }
 
@@ -1094,7 +1081,7 @@ textarea {
 .page-title,
 .entry-title {
 	display: inline;
-	font-family: 'Bree Serif', Georgia, Times New Roman;
+	font-family: 'Roboto Slab', Georgia, Times New Roman;
 	font-size: 40px;
 	font-size: 2.5rem;
 	font-weight: bold;

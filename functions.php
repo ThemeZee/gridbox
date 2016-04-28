@@ -148,7 +148,7 @@ add_action( 'wp_enqueue_scripts', 'gridbox_scripts' );
 function gridbox_google_fonts_url() {
     
 	// Set default Fonts
-	$font_families = array( 'PT+Serif:400,400italic,700,700italic', 'Bree+Serif:400,400italic,700,700italic' );
+	$font_families = array( 'Roboto:400,400italic,700,700italic', 'Roboto Slab:400,400italic,700,700italic' );
 
 	// Build Fonts URL
 	$query_args = array(

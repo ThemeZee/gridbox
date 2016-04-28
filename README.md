@@ -84,11 +84,11 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the MIT License (http://opensource.org/licenses/MIT)
 	Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 	
-	4. PT Serif Font - https://www.google.com/fonts/specimen/Alice
+	4. Roboto Font - https://www.google.com/fonts/specimen/Alice
 	License: Distributed under the terms of the SIL Open Font License 1.1 (http://scripts.sil.org/OFL)
 	Copyright: 2010 Alexandra Korolkova, Olga Umpeleva, Vladimir Yefimov
 	
-	5. Bree Serif Font - https://www.google.com/fonts/specimen/Bree+Serif
+	5. Roboto Slab Font - https://www.google.com/fonts/specimen/Roboto Slab
 	License: Distributed under the terms of the SIL Open Font License 1.1 (http://scripts.sil.org/OFL)
 	Copyright: 2008 Veronika Burian, José Scaglione
 	
