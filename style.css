@@ -655,7 +655,6 @@ textarea {
 .sidebar {
 	float: right;
 	width: 30%;
-	margin-top: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -684,7 +683,7 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	color: #e5e5e5;
+	color: #fff;
 	font-family: 'Roboto Slab', Georgia, Times New Roman;
 	font-size: 28px;
 	font-size: 1.75rem;
@@ -694,12 +693,12 @@ textarea {
 
 .site-title a:link, 
 .site-title a:visited {
-	color: #e5e5e5;
+	color: #fff;
 }
 
 .site-title a:hover,
 .site-title a:active {
-	color: #fff;
+	color: #e5e5e5;
 }
 
 .site-branding .custom-logo {
@@ -957,14 +956,15 @@ textarea {
 }
 
 .widget-header {
-	margin: 0 0 1.5em 0;
-	border-bottom: 4px solid #111133;
+	margin: 0 0 1.25em 0;
+	border-left: 6px solid #111133;
 }
 
 .widget-title {
 	display: inline-block;
 	margin: 0;
-	padding: 0 0 0.4em;
+	padding: 0 0 0 0.8em;
+	font-family: 'Roboto Slab', Georgia, Times New Roman;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: bold;
@@ -1113,9 +1113,8 @@ textarea {
 	font-size: 1.0625rem;
 }
 
-.type-post .wp-post-image,
-.type-page .wp-post-image {
-	margin: 1.5em 0 0;
+.wp-post-image {
+	margin: 0 0 0.5em;
 }
 
 /* Read more Link */
@@ -1351,10 +1350,6 @@ textarea {
 	margin-bottom: 0.5em;
 }
 
-.post-col .wp-post-image {
-	margin: 0 0 0.5em;
-}
-
 /* Theme Pagination */
 .post-pagination {
 	margin: 0 0 2.5em;
@@ -1486,15 +1481,16 @@ textarea {
 /* Comment Header */
 .comments-header,
 .comment-reply-title {
-	margin: 0 0 1.5em 0;
-	border-bottom: 4px solid #111133;
+	margin: 0 0 1.25em 0;
+	border-left: 6px solid #111133;
 }
 
 .comments-header .comments-title,
 .comment-reply-title span {
 	display: inline-block;
 	margin: 0;
-	padding: 0 0 0.4em;
+	padding: 0 0 0 0.8em;
+	font-family: 'Roboto Slab', Georgia, Times New Roman;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: bold;
@@ -1776,10 +1772,6 @@ object {
 		padding-top: 2em;
 	}
 	
-	.sidebar {
-		margin-top: 0;
-	}
-	
 	.content-single {
 		padding-right: 2em;
 	}
@@ -1931,7 +1923,7 @@ object {
 		width: 100%;
 		display: none;
 		margin-bottom: 1em;
-		border-top: 4px solid #fff;
+		border-top: 3px solid rgba(255,255,255,0.3);
 	}
 	
 	.main-navigation-menu li {
