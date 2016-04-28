@@ -638,18 +638,13 @@ textarea {
 	background: #fff;
 }
 
-.content-area {
-	width: 100%;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
 .content-single {
 	float: left;
 	width: 70%;
 	padding-right: 4em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .sidebar {
@@ -1311,43 +1306,66 @@ textarea {
 	margin: 0.5em 0 0;
 }
 
-/* Post Columns */
-.post-columns {
+/* Archive Posts Styling */
+.post-wrapper .type-post .entry-content {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.post-wrapper .type-post .entry-excerpt p {
+	margin: 0.5em 0 1em;
+}
+
+.post-wrapper .type-post .entry-meta {
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin-bottom: 0.5em;
+}
+
+/* Archive Posts Columns */
+.post-wrapper {
+	display: flex;
+	flex-wrap: wrap;
 	margin-right: -2.5em;
 }
 
-.post-columns .post-col {
+.post-wrapper .post-column {
 	float: left;
-	width: 33.3333333333333%;
+	display: flex;
 	padding-right: 2.5em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.post-columns .post-col:nth-child(3n + 1) {
-	clear: left;
+/* Two Column Layout */
+.post-layout-two-columns .post-wrapper .post-column {
+	width: 50%;
 }
 
-/* Small Post Layout */
-.post-col .entry-title {
+.post-layout-two-columns .post-wrapper .type-post .entry-title {
+	font-size: 32px;
+	font-size: 2rem;
+}
+
+/* Three Column Layout */
+.post-layout-three-columns .post-wrapper .post-column {
+	width: 33.3333333333333%;
+}
+
+.post-layout-three-columns .post-wrapper .type-post .entry-title {
 	font-size: 24px;
 	font-size: 1.5rem;
 }
 
-.post-col .entry-content {
-	font-size: 16px;
-	font-size: 1rem;
+/* Four Column Layout */
+.post-layout-four-columns .post-wrapper .post-column {
+	width: 25%;
 }
 
-.post-col .entry-excerpt p {
-	margin: 0.5em 0 1em;
-}
-
-.post-col .entry-meta {
-	font-size: 14px;
-	font-size: 0.875rem;
-	margin-bottom: 0.5em;
+.post-layout-four-columns .post-wrapper .type-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 /* Theme Pagination */
@@ -1787,12 +1805,17 @@ object {
 	}
 
 	/* Post Columns */
-	.post-columns {
+	.post-wrapper {
 		margin-right: -2em;
 	}
 
-	.post-columns .post-col {
+	.post-wrapper .post-column {
 		padding-right: 2em;
+	}
+	
+	.post-layout-two-columns .post-wrapper .type-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
 	}
 	
 }
@@ -1815,9 +1838,19 @@ object {
 		font-size: 1.125rem;
 	}
 	
-	.post-col .entry-title {
+	.post-layout-two-columns .post-wrapper .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+	
+	.post-layout-three-columns .post-wrapper .type-post .entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
+	}
+	
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
 }
@@ -1840,7 +1873,18 @@ object {
 		font-size: 1rem;
 	}
 	
-	.post-col .entry-title {
+	/* Post Columns */
+	.post-layout-four-columns .post-wrapper .post-column {
+		width: 50%;
+	}
+	
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+	
+	.post-layout-three-columns .post-wrapper .type-post .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
@@ -2047,17 +2091,24 @@ object {
 @media only screen and (max-width: 50em) {
 	
 	/* Post Columns */
-	.post-columns .post-col {
+	.post-layout-three-columns .post-wrapper .post-column {
 		width: 50%;
 	}
 	
-	.post-columns .post-col:nth-child(3n + 1) {
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+	
+	/*.post-columns .post-col:nth-child(3n + 1) {
 		clear: none;
 	}
 	
 	.post-columns .post-col:nth-child(2n + 1) {
 		clear: left;
-	}
+	} */
 	
 }
 
@@ -2073,7 +2124,9 @@ object {
 		font-size: 1.75rem;
 	}
 	
-	.post-col .entry-title {
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
@@ -2117,17 +2170,25 @@ object {
 	}
 	
 	/* Post Columns */
-	.post-columns {
+	.post-wrapper {
+		display: block;
 		margin-right: 0;
 	}
 
-	.post-columns .post-col {
-		float: none;
-		width: 100%;
+	.post-wrapper .post-column {
+		display: block;
 		padding-right: 0;
 	}
 	
-	.post-col .entry-title {
+	.post-layout-two-columns .post-wrapper .post-column,
+	.post-layout-three-columns .post-wrapper .post-column,
+	.post-layout-four-columns .post-wrapper .post-column {
+		width: 100%;
+	}
+	
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
@@ -2150,8 +2211,14 @@ object {
 	
 	.archive-title,
 	.page-title,
-	.entry-title,
-	.post-col .entry-title {
+	.entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+	
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
@@ -2221,7 +2288,7 @@ object {
 --------------------------------------------------------------*/
 
 /* Ensure navigation is visible on desktop view */
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 60.001em) {
 	
 	.main-navigation-menu {
 		display: block !important;

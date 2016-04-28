@@ -6,7 +6,7 @@
  */
 ?>
 
-	<div class="post-col clearfix">
+	<div class="post-column clearfix">
 	
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			

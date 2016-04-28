@@ -47,6 +47,7 @@ function gridbox_default_options() {
 		'sticky_header'						=> false,
 		'homepage_title'					=> '',
 		'homepage_description'				=> '',
+		'post_layout'						=> 'three-columns',
 		'excerpt_length' 					=> 25,
 		'meta_date'							=> true,
 		'meta_author'						=> true,

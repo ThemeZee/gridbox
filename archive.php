@@ -16,22 +16,24 @@ get_header(); ?>
 
 	</header>
 
-	<section id="primary" class="content-full content-area">
+	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
-	
-			<div id="archive-posts" class="post-columns clearfix">
-					
-			<?php if (have_posts()) : while (have_posts()) : the_post();
-		
-				get_template_part( 'template-parts/content' );
-		
-				endwhile;
+			
+			<?php if ( have_posts() ) : ?>
+			
+				<div id="archive-posts" class="post-wrapper clearfix">
+						
+					<?php while (have_posts()) : the_post();
+				
+						get_template_part( 'template-parts/content' );
+				
+					endwhile; ?>
+				
+				</div>
+			
+				<?php gridbox_pagination(); ?>
 
-			endif; ?>
-			
-			</div>
-			
-			<?php gridbox_pagination(); ?>
+			<?php endif; ?>
 			
 		</main><!-- #main -->
 	</section><!-- #primary -->

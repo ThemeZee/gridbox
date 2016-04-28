@@ -23,6 +23,28 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
+	// Add Post Layout Settings for archive posts
+	$wp_customize->add_setting( 'gridbox_theme_options[post_layout]', array(
+        'default'           => 'three-columns',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'gridbox_sanitize_select'
+		)
+	);
+    $wp_customize->add_control( 'gridbox_theme_options[post_layout]', array(
+        'label'    => esc_html__( 'Post Layout (archive pages)', 'gridbox' ),
+        'section'  => 'gridbox_section_post',
+        'settings' => 'gridbox_theme_options[post_layout]',
+        'type'     => 'select',
+		'priority' => 1,
+        'choices'  => array(
+            'two-columns' => esc_html__( 'Two Columns', 'gridbox' ),
+			'three-columns' => esc_html__( 'Three Columns', 'gridbox' ),
+			'four-columns' => esc_html__( 'Four Columns', 'gridbox' )
+			)
+		)
+	);
+	
 	// Add Setting and Control for Excerpt Length
 	$wp_customize->add_setting( 'gridbox_theme_options[excerpt_length]', array(
         'default'           => 25,
