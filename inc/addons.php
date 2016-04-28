@@ -11,7 +11,7 @@ add_action( 'after_setup_theme', 'gridbox_theme_addons_setup' );
 
 function gridbox_theme_addons_setup() {
 
-	// Add Theme Support for Anderson Pro Plugin
+	// Add Theme Support for Gridbox Pro Plugin
 	add_theme_support( 'gridbox-pro' );
 	
 	// Add Theme Support for ThemeZee Plugins
