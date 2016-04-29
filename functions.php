@@ -98,9 +98,19 @@ function gridbox_widgets_init() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'gridbox' ),
 		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'gridbox' ),
+		'description' => esc_html__( 'Appears on single posts and pages.', 'gridbox' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
+		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title' => '</h3></div>',
+	));
+	
+	register_sidebar( array(
+		'name' => esc_html__( 'Magazine Homepage', 'gridbox' ),
+		'id' => 'magazine-homepage',
+		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'gridbox' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
 		'after_title' => '</h3></div>',
 	));
@@ -180,3 +190,6 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Include support functions for Theme Addons
 require get_template_directory() . '/inc/addons.php';
+
+// include Widget Files
+require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';

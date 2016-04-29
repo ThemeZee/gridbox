@@ -55,6 +55,9 @@ function gridbox_default_options() {
 		'featured_image'					=> true,
 		'meta_tags'							=> true,
 		'post_navigation'					=> true,
+		'featured_magazine' 				=> false,
+		'featured_blog' 					=> false,
+		'featured_category' 				=> 0,
 	);
 	
 	return $default_options;
