@@ -34,26 +34,27 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 10.0 - Navigation
 11.0 - Widgets
 12.0 - Posts and pages
-11.0 - Comments
-12.0 - Footer
-13.0 - Media
-	13.1 - Captions
-	13.2 - Galleries
-14.0 - Media Queries
-	14.1 - Desktop Large ( < 1120px )
-	14.2 - Desktop Medium ( < 1040px )
-	14.3 - Desktop Small ( < 960px )
-	14.4 - Tablet Large ( < 880px )
-	14.5 - Tablet Medium ( < 800px )
-	14.6 - Tablet Small ( < 720px )
-	14.7 - Mobile Extra Large ( < 640px )
-	14.8 - Mobile Large ( < 560px )
-	14.9 - Mobile Medium ( < 480px )
-	14.10 - Mobile Small ( < 320px )
-15.0 - Theme Option Styles
+13.0 - Featured Posts
+14.0 - Comments
+15.0 - Footer
+16.0 - Media
+	16.1 - Captions
+	16.2 - Galleries
+17.0 - Media Queries
+	17.1 - Desktop Large ( < 1120px )
+	17.2 - Desktop Medium ( < 1040px )
+	17.3 - Desktop Small ( < 960px )
+	17.4 - Tablet Large ( < 880px )
+	17.5 - Tablet Medium ( < 800px )
+	17.6 - Tablet Small ( < 720px )
+	17.7 - Mobile Extra Large ( < 640px )
+	17.8 - Mobile Large ( < 560px )
+	17.9 - Mobile Medium ( < 480px )
+	17.10 - Mobile Small ( < 320px )
+18.0 - Theme Option Styles
 	15.1 - Sidebar Left Layout
 	15.2 - Sticky Header
-16.0 - Media Query Fixes
+19.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -1581,7 +1582,94 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 11.0 - Comments
+# 13.0 - Featured Posts
+--------------------------------------------------------------*/
+.featured-posts-wrap {
+	margin: 0 0 2.5em;
+}
+
+.featured-posts {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -0.5em;
+}
+
+.featured-posts .grid-post {
+	display: flex;
+	width: 33.333333333333333%;
+	padding-right: 0.5em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.featured-posts .grid-post:nth-child(1),
+.featured-posts .grid-post:nth-child(2) {
+	width: 50%;
+}
+
+.featured-posts .grid-post .type-post .featured-image {
+	margin: 0;
+	vertical-align: top;
+}
+
+.featured-posts .grid-post .type-post {
+	position: relative;
+	margin: 0 0 0.5em;
+}
+
+.featured-posts .grid-post .type-post .image-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.1);
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.featured-posts .grid-post .type-post:hover .image-overlay {
+	background: none;
+}
+
+.featured-posts .grid-post .type-post .post-content {
+	position: absolute;
+	left: 1.5em;
+	bottom: 1.5em;
+	right: 1.5em;
+}
+
+.featured-posts .grid-post .type-post .entry-title {
+	display: block;
+	padding: 0.2em 0.6em;
+	font-size: 28px;
+	font-size: 1.75rem;
+	text-shadow: 0 0 15px #000;
+}
+
+.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+	font-size: 36px;
+	font-size: 2.25rem;
+}
+
+
+.featured-posts .grid-post .type-post .entry-title a:link, 
+.featured-posts .grid-post .type-post .entry-title a:visited {
+	color: #fff;
+}
+
+.featured-posts .grid-post .type-post .entry-title a:hover, 
+.featured-posts .grid-post .type-post .entry-title a:active {
+	color: #ddd;
+}
+
+/*--------------------------------------------------------------
+# 14.0 - Comments
 --------------------------------------------------------------*/
 
 .comments-area {
@@ -1746,7 +1834,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 12.0 - Footer
+# 15.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
 	background: #111133;
@@ -1775,7 +1863,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 13.0 - Media
+# 16.0 - Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -1794,7 +1882,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## 13.1 - Captions
+## 16.1 - Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -1815,7 +1903,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## 13.2 - Galleries
+## 16.2 - Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
@@ -1865,11 +1953,11 @@ object {
 }
 
 /*--------------------------------------------------------------
-# 14.0 - Media Queries
+# 17.0 - Media Queries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## 14.1 - Desktop X-Large ( < 1200px )
+## 17.1 - Desktop X-Large ( < 1200px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
 
@@ -1914,10 +2002,26 @@ object {
 		font-size: 1.75rem;
 	}
 	
+	/* Featured Posts */
+	.featured-posts-wrap {
+		margin: 0 0 2em;
+	}
+	
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+	
 }
 
 /*--------------------------------------------------------------
-## 14.2 - Desktop Large ( < 1120px )
+## 17.2 - Desktop Large ( < 1120px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
 	
@@ -1953,11 +2057,29 @@ object {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
+	
+	/* Featured Posts */
+	.featured-posts .grid-post .type-post .post-content {
+		left: 1em;
+		bottom: 1em;
+		right: 1em;
+	}
+	
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
 
 }
 
 /*--------------------------------------------------------------
-## 14.3 - Desktop Small ( < 960px )
+## 17.3 - Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 	
@@ -1994,6 +2116,24 @@ object {
 	.magazine-three-columns .magazine-column .type-post .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
+	}
+	
+	/* Featured Posts */
+	.featured-posts .grid-post .type-post .post-content {
+		left: 0.5em;
+		bottom: 0.5em;
+		right: 0.5em;
+	}
+	
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	
 	/*** Mobile Main Navigation ***/
@@ -2172,7 +2312,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## 14.4 - Tablet Large ( < 880px )
+## 17.4 - Tablet Large ( < 880px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
 	
@@ -2193,7 +2333,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## 14.5 - Tablet Medium ( < 800px )
+## 17.5 - Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	
@@ -2230,10 +2370,31 @@ object {
 		clear: left;
 	} */
 	
+	/* Featured Posts */
+	.featured-posts .grid-post,
+	.featured-posts .grid-post:nth-child(2) {
+		width: 50%;
+	}
+
+	.featured-posts .grid-post:nth-child(1) {
+		width: 100%;
+	}
+	
+	.featured-posts .grid-post .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+	
 }
 
 /*--------------------------------------------------------------
-## 14.7 - Mobile Extra Large ( < 640px )
+## 17.7 - Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	
@@ -2255,10 +2416,22 @@ object {
 		font-size: 1.125rem;
 	}
 	
+	/* Featured Posts */
+	.featured-posts .grid-post .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+	
 }
 
 /*--------------------------------------------------------------
-## 14.9 - Mobile Medium ( < 480px )
+## 17.9 - Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
 	
@@ -2333,12 +2506,24 @@ object {
 		font-size: 1.5rem;
 	}
 	
+	/* Featured Posts */
+	.featured-posts-wrap {
+		margin: 0 0 1.5em;
+	}
 
+	.featured-posts .grid-post:nth-child(n+2) .type-post .post-content {
+		display: none;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
 	
 }
 
 /*--------------------------------------------------------------
-## 14.10 - Mobile Small ( < 320px )
+## 17.10 - Mobile Small ( < 320px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 20em) {
 	
@@ -2368,15 +2553,21 @@ object {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-
+	
+	/* Featured Post */
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+	
 }
 
 /*--------------------------------------------------------------
-# 15.0 - Theme Option Styles
+# 18.0 - Theme Option Styles
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## 15.1 - Sidebar Left Layout
+## 18.1 - Sidebar Left Layout
 --------------------------------------------------------------*/
 .sidebar-left .content-single {
 	float: right;
@@ -2407,7 +2598,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## 15.2 - Sticky Header
+## 18.2 - Sticky Header
 --------------------------------------------------------------*/
 @media only screen and (min-width: 50em) {
 	
@@ -2430,7 +2621,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-# 16.0 - Media Query Fixes
+# 19.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
 /* Ensure navigation is visible on desktop view */
