@@ -78,34 +78,34 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 	);
 	
 	// Add Homepage Title
-	$wp_customize->add_setting( 'gridbox_theme_options[homepage_title]', array(
+	$wp_customize->add_setting( 'gridbox_theme_options[blog_title]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'wp_kses_post'
 		)
 	);
-    $wp_customize->add_control( 'gridbox_theme_options[homepage_title]', array(
+    $wp_customize->add_control( 'gridbox_theme_options[blog_title]', array(
         'label'    => esc_html__( 'Home Page Title', 'gridbox' ),
         'section'  => 'gridbox_section_general',
-        'settings' => 'gridbox_theme_options[homepage_title]',
+        'settings' => 'gridbox_theme_options[blog_title]',
         'type'     => 'text',
 		'priority' => 4
 		)
 	);
 	
 	// Add Homepage Title
-	$wp_customize->add_setting( 'gridbox_theme_options[homepage_description]', array(
+	$wp_customize->add_setting( 'gridbox_theme_options[blog_description]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'wp_kses_post'
 		)
 	);
-    $wp_customize->add_control( 'gridbox_theme_options[homepage_description]', array(
+    $wp_customize->add_control( 'gridbox_theme_options[blog_description]', array(
         'label'    => esc_html__( 'Home Page Description', 'gridbox' ),
         'section'  => 'gridbox_section_general',
-        'settings' => 'gridbox_theme_options[homepage_description]',
+        'settings' => 'gridbox_theme_options[blog_description]',
         'type'     => 'textarea',
 		'priority' => 5
 		)

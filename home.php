@@ -12,13 +12,13 @@ get_header();
 // Get Theme Options from Database
 $theme_options = gridbox_theme_options();
 
-// Display Homepage Title
-if ( isset( $theme_options['homepage_title'] ) and $theme_options['homepage_title'] <> '' ) : ?>
+// Display Blog Title
+if ( isset( $theme_options['blog_title'] ) and $theme_options['blog_title'] <> '' ) : ?>
 		
 	<header class="page-header clearfix">
 		
-		<h1 class="page-title"><?php echo wp_kses_post( $theme_options['homepage_title'] ); ?></h1>
-		<p class="homepage-description"><?php echo wp_kses_post( $theme_options['homepage_description'] ); ?></p>
+		<h1 class="blog-title page-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
+		<p class="blog-description"><?php echo wp_kses_post( $theme_options['blog_description'] ); ?></p>
 		
 	</header>
 

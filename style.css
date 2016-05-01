@@ -1388,13 +1388,13 @@ textarea {
 	margin-bottom: 2.5em;
 }
 
-.page-header .homepage-description,
+.page-header .blog-description,
 .page-header .archive-description {
 	font-size: 20px;
 	font-size: 1.25rem;
 }
 
-.page-header .homepage-description,
+.page-header .blog-description,
 .page-header .archive-description p {
 	margin: 0.5em 0 0;
 }
@@ -1622,18 +1622,17 @@ textarea {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: rgba(0,0,0,0.1);
 	width: 100%;
 	height: 100%;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
 }
 
 .featured-posts .grid-post .type-post:hover .image-overlay {
-	background: none;
+	background: rgba(0,0,0,0.1);
 }
 
 .featured-posts .grid-post .type-post .post-content {
@@ -2033,7 +2032,7 @@ object {
 		font-size: 2.25rem;
 	}
 	
-	.page-header .homepage-description,
+	.page-header .blog-description,
 	.page-header .archive-description,
 	.widget-magazine-posts .widget-header .category-description {
 		font-size: 18px;
@@ -2091,7 +2090,7 @@ object {
 		font-size: 2rem;
 	}
 	
-	.page-header .homepage-description,
+	.page-header .blog-description,
 	.page-header .archive-description,
 	.widget-magazine-posts .widget-header .category-description {
 		font-size: 16px;
