@@ -107,6 +107,26 @@
 	
 	
 	/**--------------------------------------------------------------
+	# Sticky Header
+	--------------------------------------------------------------*/
+	function stickyHeader() {
+
+		var window_top = $(window).scrollTop(),
+			top_position = $('body').offset().top ,
+			sticky_header = $('.site-header');
+
+		if ( window_top > top_position ) {
+			
+			sticky_header.addClass('fixed-header');
+				
+		} else {
+			
+			sticky_header.removeClass('fixed-header');
+				
+		}
+    };
+	
+	/**--------------------------------------------------------------
 	# Setup Navigation Menus
 	--------------------------------------------------------------*/
 	$( document ).ready( function() {
@@ -131,14 +151,10 @@
 			toggleClass: "footer-navigation-toggle",
 			maxWidth: "60em"
 		});
-		
-		/* Setup Footer Navigation 
-		$('.footer-navigation-menu').before('<button id=\"footer-links-toggle\" class=\"footer-navigation-toggle\"></button>');
-		
-		$('#footer-links-toggle').on('click', function(){
-			$('.footer-navigation-menu').slideToggle();
-			$(this).toggleClass('active');
-		});*/
+				
+		/* Add Sticky Header feature */
+		$(window).scroll(stickyHeader);
+		stickyHeader();
 
 	} );
 
