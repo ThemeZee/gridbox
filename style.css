@@ -1150,6 +1150,81 @@ textarea {
 	font-size: 1.25rem;
 }
 
+/* Magazine Posts Boxed Widget Horizontal Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
+	float: left;	
+	width: 50%;
+	margin: 0;
+	padding-right: 1.25em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+	float: right;
+	width: 50%;
+	padding-left: 1.25em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Magazine Posts Boxed Widget Vertical Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+	float: left;
+	width: 50%;
+	margin-bottom: 1em;
+	padding-right: 1.25em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+	width: 50%;
+	margin-left: 50%;
+	padding-left: 1.25em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-post {
+	float: left;
+	display: block;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-post .wp-post-image {
+	float: left;
+	margin: 0 2em 0 0;
+	max-width: 50%;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+/* Magazine Posts Boxed Widget Post Styling */
+.widget-magazine-posts-boxed  .large-post .entry-title {
+	font-size: 32px;
+	font-size: 2rem;
+}
+
+.widget-magazine-posts-boxed  .large-post .entry-meta {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.widget-magazine-posts-boxed  .large-post .entry-content {
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
 
 /*--------------------------------------------------------------
 # 12.0 - Content Area

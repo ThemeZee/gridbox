@@ -192,4 +192,5 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/addons.php';
 
 // include Widget Files
+require get_template_directory() . '/inc/widgets/widget-magazine-posts-boxed.php';
 require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';
