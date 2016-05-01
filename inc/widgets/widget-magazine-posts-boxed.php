@@ -42,7 +42,6 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			'title'				=> '',
 			'category'			=> 0,
 			'layout'			=> 'horizontal',
-			'excerpt_length'	=> 0,
 			'meta_date'			=> true,
 			'meta_author'		=> true,
 			'meta_category'		=> true,
@@ -84,9 +83,6 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 		// Get Widget Settings
 		$settings = wp_parse_args( $instance, $this->default_settings() );
-		
-		// Set Excerpt Length
-		$this->excerpt_length = (int)$settings['excerpt_length'];
 		
 		// Output
 		echo $args['before_widget'];
@@ -173,11 +169,9 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Display Posts
-			while( $posts_query->have_posts() ) :
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); 
 				
-				$posts_query->the_post(); 
-				
-				if( isset($i) and $i == 0 ) : 
+				if( 0 == $i ) : 
 				
 					// Limit the number of words for the excerpt
 					add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
@@ -227,39 +221,34 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 							
 							<header class="entry-header">
 					
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+								<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 							
 								<?php $this->entry_meta( $settings ); ?>
 						
 							</header><!-- .entry-header -->
 
-							<?php if( $settings['excerpt_length'] > 0 ) : ?>
+							<div class="entry-content entry-excerpt clearfix">
 								
-								<div class="entry-content entry-excerpt clearfix">
-									
-									<?php the_excerpt(); ?>
-									
-									<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+								<?php the_excerpt(); ?>
 								
-								</div><!-- .entry-content -->
-								
-							<?php endif; ?>
+								<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+							
+							</div><!-- .entry-content -->
 
 						</article>
 						
 					</div>
 
 				<?php
-				endif; $i++;
+					// Remove excerpt filter
+					remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );	
 				
-			endwhile; ?>
+				endif; $i++; endwhile; ?>
 			
 				</div><!-- end .magazine-three-columns -->
 				
 			<?php
-			// Remove excerpt filter
-			remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );	
-			
+
 		endif;
 		
 		// Reset Postdata
@@ -279,7 +268,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		
 		// Get latest posts from database
 		$query_arguments = array(
-			'posts_per_page' => 4,
+			'posts_per_page' => 5,
 			'ignore_sticky_posts' => true,
 			'cat' => (int)$settings['category']
 		);
@@ -288,17 +277,14 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
-
+			
+			// Limit the number of words for the excerpt
+			add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
+			
 			// Display Posts
-			while( $posts_query->have_posts() ) :
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); 
 				
-				$posts_query->the_post(); 
-				
-				if( isset($i) and $i == 0 ) : 
-				
-					// Limit the number of words for the excerpt
-					add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
-					?>
+				if( 0 == $i ) : ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
@@ -321,16 +307,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 				<div class="small-posts clearfix">
 
-				<?php 
-					// Remove excerpt filter
-					remove_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );	
-				
-				else:
-
-					// Limit the number of words for the excerpt
-					add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-					
-				?>
+				<?php else: ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
 
@@ -340,10 +317,10 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 						
 							<header class="entry-header">
 						
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-						
+								<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+								
 								<?php $this->entry_meta( $settings ); ?>
-					
+								
 							</header><!-- .entry-header -->
 							
 						</div>
@@ -359,7 +336,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+			remove_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );	
 			
 		endif;
 		
@@ -388,6 +365,12 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			
 		}
 		
+		if( true == $settings['meta_category'] ) {
+		
+			$postmeta .= gridbox_meta_category();
+			
+		}
+		
 		if( $postmeta ) {
 		
 			echo '<div class="entry-meta">' . $postmeta . '</div>';
@@ -403,7 +386,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 * @return integer $this->excerpt_length Number of Words
 	 */
 	function excerpt_length_large_post( $length ) {
-		return 40;
+		return 30;
 	}
 	
 	
@@ -413,7 +396,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 * @return integer $this->excerpt_length Number of Words
 	 */
 	function excerpt_length( $length ) {
-		return $this->excerpt_length;
+		return 10;
 	}
 	
 	/**
@@ -464,7 +447,6 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
 		$instance['layout'] = esc_attr($new_instance['layout']);
-		$instance['excerpt_length'] = (int)$new_instance['excerpt_length'];
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
 		$instance['meta_category'] = !empty($new_instance['meta_category']);
@@ -513,13 +495,7 @@ class Gridbox_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				<option <?php selected( $settings['layout'], 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'gridbox' ); ?></option>
 			</select>
 		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('excerpt_length'); ?>"><?php esc_html_e( 'Excerpt Length:', 'gridbox' ); ?>
-				<input id="<?php echo $this->get_field_id('excerpt_length'); ?>" name="<?php echo $this->get_field_name('excerpt_length'); ?>" type="text" value="<?php echo $settings['excerpt_length']; ?>" size="6" />
-			</label>
-		</p>
-		
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
