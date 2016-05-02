@@ -41,7 +41,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
-			'layout'			=> 'three-columns',
+			'layout'			=> 'three-columns-grid',
 			'number'			=> 3,
 			'excerpt_length'	=> 0,
 			'meta_date'			=> true,
@@ -145,13 +145,13 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			// Limit the number of words for the excerpt
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) ); ?>
 			
-			<div class="magazine-columns magazine-<?php echo esc_attr( $settings['layout'] ); ?>">
+			<div class="magazine-grid magazine-<?php echo esc_attr( $settings['layout'] ); ?>">
 			
 				<?php
 				// Display Posts
 				while( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 				
-					<div class="magazine-column clearfix">
+					<div class="magazine-grid-post clearfix">
 					
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							
@@ -336,9 +336,9 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Grid Layout:', 'gridbox' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
-				<option <?php selected( $settings['layout'], 'two-columns' ); ?> value="two-columns" ><?php esc_html_e( 'Two Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'three-columns' ); ?> value="three-columns" ><?php esc_html_e( 'Three Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'four-columns' ); ?> value="four-columns" ><?php esc_html_e( 'Four Columns', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'two-columns-grid' ); ?> value="two-columns-grid" ><?php esc_html_e( 'Two Columns', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'three-columns-grid' ); ?> value="three-columns-grid" ><?php esc_html_e( 'Three Columns', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'four-columns-grid' ); ?> value="four-columns-grid" ><?php esc_html_e( 'Four Columns', 'gridbox' ); ?></option>
 			</select>
 		</p>
 		

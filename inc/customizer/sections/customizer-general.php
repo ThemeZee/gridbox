@@ -86,7 +86,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'gridbox_theme_options[blog_title]', array(
-        'label'    => esc_html__( 'Home Page Title', 'gridbox' ),
+        'label'    => esc_html__( 'Blog Title', 'gridbox' ),
         'section'  => 'gridbox_section_general',
         'settings' => 'gridbox_theme_options[blog_title]',
         'type'     => 'text',
@@ -103,7 +103,7 @@ function gridbox_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'gridbox_theme_options[blog_description]', array(
-        'label'    => esc_html__( 'Home Page Description', 'gridbox' ),
+        'label'    => esc_html__( 'Blog Description', 'gridbox' ),
         'section'  => 'gridbox_section_general',
         'settings' => 'gridbox_theme_options[blog_description]',
         'type'     => 'textarea',
