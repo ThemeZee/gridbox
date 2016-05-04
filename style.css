@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website. 
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gridbox
@@ -284,7 +284,7 @@ button,
 input,
 select,
 textarea {
-	color: #111133;
+	color: #222;
 	font-family: 'Roboto', Tahoma, Arial;
 	font-size: 16px;
 	font-size: 1rem;
@@ -375,7 +375,7 @@ body {
 
 blockquote {
 	margin: 0 0 1.5em;
-	border-left: 4px solid #111133;
+	border-left: 4px solid #222;
 	padding-left: 1.25em;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -694,7 +694,7 @@ textarea {
 
 .site-title a:hover,
 .site-title a:active {
-	color: #e5e5e5;
+	color: rgba(255,255,255,0.75);
 }
 
 .site-branding .custom-logo {
@@ -769,18 +769,18 @@ textarea {
 	text-decoration: inherit;
 	vertical-align: top;
 	content: '\f431';
-	color: #e5e5e5;
+	color: #fff;
 	
 }
 
 .main-navigation-menu a:link, 
 .main-navigation-menu a:visited {
-	color: #e5e5e5;
+	color: #fff;
 	text-decoration: none;
 }
 
 .main-navigation-menu li a:hover {
-	color: #fff;
+	color: rgba(255,255,255,0.75);
 }
 
 .main-navigation-menu ul {
@@ -792,7 +792,7 @@ textarea {
 	list-style-type: none;
 	list-style-position: outside;
 	background: #111133;
-	border-top: 3px solid rgba(255,255,255,0.3);
+	border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .main-navigation-menu ul li{
@@ -843,7 +843,9 @@ textarea {
 .main-navigation-menu li ul ul {
 	margin-left: 250px;
 	margin-left: 16rem;
+	margin-top: -1px;
 	padding: 0;
+	border: 1px solid rgba(255,255,255,0.2);
 }
 
 .main-navigation-menu li:hover ul ul, 
@@ -1192,7 +1194,7 @@ textarea {
 }
 
 .entry-title a:hover, 
-.entry-title a:active{
+.entry-title a:active {
 	color: #4477aa;
 }
 
@@ -1842,22 +1844,20 @@ textarea {
 .site-footer {
 	font-size: 14px;
 	font-size: 0.875rem;
-	color: #fff;
+	color: rgba(255,255,255,0.75);
 }
 
 .site-footer a:link,
 .site-footer a:visited {
 	color: #fff;
-	text-decoration: underline;
 }
 
 .site-footer a:hover,
 .site-footer a:active {
-	text-decoration: none;
+	color: rgba(255,255,255,0.75);
 }
 
 .site-footer .site-info {
-	float: left;
 	padding: 2em 0;
 }
 
@@ -2081,6 +2081,10 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 	
+	.header-bar {
+		padding: 0 1.25em;
+	}
+	
 	.archive-title,
 	.page-title, 
 	.entry-title,
@@ -2206,13 +2210,17 @@ object {
 		color: #fff;
 	}
 	
+	.main-navigation-toggle:hover:after {
+		color: rgba(255,255,255,0.75);
+	}
+	
 	/* Main Navigation Menu */
 	.main-navigation-menu {
 		float: left;
 		width: 100%;
 		display: none;
 		margin-bottom: 1em;
-		border-top: 3px solid rgba(255,255,255,0.3);
+		border-top: 1px solid rgba(255,255,255,0.2);
 	}
 	
 	.main-navigation-menu li {
@@ -2222,21 +2230,10 @@ object {
 	.main-navigation-menu a {
 		display: block;
 		clear: left;
-		font-size: 15px;
-		font-size: 0.9375rem;
 		padding: 1.2em;
 		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
 	
-	.main-navigation-menu li a:hover {
-		text-decoration: underline;
-		border-color: rgba(255,255,255,0.2);
-	}
-
-	.main-navigation-menu li:last-child a {
-		border-bottom: none;
-	}
-
 	.main-navigation-menu ul {
 		float: none;
 		width: 100%;
@@ -2266,11 +2263,16 @@ object {
 		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
 
+	.main-navigation-menu li ul ul {
+		border: none;
+		border-top: 1px solid rgba(255,255,255,0.2);
+	}
+	
 	.main-navigation-menu li.current-menu-item > a {
 		text-decoration: underline;
 		border-bottom: 1px solid rgba(255,255,255,0.2);
 	}
-	
+
 	/* Mobile Submenu Dropdowns */
 	.main-navigation-menu .submenu-dropdown-toggle {
 		float: right;
@@ -2297,6 +2299,10 @@ object {
 	
 	.main-navigation-menu .submenu-dropdown-toggle.active:before {
 		content: '\f432';
+	}
+	
+	.main-navigation-menu .submenu-dropdown-toggle:hover:before {
+		color: rgba(255,255,255,0.75);
 	}
 	
 	.main-navigation-menu ul .submenu-dropdown-toggle {
