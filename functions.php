@@ -83,7 +83,7 @@ add_action( 'after_setup_theme', 'gridbox_setup' );
  * @global int $content_width
  */
 function gridbox_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'gridbox_content_width', 840 );
+	$GLOBALS['content_width'] = apply_filters( 'gridbox_content_width', 780 );
 }
 add_action( 'after_setup_theme', 'gridbox_content_width', 0 );
 

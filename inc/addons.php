@@ -23,7 +23,7 @@ function gridbox_theme_addons_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'type' 		=> 'click',
 		'container' => 'main',
-		'wrapper' => 'post-columns',
+		'wrapper' => 'post-wrapper',
 		'render'    => 'gridbox_infinite_scroll_render',
 	) );
 	

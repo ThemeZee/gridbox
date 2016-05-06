@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridbox\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-02-25 17:34+0100\n"
-"PO-Revision-Date: 2016-02-25 17:34+0100\n"
+"POT-Creation-Date: 2016-05-06 15:25+0100\n"
+"PO-Revision-Date: 2016-05-06 15:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -63,12 +63,22 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:91 sidebar.php:20
+#: functions.php:99 sidebar.php:20
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:93
-msgid "Appears on posts and pages except full width template."
+#: functions.php:101
+msgid "Appears on single posts and pages."
+msgstr ""
+
+#: functions.php:109
+msgid "Magazine Homepage"
+msgstr ""
+
+#: functions.php:111
+msgid ""
+"Appears on Magazine Homepage template only. You can use the Magazine Posts "
+"widgets here."
 msgstr ""
 
 #: header.php:26
@@ -104,29 +114,30 @@ msgid ""
 "Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
 
-#: inc/back-compat.php:40
+#: template-magazine.php:43
 msgid ""
-"%$1s requires at least WordPress version 4.2. You are running version %$2s. "
-"Please upgrade and try again."
+"Please go to Appearance &#8594; Widgets and add at least one widget to the "
+"\"Magazine Homepage\" widget area. You can use the Magazine Posts widgets to "
+"set up the theme like the demo website."
 msgstr ""
 
-#: inc/back-compat.php:49 inc/back-compat.php:61
+#: inc/back-compat.php:42 inc/back-compat.php:52 inc/back-compat.php:65
 #, php-format
 msgid ""
-"Gridbox requires at least WordPress version 4.2. You are running version %s. "
+"%1$s requires at least WordPress version %2$s. You are running version %3$s. "
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/template-tags.php:156
+#: inc/template-tags.php:187
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:217
+#: inc/template-tags.php:248 inc/widgets/widget-magazine-posts-grid.php:174
 msgid "Read more"
 msgstr ""
 
-#: inc/template-tags.php:322
+#: inc/template-tags.php:353
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
@@ -140,15 +151,15 @@ msgstr ""
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:100
+#: inc/theme-info.php:49 inc/customizer/customizer.php:118
 msgid "Theme Links"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:101
+#: inc/theme-info.php:50 inc/customizer/customizer.php:119
 msgid "https://themezee.com/themes/gridbox/"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:102
+#: inc/theme-info.php:50 inc/customizer/customizer.php:120
 msgid "Theme Page"
 msgstr ""
 
@@ -161,16 +172,16 @@ msgid "Theme Demo"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
-#: inc/customizer/customizer.php:103
+#: inc/customizer/customizer.php:121
 msgid "https://themezee.com/docs/gridbox-documentation/"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
-#: inc/customizer/customizer.php:104
+#: inc/customizer/customizer.php:122
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/theme-info.php:54 inc/customizer/customizer.php:106
+#: inc/theme-info.php:54 inc/customizer/customizer.php:124
 msgid "Rate this theme"
 msgstr ""
 
@@ -190,7 +201,7 @@ msgstr ""
 msgid "View %s Documentation"
 msgstr ""
 
-#: inc/theme-info.php:81 inc/customizer/customizer.php:30
+#: inc/theme-info.php:81 inc/customizer/customizer.php:31
 msgid "Theme Options"
 msgstr ""
 
@@ -264,20 +275,45 @@ msgstr ""
 msgid "rate it"
 msgstr ""
 
-#: inc/customizer/customizer.php:40
+#: inc/customizer/customizer.php:41
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/customizer.php:51
+#: inc/customizer/customizer.php:52
+msgid "Display Site Title"
+msgstr ""
+
+#: inc/customizer/customizer.php:69
 msgid "Header Image Link"
 msgstr ""
 
-#: inc/customizer/customizer.php:68
+#: inc/customizer/customizer.php:86
 msgid "Hide header image on front page"
 msgstr ""
 
 #: inc/customizer/functions/custom-controls.php:61
+#: inc/widgets/widget-magazine-posts-grid.php:325
 msgid "All Categories"
+msgstr ""
+
+#: inc/customizer/sections/customizer-featured.php:20
+msgid "Featured Posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-featured.php:36
+msgid "Activate Featured Posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-featured.php:51
+msgid "Show featured posts on Magazine Homepage"
+msgstr ""
+
+#: inc/customizer/sections/customizer-featured.php:66
+msgid "Show featured posts on posts page"
+msgstr ""
+
+#: inc/customizer/sections/customizer-featured.php:84
+msgid "Featured Posts Category"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:20
@@ -305,11 +341,11 @@ msgid "Enable sticky header feature"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:89
-msgid "Home Page Title"
+msgid "Blog Title"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:106
-msgid "Home Page Description"
+msgid "Blog Description"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:20
@@ -317,41 +353,99 @@ msgid "Post Settings"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:35
+msgid "Post Layout (archive pages)"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:41
+#: inc/widgets/widget-magazine-posts-grid.php:339
+msgid "Two Columns"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:42
+#: inc/widgets/widget-magazine-posts-grid.php:340
+msgid "Three Columns"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:43
+#: inc/widgets/widget-magazine-posts-grid.php:341
+msgid "Four Columns"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:57
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:53
+#: inc/customizer/sections/customizer-post.php:75
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:69
+#: inc/customizer/sections/customizer-post.php:91
+#: inc/widgets/widget-magazine-posts-grid.php:360
 msgid "Display post date"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:85
+#: inc/customizer/sections/customizer-post.php:107
+#: inc/widgets/widget-magazine-posts-grid.php:367
 msgid "Display post author"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:101
+#: inc/customizer/sections/customizer-post.php:123
+#: inc/widgets/widget-magazine-posts-grid.php:374
 msgid "Display post categories"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:119
+#: inc/customizer/sections/customizer-post.php:141
 msgid "Single Posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:136
+#: inc/customizer/sections/customizer-post.php:158
 msgid "Display featured image on single posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:152
+#: inc/customizer/sections/customizer-post.php:174
 msgid "Display post tags on single posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:168
+#: inc/customizer/sections/customizer-post.php:190
 msgid "Display post navigation on single posts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:20
 msgid "More Features"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:21
+#, php-format
+msgid "Magazine Posts: Grid (%s)"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:24
+msgid ""
+"Displays your posts from a selected category in a grid layout. Please use "
+"this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:258
+#, php-format
+msgid "View all posts from category %s"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:316
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:322
+msgid "Category:"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:337
+msgid "Grid Layout:"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:346
+msgid "Number of posts:"
+msgstr ""
+
+#: inc/widgets/widget-magazine-posts-grid.php:352
+msgid "Excerpt Length:"
 msgstr ""
