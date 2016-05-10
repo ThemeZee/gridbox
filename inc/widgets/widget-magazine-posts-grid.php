@@ -21,7 +21,8 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'gridbox' ), wp_get_theme()->Name ), // Name
 			array( 
 				'classname' => 'gridbox_magazine_posts_grid', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox' ) 
+				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 		
