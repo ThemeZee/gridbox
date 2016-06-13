@@ -9,24 +9,24 @@
  * @package Gridbox
  */
 
- 
+
 /*--------------------------------------------------------------
 # General Styles
 ---------------------------------------------------------------- */
 
 /* Clearing Floats */
-.tzwb-clearfix:before, 
-.tzwb-clearfix:after {  
+.tzwb-clearfix:before,
+.tzwb-clearfix:after {
 	content: " ";
-	display: table;  
-}  
+	display: table;
+}
 
-.tzwb-clearfix:after {  
+.tzwb-clearfix:after {
 	clear: both;
-}  
+}
 
 .tzwb-clearfix {
-    *zoom: 1; /* For IE 6/7 only */  
+	*zoom: 1; /* For IE 6/7 only */
 }
 
 
@@ -122,7 +122,7 @@
 	background: #111133;
 }
 
-.tzwb-tabbed-content .tzwb-tabnavi li a:link, 
+.tzwb-tabbed-content .tzwb-tabnavi li a:link,
 .tzwb-tabbed-content .tzwb-tabnavi li a:visited  {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
@@ -132,7 +132,7 @@
 	transition: all 0.2s ease;
 }
 
-.tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
+.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 .tzwb-tabbed-content .tzwb-tabnavi li a:active {
 	background: #4477aa;
 	text-decoration: none;
