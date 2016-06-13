@@ -6,7 +6,7 @@
  *
  * @package Gridbox
  */
- 
+
 get_header(); ?>
 	
 	<header class="page-header clearfix">
@@ -23,10 +23,10 @@ get_header(); ?>
 			
 				<div id="archive-posts" class="post-wrapper clearfix">
 						
-					<?php while (have_posts()) : the_post();
-				
+					<?php while ( have_posts() ) : the_post();
+
 						get_template_part( 'template-parts/content' );
-				
+
 					endwhile; ?>
 				
 				</div>

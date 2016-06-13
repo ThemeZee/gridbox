@@ -4,27 +4,28 @@
  *
  * @package Gridbox
  */
+
 ?>
 
-	<div class="post-col clearfix">
-	
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
-			<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-				<?php the_post_thumbnail(); ?>
-			</a>
-			
-			<header class="entry-header">
+<div class="post-col clearfix">
 
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-			
-			</header><!-- .entry-header -->
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<div class="entry-content entry-excerpt clearfix">
-				<?php the_excerpt(); ?>
-				<?php gridbox_more_link(); ?>
-			</div><!-- .entry-content -->
+		<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
+			<?php the_post_thumbnail(); ?>
+		</a>
 
-		</article>
-		
-	</div>
+		<header class="entry-header">
+
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+		</header><!-- .entry-header -->
+
+		<div class="entry-content entry-excerpt clearfix">
+			<?php the_excerpt(); ?>
+			<?php gridbox_more_link(); ?>
+		</div><!-- .entry-content -->
+
+	</article>
+
+</div>

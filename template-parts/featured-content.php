@@ -7,36 +7,36 @@
  * @package Gridbox
  */
 
-// Get Theme Options from Database
+// Get Theme Options from Database.
 $theme_options = gridbox_theme_options();
-	
-// Get latest posts from database
+
+// Get latest posts from database.
 $query_arguments = array(
 	'posts_per_page' => 5,
 	'ignore_sticky_posts' => true,
-	'cat' => absint( $theme_options['featured_category'] )
+	'cat' => absint( $theme_options['featured_category'] ),
 );
-$featured_query = new WP_Query($query_arguments);
+$featured_query = new WP_Query( $query_arguments );
 
-// Check if there are posts
-if( $featured_query->have_posts() ) : ?>
-	
+// Check if there are posts.
+if ( $featured_query->have_posts() ) : ?>
+
 	<div id="featured-posts-wrap" class="featured-posts-wrap">
-	
+
 		<div id="featured-posts" class="featured-posts clearfix">
 
-			<?php while( $featured_query->have_posts() ) : $featured_query->the_post();
+			<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
 
 				get_template_part( 'template-parts/content', 'featured' );
 
 			endwhile; ?>
-		
+
 		</div>
-		
+
 	</div>
 
 <?php
 endif;
-	
-// Reset Postdata
+
+// Reset Postdata.
 wp_reset_postdata();
