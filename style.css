@@ -1499,14 +1499,16 @@ textarea {
 	display: none;
 }
 
-.infinite-scroll .post-columns:before,
-.infinite-scroll .post-columns:after {
-	content: "";
-	display: table;
+.infinite-scroll #infinite-handle,
+.infinite-scroll .infinite-loader {
+	width: 100%;
+	text-align: center;
 }
 
-.infinite-scroll .post-columns:after {
-	clear: both;
+.infinite-scroll .infinite-loader .spinner {
+	left: auto;
+	margin: 0 auto;
+	bottom: -1em;
 }
 
 .infinite-scroll #infinite-handle span {

@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<header class="page-header clearfix">
 
-		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'gridbox' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'gridbox' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 		<p><?php get_search_form(); ?></p>
 
 	</header>
@@ -21,7 +21,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<div id="search-posts" class="post-wrapper clearfix">
+				<div id="post-wrapper" class="post-wrapper clearfix">
 
 					<?php while ( have_posts() ) : the_post();
 
