@@ -47,7 +47,7 @@
 							'menu_class' => 'main-navigation-menu',
 							'echo' => true,
 							'fallback_cb' => 'gridbox_default_menu',
-							),
+							)
 						);
 					?>
 				</nav><!-- #main-navigation -->
