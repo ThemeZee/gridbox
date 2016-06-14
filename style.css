@@ -2602,6 +2602,15 @@ object {
 
 }
 
+/* No Sidebar Singular Layout */
+.no-sidebar .content-single {
+	float: none;
+	width: 100%;
+	max-width: 800px;
+	padding: 0;
+	margin: 0 auto;
+}
+
 /*--------------------------------------------------------------
 ## 18.2 - Sticky Header
 --------------------------------------------------------------*/

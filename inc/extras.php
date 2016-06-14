@@ -42,9 +42,14 @@ function gridbox_body_classes( $classes ) {
 	if ( 'two-columns' == $theme_options['post_layout'] ) {
 		$classes[] = 'post-layout-two-columns post-layout-columns';
 	} elseif ( 'three-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-three-columns post-layout-columns no-sidebar';
+		$classes[] = 'post-layout-three-columns post-layout-columns';
 	} elseif ( 'four-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-four-columns post-layout-columns no-sidebar';
+		$classes[] = 'post-layout-four-columns post-layout-columns';
+	}
+
+	// Add no-sidebar class.
+	if ( ! is_active_sidebar( 'sidebar' ) ) {
+		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;
