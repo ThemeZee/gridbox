@@ -611,6 +611,8 @@ textarea {
 --------------------------------------------------------------*/
 .clearfix:before,
 .clearfix:after,
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after,
 .comment-navigation:before,
 .comment-navigation:after {
 	content: "";
@@ -618,6 +620,7 @@ textarea {
 }
 
 .clearfix:after,
+.post-navigation .nav-links:after,
 .comment-navigation:after {
 	clear: both;
 }
@@ -1338,22 +1341,22 @@ textarea {
 	border-top: 2px solid #eee;
 }
 
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after {
-	content: "";
-	display: table;
-}
-
-.post-navigation .nav-links:after {
-	clear: both;
-}
-
 .post-navigation .nav-links .nav-previous {
 	float: left;
 }
 
 .post-navigation .nav-links .nav-next {
 	float: right;
+}
+
+.post-navigation .nav-links .nav-previous a:before {
+	margin-right: 3px;
+	content: "\00AB";
+}
+
+.post-navigation .nav-links .nav-next a:after {
+	margin-left: 4px;
+	content: "\00BB";
 }
 
 .post-navigation .nav-links a {
