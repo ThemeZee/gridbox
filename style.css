@@ -610,12 +610,15 @@ textarea {
 # 7.0 - Clearings
 --------------------------------------------------------------*/
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.comment-navigation:before,
+.comment-navigation:after {
 	content: "";
 	display: table;
 }
 
-.clearfix:after {
+.clearfix:after,
+.comment-navigation:after {
 	clear: both;
 }
 
@@ -1779,6 +1782,16 @@ textarea {
 
 .comment-navigation .nav-next {
 	float: right;
+}
+
+.comment-navigation .nav-previous a:before {
+	margin-right: 3px;
+	content: "\00AB";
+}
+
+.comment-navigation .nav-next a:after {
+	margin-left: 4px;
+	content: "\00BB";
 }
 
 .reply .comment-reply-link {
