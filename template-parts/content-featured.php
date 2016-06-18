@@ -11,7 +11,7 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<a href="<?php esc_url( the_permalink() ); ?>" class="featured-image-link">
+		<a href="<?php the_permalink(); ?>" class="featured-image-link">
 
 			<?php // Display Post Thumbnail or default thumbnail.
 			if ( has_post_thumbnail() ) :

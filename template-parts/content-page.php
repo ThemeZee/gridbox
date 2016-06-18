@@ -18,9 +18,14 @@
 	<?php gridbox_post_image_single(); ?>
 
 	<div class="entry-content clearfix">
+
 		<?php the_content(); ?>
-		<!-- <?php trackback_rdf(); ?> -->
-		<div class="page-links"><?php wp_link_pages(); ?></div>
+
+		<?php wp_link_pages( array(
+			'before' => '<div class="page-links"><p>' . esc_html__( 'Pages:', 'gridbox' ),
+			'after'  => '</p></div>',
+		) ); ?>
+
 	</div><!-- .entry-content -->
 
 </article>
