@@ -503,9 +503,6 @@ input[type="submit"] {
 	text-transform: uppercase;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -649,8 +646,6 @@ textarea {
 	float: left;
 	width: 70%;
 	padding-right: 4em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -814,9 +809,6 @@ textarea {
 	font-size: 0.8125rem;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
 	transition: none;
 }
 
@@ -992,9 +984,6 @@ textarea {
 .widget-title a:visited  {
 	color: #111133;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1031,8 +1020,6 @@ textarea {
 	margin: 0;
 	width: 100%;
 	padding: 0.5em 1.5em 0.5em 0.7em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
 }
@@ -1045,9 +1032,6 @@ textarea {
 	padding: 0.6em 0.6em 0 0;
 	cursor: pointer;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1115,17 +1099,16 @@ textarea {
 
 /* Magazine Posts Grid */
 .magazine-grid {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -2.5em;
 }
 
 .magazine-grid .magazine-grid-post {
-	float: left;
-	display: flex;
 	padding-right: 2.5em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1157,6 +1140,15 @@ textarea {
 .magazine-four-columns-grid .type-post .entry-title {
 	font-size: 20px;
 	font-size: 1.25rem;
+}
+
+/* Fix Render Bug for Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.magazine-grid .magazine-grid-post {
+			margin-right: -1px;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1193,9 +1185,6 @@ textarea {
 	color: #111133;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1226,9 +1215,6 @@ textarea {
 	color: #fff;
 	background: #111133;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1320,9 +1306,6 @@ textarea {
 .entry-tags .meta-tags a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1371,9 +1354,6 @@ textarea {
 	color: #fff;
 	background: #111133;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1425,17 +1405,16 @@ textarea {
 
 /* Archive Posts Columns */
 .post-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -2.5em;
 }
 
 .post-wrapper .post-column {
-	float: left;
-	display: flex;
 	padding-right: 2.5em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1469,6 +1448,15 @@ textarea {
 	font-size: 1.25rem;
 }
 
+/* Fix Render Bug for Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.post-wrapper .post-column {
+			margin-right: -1px;
+		}
+	}
+}
+
 /* Theme Pagination */
 .post-pagination {
 	margin: 0 0 2.5em;
@@ -1489,9 +1477,6 @@ textarea {
 .post-pagination a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1529,9 +1514,6 @@ textarea {
 	color: #fff;
 	background: #111133;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1599,17 +1581,17 @@ textarea {
 }
 
 .featured-posts {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -0.5em;
 }
 
 .featured-posts .grid-post {
-	display: flex;
 	width: 33.333333333333333%;
 	padding-right: 0.5em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1635,9 +1617,6 @@ textarea {
 	width: 100%;
 	height: 100%;
 	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-ms-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
 }
 
@@ -1666,7 +1645,6 @@ textarea {
 	font-size: 2.25rem;
 }
 
-
 .featured-posts .grid-post .type-post .entry-title a:link,
 .featured-posts .grid-post .type-post .entry-title a:visited {
 	color: #fff;
@@ -1675,6 +1653,15 @@ textarea {
 .featured-posts .grid-post .type-post .entry-title a:hover,
 .featured-posts .grid-post .type-post .entry-title a:active {
 	color: #ddd;
+}
+
+/* Fix Render Bug for Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.featured-posts .grid-post {
+			margin-right: -1px;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1809,9 +1796,6 @@ textarea {
 	color: #fff;
 	background: #111133;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -2646,9 +2630,6 @@ object {
 .sticky-header .fixed-header .main-navigation-toggle {
 	margin: 0.5em 0;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
