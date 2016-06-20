@@ -93,6 +93,28 @@ function gridbox_header_image() {
 endif;
 
 
+if ( ! function_exists( 'gridbox_post_image' ) ) :
+/**
+ * Displays the featured image on archive posts.
+ *
+ * @param string $size Post thumbnail size.
+ * @param array  $attr Post thumbnail attributes.
+ */
+function gridbox_post_image( $size = '', $attr = array() ) {
+
+	// Display Post Thumbnail.
+	if ( has_post_thumbnail() ) : ?>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark">
+			<?php the_post_thumbnail( $size, $attr ); ?>
+		</a>
+
+	<?php endif;
+
+} // gridbox_post_image()
+endif;
+
+
 if ( ! function_exists( 'gridbox_post_image_single' ) ) :
 /**
  * Displays the featured image on single posts

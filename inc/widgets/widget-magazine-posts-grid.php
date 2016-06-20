@@ -161,7 +161,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+							<?php gridbox_post_image(); ?>
 
 							<header class="entry-header">
 
