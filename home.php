@@ -34,7 +34,8 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php if ( have_posts() ) : ?>
+			<?php
+			if ( have_posts() ) : ?>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
 
@@ -48,7 +49,12 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 				<?php gridbox_pagination(); ?>
 
-			<?php endif; ?>
+			<?php
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
