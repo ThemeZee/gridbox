@@ -100,7 +100,7 @@ if ( ! function_exists( 'gridbox_post_image' ) ) :
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function gridbox_post_image( $size = '', $attr = array() ) {
+function gridbox_post_image( $size = 'post-thumbnail', $attr = array() ) {
 
 	// Display Post Thumbnail.
 	if ( has_post_thumbnail() ) : ?>

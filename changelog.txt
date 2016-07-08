@@ -2,6 +2,13 @@
 Gridbox Changelog
 ===================================
 
+Version 1.0.3
+-----------------------------------
+[added] content-none.php template file
+[added] post image template function
+[improved] accessibility of navigation menus
+[improved] code formatting with PHP Codesniffer
+
 Version 1.0.2
 -----------------------------------
 [added] Magazine Homepage template
