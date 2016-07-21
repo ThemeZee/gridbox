@@ -150,10 +150,13 @@ function gridbox_theme_info_page() {
 
 		<div id="theme-author">
 
-			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
-				$theme->get( 'Name' ),
-				'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox" title="ThemeZee">ThemeZee</a>',
-			'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/gridbox?filter=5" title="Gridbox Review">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'); ?>
+			<p>
+				<?php
+				printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
+					$theme->get( 'Name' ),
+					'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox">ThemeZee</a>',
+					'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/gridbox?filter=5">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'
+				); ?>
 			</p>
 
 		</div>

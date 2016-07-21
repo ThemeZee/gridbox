@@ -2,6 +2,12 @@
 Gridbox Changelog
 ===================================
 
+Version 1.0.4
+-----------------------------------
+[added] missing default featured posts placeholder image
+[updated] tags in style.css
+[removed] not needed title attributes in theme-info.php
+
 Version 1.0.3
 -----------------------------------
 [added] content-none.php template file
