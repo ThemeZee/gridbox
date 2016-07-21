@@ -45,7 +45,6 @@ function gridbox_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'gridbox' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/gridbox/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'gridbox' ); ?></a>
-				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'gridbox' ); ?></a>
 				<a href="<?php echo esc_url( 'http://preview.themezee.com/gridbox/?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'gridbox' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/gridbox-documentation/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'gridbox' ); ?></a>
 				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/gridbox?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'gridbox' ); ?></a>
