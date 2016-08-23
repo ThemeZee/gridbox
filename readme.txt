@@ -28,7 +28,7 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 = 1.0.5 =
 * improved styling of navigation menus
-* added styling for mega menu plugin
+* added Right-to-Left language support
 
 = 1.0.4 =
 * added missing default featured posts placeholder image
