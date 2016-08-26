@@ -363,8 +363,17 @@ li > ol {
 		float: right;
 	}
 
+	.primary-navigation {
+		clear: both;
+		width: 100%;
+	}
+
 	.main-navigation-menu {
 		float: right;
+	}
+
+	.main-navigation-menu li {
+		width: 100%;
 	}
 
 	.main-navigation-menu a {
