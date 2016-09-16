@@ -28,7 +28,7 @@ function gridbox_customize_register_options( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
 		'title'          => esc_html__( 'Theme Options', 'gridbox' ),
-		'description'    => '',
+		'description'    => gridbox_customize_theme_links(),
 	) );
 
 	// Add postMessage support for site title and description.
@@ -104,32 +104,54 @@ add_action( 'customize_preview_init', 'gridbox_customize_preview_js' );
 
 
 /**
- * Embed JS file for Customizer Controls
- */
-function gridbox_customize_controls_js() {
-
-	wp_enqueue_script( 'gridbox-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
-
-	// Localize the script.
-	wp_localize_script( 'gridbox-customizer-controls', 'gridbox_theme_links', array(
-		'title'	=> esc_html__( 'Theme Links', 'gridbox' ),
-		'themeURL'	=> esc_url( __( 'https://themezee.com/themes/gridbox/', 'gridbox' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=gridbox&utm_content=theme-page' ),
-		'themeLabel'	=> esc_html__( 'Theme Page', 'gridbox' ),
-		'docuURL'	=> esc_url( __( 'https://themezee.com/docs/gridbox-documentation/', 'gridbox' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=gridbox&utm_content=documentation' ),
-		'docuLabel'	=> esc_html__( 'Theme Documentation', 'gridbox' ),
-		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/gridbox?filter=5' ),
-		'rateLabel'	=> esc_html__( 'Rate this theme', 'gridbox' ),
-		)
-	);
-
-}
-add_action( 'customize_controls_enqueue_scripts', 'gridbox_customize_controls_js' );
-
-
-/**
  * Embed CSS styles for the theme options in the Customizer
  */
 function gridbox_customize_preview_css() {
-	wp_enqueue_style( 'gridbox-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
+	wp_enqueue_style( 'gridbox-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
 }
 add_action( 'customize_controls_print_styles', 'gridbox_customize_preview_css' );
+
+/**
+ * Returns Theme Links
+ */
+function gridbox_customize_theme_links() {
+
+	ob_start();
+	?>
+
+		<div class="theme-links">
+
+			<span class="customize-control-title"><?php esc_html_e( 'Theme Links', 'gridbox' ); ?></span>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/gridbox/', 'gridbox' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=gridbox&utm_content=theme-page" target="_blank">
+					<?php esc_html_e( 'Theme Page', 'gridbox' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="http://preview.themezee.com/gridbox/?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=demo" target="_blank">
+					<?php esc_html_e( 'Theme Demo', 'gridbox' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/gridbox-documentation/', 'gridbox' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=gridbox&utm_content=documentation" target="_blank">
+					<?php esc_html_e( 'Theme Documentation', 'gridbox' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Rate this theme', 'gridbox' ); ?>
+				</a>
+			</p>
+
+		</div>
+
+	<?php
+	$theme_links = ob_get_contents();
+	ob_end_clean();
+
+	return $theme_links;
+}

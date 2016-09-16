@@ -45,9 +45,9 @@ function gridbox_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'gridbox' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/gridbox/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'gridbox' ); ?></a>
-				<a href="<?php echo esc_url( 'http://preview.themezee.com/gridbox/?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'gridbox' ); ?></a>
+				<a href="http://preview.themezee.com/gridbox/?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'gridbox' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/gridbox-documentation/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'gridbox' ); ?></a>
-				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/gridbox?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'gridbox' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'gridbox' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -107,10 +107,10 @@ function gridbox_theme_info_page() {
 				<div class="column column-half clearfix">
 
 					<div class="section">
-						<h4><?php esc_html_e( 'Pro Version', 'gridbox' ); ?></h4>
+						<h4><?php esc_html_e( 'Pro Version Add-on', 'gridbox' ); ?></h4>
 
 						<p class="about">
-							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'gridbox' ), 'Gridbox' ); ?>
+							<?php printf( esc_html__( 'Purchase the %s Pro Add-on and get additional features and advanced customization options.', 'gridbox' ), 'Gridbox' ); ?>
 						</p>
 						<p>
 							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/gridbox-pro/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=gridbox&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
@@ -124,17 +124,14 @@ function gridbox_theme_info_page() {
 				<div class="column column-half clearfix">
 
 					<div class="section">
-						<h4><?php esc_html_e( 'ThemeZee Plugins', 'gridbox' ); ?></h4>
+						<h4><?php esc_html_e( 'Recommended Plugins', 'gridbox' ); ?></h4>
 
 						<p class="about">
-							<?php esc_html_e( 'Extend the functionality of your WordPress website with our customized plugins.', 'gridbox' ); ?>
+							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'gridbox' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( __( 'https://themezee.com/plugins/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=gridbox&utm_content=plugins' ); ?>" target="_blank" class="button button-secondary">
-								<?php esc_html_e( 'Browse Plugins', 'gridbox' ); ?>
-							</a>
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-primary">
-								<?php esc_html_e( 'Install now', 'gridbox' ); ?>
+							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+								<?php esc_html_e( 'Install Plugins', 'gridbox' ); ?>
 							</a>
 						</p>
 					</div>
@@ -149,13 +146,10 @@ function gridbox_theme_info_page() {
 
 		<div id="theme-author">
 
-			<p>
-				<?php
-				printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
-					$theme->get( 'Name' ),
-					'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox">ThemeZee</a>',
-					'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/gridbox?filter=5">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'
-				); ?>
+			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
+				$theme->get( 'Name' ),
+				'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox" title="ThemeZee">ThemeZee</a>',
+				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) . '" title="' . esc_attr__( 'Review Gridbox', 'gridbox' ) . '">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'); ?>
 			</p>
 
 		</div>
