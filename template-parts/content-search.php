@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="post-col clearfix">
+<div class="post-column clearfix">
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -23,7 +23,6 @@
 
 		<div class="entry-content entry-excerpt clearfix">
 			<?php the_excerpt(); ?>
-			<?php gridbox_more_link(); ?>
 		</div><!-- .entry-content -->
 
 	</article>

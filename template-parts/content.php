@@ -23,7 +23,6 @@
 
 		<div class="entry-content entry-excerpt clearfix">
 			<?php the_excerpt(); ?>
-			<?php gridbox_more_link(); ?>
 		</div><!-- .entry-content -->
 
 	</article>

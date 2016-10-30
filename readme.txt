@@ -26,6 +26,10 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 1.0.6 =
+* changed implementation of read more link
+* fixed layout bug in search template
+
 = 1.0.5 =
 * improved styling of navigation menus
 * added Right-to-Left language support

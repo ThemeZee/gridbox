@@ -90,7 +90,7 @@ add_filter( 'excerpt_length', 'gridbox_excerpt_length' );
  */
 function gridbox_excerpt_more( $more_text ) {
 
-	return '';
+	return '<p class="read-more"><a href="' . esc_url( get_permalink() ) . '" class="more-link">' . esc_html__( 'Read more', 'gridbox' ) . '</a></p>';
 
 }
 add_filter( 'excerpt_more', 'gridbox_excerpt_more' );
