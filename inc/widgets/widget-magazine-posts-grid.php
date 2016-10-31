@@ -29,11 +29,6 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			) // Args.
 		);
 
-		// Delete Widget Cache on certain actions.
-		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'delete_widget_cache' ) );
-
 	}
 
 
@@ -68,22 +63,6 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		$cache = array();
-
-		// Get Widget Object Cache.
-		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_gridbox_magazine_posts_grid', 'widget' );
-		}
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		// Display Widget from Cache if exists.
-		if ( isset( $cache[ $this->id ] ) ) {
-			echo $cache[ $this->id ];
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -113,13 +92,8 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 
-		// Set Cache.
-		if ( ! $this->is_preview() ) {
-			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_gridbox_magazine_posts_grid', $cache, 'widget' );
-		} else {
-			ob_end_flush();
-		}
+		// Output Widget.
+		ob_end_flush();
 
 	} // widget()
 
@@ -307,8 +281,6 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
 		$instance['meta_category'] = ! empty( $new_instance['meta_category'] );
 
-		$this->delete_widget_cache();
-
 		return $instance;
 	}
 
@@ -390,16 +362,6 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<?php
 
 	} // form()
-
-
-	/**
-	 * Delete Widget Cache
-	 */
-	public function delete_widget_cache() {
-
-		wp_cache_delete( 'widget_gridbox_magazine_posts_grid', 'widget' );
-
-	}
 }
 
 /**
