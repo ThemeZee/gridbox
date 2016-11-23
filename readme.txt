@@ -26,6 +26,9 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 1.0.8 =
+* improved escaping and sanitizing of widget settings
+
 = 1.0.7 =
 * fixed duplicated read more button in Magazine Post widgets
 

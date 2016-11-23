@@ -80,7 +80,7 @@ function gridbox_theme_info_page() {
 							<?php printf( esc_html__( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'gridbox' ), $theme->get( 'Name' ) ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'gridbox' ); ?></a>
+							<a href="<?php echo wp_customize_url(); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'gridbox' ); ?></a>
 						</p>
 					</div>
 
@@ -146,10 +146,12 @@ function gridbox_theme_info_page() {
 
 		<div id="theme-author">
 
-			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
-				$theme->get( 'Name' ),
-				'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) . '" title="' . esc_attr__( 'Review Gridbox', 'gridbox' ) . '">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'); ?>
+			<p>
+				<?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
+					$theme->get( 'Name' ),
+					'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox" title="ThemeZee">ThemeZee</a>',
+					'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) . '" title="' . esc_attr__( 'Review Gridbox', 'gridbox' ) . '">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'
+				); ?>
 			</p>
 
 		</div>
@@ -172,7 +174,7 @@ function gridbox_theme_info_page_css( $hook ) {
 	}
 
 	// Embed theme info css style.
-	wp_enqueue_style( 'gridbox-theme-info-css', get_template_directory_uri() .'/css/theme-info.css' );
+	wp_enqueue_style( 'gridbox-theme-info-css', get_template_directory_uri() . '/css/theme-info.css' );
 
 }
 add_action( 'admin_enqueue_scripts', 'gridbox_theme_info_page_css' );
