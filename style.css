@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gridbox
@@ -1459,12 +1459,12 @@ textarea {
 }
 
 /* Theme Pagination */
-.post-pagination {
+.pagination {
 	margin: 0 0 2.5em;
 }
 
-.post-pagination a,
-.post-pagination .current {
+.pagination a,
+.pagination .current {
 	display: inline-block;
 	margin: 0 2px 2px 0;
 	padding: 0.4em 0.9em;
@@ -1474,20 +1474,20 @@ textarea {
 	text-decoration: none;
 }
 
-.post-pagination a:link,
-.post-pagination a:visited {
+.pagination a:link,
+.pagination a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
-.post-pagination a:hover,
-.post-pagination .current {
+.pagination a:hover,
+.pagination .current {
 	background: #4477aa;
 }
 
 /* Infinite Scroll Pagination */
-.infinite-scroll .post-pagination {
+.infinite-scroll .pagination {
 	display: none;
 }
 
@@ -1979,7 +1979,7 @@ object {
 	.type-post,
 	.type-page,
 	.type-attachment,
-	.post-pagination,
+	.pagination,
 	.comments-area {
 		margin-bottom: 2em;
 	}
@@ -2466,7 +2466,7 @@ object {
 	.type-post,
 	.type-page,
 	.type-attachment,
-	.post-pagination,
+	.pagination,
 	.comments-area {
 		margin-bottom: 1.5em;
 	}
