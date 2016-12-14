@@ -35,6 +35,7 @@
 
 					<?php gridbox_site_logo(); ?>
 					<?php gridbox_site_title(); ?>
+					<?php gridbox_site_description(); ?>
 
 				</div><!-- .site-branding -->
 
