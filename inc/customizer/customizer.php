@@ -173,7 +173,7 @@ function gridbox_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/?demo=gridbox&utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=gridbox&utm_source=customizer&utm_campaign=gridbox" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'gridbox' ); ?>
 				</a>
 			</p>
