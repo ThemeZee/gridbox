@@ -654,6 +654,16 @@ textarea {
 	width: 30%;
 }
 
+/* No Sidebar Singular Layout */
+.no-sidebar .content-single,
+.site-content .centered-content-area {
+	float: none;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 800px;
+	width: 100%;
+}
+
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
@@ -2615,15 +2625,6 @@ object {
 		width: 100%;
 	}
 
-}
-
-/* No Sidebar Singular Layout */
-.no-sidebar .content-single {
-	float: none;
-	margin: 0 auto;
-	padding: 0;
-	max-width: 800px;
-	width: 100%;
 }
 
 /*--------------------------------------------------------------
