@@ -33,11 +33,6 @@ function gridbox_body_classes( $classes ) {
 		$classes[] = 'sidebar-left';
 	}
 
-	// Add sticky header class.
-	if ( true == $theme_options['sticky_header'] ) {
-		$classes[] = 'sticky-header';
-	}
-
 	// Add post columns classes.
 	if ( 'two-columns' == $theme_options['post_layout'] ) {
 		$classes[] = 'post-layout-two-columns post-layout-columns';
