@@ -27,8 +27,10 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 == Changelog ==
 
 = 1.0.9 =
+* added Magazine Homepage widgets to blog index
 * added fullwidth page template for blog posts
 * added centered page template for posts and static pages
+* improved implementation of sticky header feature
 
 = 1.0.8 =
 * added new theme setting to display tagline
