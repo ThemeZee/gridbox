@@ -47,6 +47,21 @@ function gridbox_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Hide Date?
+	if ( false === $theme_options['meta_date'] ) {
+		$classes[] = 'date-hidden';
+	}
+
+	// Hide Author?
+	if ( false === $theme_options['meta_author'] ) {
+		$classes[] = 'author-hidden';
+	}
+
+	// Hide Categories?
+	if ( false === $theme_options['meta_category'] ) {
+		$classes[] = 'categories-hidden';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'gridbox_body_classes' );
@@ -74,6 +89,16 @@ function gridbox_hide_elements() {
 		$elements[] = '.site-description';
 	}
 
+	// Hide Post Tags?
+	if ( false === $theme_options['meta_tags'] ) {
+		$elements[] = '.type-post .entry-footer .entry-tags';
+	}
+
+	// Hide Post Navigation?
+	if ( false === $theme_options['post_navigation'] ) {
+		$elements[] = '.type-post .entry-footer .post-navigation';
+	}
+
 	// Return early if no elements are hidden.
 	if ( empty( $elements ) ) {
 		return;
@@ -81,10 +106,7 @@ function gridbox_hide_elements() {
 
 	// Create CSS.
 	$classes = implode( ', ', $elements );
-	$custom_css = $classes . ' {
-	position: absolute;
-	clip: rect(1px, 1px, 1px, 1px);
-}';
+	$custom_css = $classes . ' { position: absolute; clip: rect(1px, 1px, 1px, 1px); }';
 
 	// Add Custom CSS.
 	wp_add_inline_style( 'gridbox-stylesheet', $custom_css );

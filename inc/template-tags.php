@@ -149,37 +149,11 @@ if ( ! function_exists( 'gridbox_entry_meta' ) ) :
 	 */
 	function gridbox_entry_meta() {
 
-		// Get theme options from database.
-		$theme_options = gridbox_theme_options();
+		$postmeta = gridbox_meta_date();
+		$postmeta .= gridbox_meta_author();
+		$postmeta .= gridbox_meta_category();
 
-		$postmeta = '';
-
-		// Display date unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_date'] ) {
-
-			$postmeta .= gridbox_meta_date();
-
-		}
-
-		// Display author unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_author'] ) {
-
-			$postmeta .= gridbox_meta_author();
-
-		}
-
-		// Display categories unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_category'] ) {
-
-			$postmeta .= gridbox_meta_category();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
+		echo '<div class="entry-meta">' . $postmeta . '</div>';
 	}
 endif;
 
@@ -237,14 +211,11 @@ if ( ! function_exists( 'gridbox_entry_tags' ) ) :
 	 */
 	function gridbox_entry_tags() {
 
-		// Get theme options from database.
-		$theme_options = gridbox_theme_options();
-
 		// Get tags.
 		$tag_list = get_the_tag_list( '', '' );
 
 		// Display tags.
-		if ( $tag_list && $theme_options['meta_tags'] ) : ?>
+		if ( $tag_list ) : ?>
 
 			<div class="entry-tags clearfix">
 				<span class="meta-tags">
@@ -287,7 +258,7 @@ if ( ! function_exists( 'gridbox_post_navigation' ) ) :
 		// Get theme options from database.
 		$theme_options = gridbox_theme_options();
 
-		if ( true === $theme_options['post_navigation'] ) {
+		if ( true === $theme_options['post_navigation'] || is_customize_preview() ) {
 
 			the_post_navigation( array(
 				'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'gridbox' ) . '</span>%title',
