@@ -1,6 +1,6 @@
 <?php
 /**
- * Magazine Posts Grid Widget
+ * Magazine Grid Widget
  *
  * Display the latest posts from a selected category in a grid layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
@@ -21,16 +21,14 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'gridbox-magazine-posts-grid', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'gridbox' ), wp_get_theme()->Name ), // Name.
+			esc_html__( 'Magazine (Grid)', 'gridbox' ), // Name.
 			array(
-				'classname' => 'gridbox_magazine_posts_grid',
+				'classname' => 'gridbox-magazine-grid-widget',
 				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
-
 	}
-
 
 	/**
 	 * Set default settings of the widget
@@ -40,18 +38,13 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
-			'layout'			=> 'three-columns-grid',
-			'number'			=> 3,
-			'excerpt_length'	=> 0,
-			'meta_date'			=> true,
-			'meta_author'		=> true,
-			'meta_category'		=> true,
+			'layout'			=> 'three-columns',
+			'number'			=> 6,
+			'excerpt'			=> false,
 		);
 
 		return $defaults;
-
 	}
-
 
 	/**
 	 * Main Function to display the widget
@@ -69,8 +62,8 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Get Widget Settings.
 		$settings = wp_parse_args( $instance, $this->default_settings() );
 
-		// Set Excerpt Length.
-		$this->excerpt_length = (int) $settings['excerpt_length'];
+		// Set Widget class.
+		$class = ( 'three-columns' === $settings['layout'] ) ? 'magazine-three-columns-grid' : 'magazine-two-columns-grid';
 
 		// Output.
 		echo $args['before_widget'];
@@ -83,7 +76,11 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 			<div class="widget-magazine-posts-content">
 
-				<?php $this->render( $settings ); ?>
+				<div class="magazine-grid <?php echo $class; ?>">
+
+					<?php $this->render( $settings ); ?>
+
+				</div>
 
 			</div>
 
@@ -92,11 +89,9 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 
-		// Output Widget.
+		// End Output Buffering.
 		ob_end_flush();
-
-	} // widget()
-
+	}
 
 	/**
 	 * Renders the Widget Content
@@ -110,119 +105,41 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 
-		// Get latest posts from database.
+		// Get cached post ids.
+		$post_ids = gridbox_get_magazine_post_ids( $this->id, $settings['category'], $settings['number'] );
+
+		// Fetch posts from database.
 		$query_arguments = array(
-			'posts_per_page' => (int) $settings['number'],
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
+			'post__in'            => $post_ids,
+			'no_found_rows'       => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
 
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
 
 			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) ); ?>
+			add_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 
-			<div class="magazine-grid magazine-<?php echo esc_attr( $settings['layout'] ); ?>">
+			// Display Posts.
+			while ( $posts_query->have_posts() ) :
 
-				<?php
-				// Display Posts.
-				while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+				$posts_query->the_post();
 
-					<div class="magazine-grid-post clearfix">
+				set_query_var( 'gridbox_post_excerpt', (bool) $settings['excerpt'] );
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				get_template_part( 'template-parts/widgets/magazine-medium-post', 'grid' );
 
-							<?php gridbox_post_image(); ?>
+			endwhile;
 
-							<header class="entry-header">
-
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-								<?php $this->entry_meta( $settings ); ?>
-
-							</header><!-- .entry-header -->
-
-							<?php if ( $settings['excerpt_length'] > 0 ) : ?>
-
-								<div class="entry-content entry-excerpt clearfix">
-
-									<?php the_excerpt(); ?>
-
-									<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
-
-								</div><!-- .entry-content -->
-
-							<?php endif; ?>
-
-						</article>
-
-					</div>
-
-				<?php endwhile; ?>
-
-			</div>
-
-			<?php
 			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+			remove_filter( 'excerpt_length', 'gridbox_magazine_posts_excerpt_length' );
 
 		endif;
 
 		// Reset Postdata.
 		wp_reset_postdata();
-
-	} // render()
-
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= gridbox_meta_date();
-
-		}
-
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= gridbox_meta_author();
-
-		}
-
-		if ( true === $settings['meta_category'] ) {
-
-			$postmeta .= gridbox_meta_category();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
-
-	/**
-	 * Returns the excerpt length in number of words
-	 *
-	 * @param int $length Length of excerpt in number of words.
-	 * @return integer $this->excerpt_length Number of Words
-	 */
-	function excerpt_length( $length ) {
-		return $this->excerpt_length;
 	}
-
 
 	/**
 	 * Displays Widget Title
@@ -241,13 +158,12 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'gridbox' ), get_cat_name( $settings['category'] ) );
-				$link_url = esc_url( get_category_link( $settings['category'] ) );
+				$link_title = sprintf( __( 'View all posts from category %s', 'gridbox' ), get_cat_name( $settings['category'] ) );
+				$link_url = get_category_link( $settings['category'] );
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . $link_url . '" title="' . $link_title . '">' . $widget_title . '</a></h3>';
-				echo '<div class="category-description">' . category_description( $settings['category'] ) . '</div>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $link_title ) . '">' . $widget_title . '</a></h3>';
 				echo '</div>';
 
 			else :
@@ -258,9 +174,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			endif;
 
 		endif;
-
-	} // widget_title()
-
+	}
 
 	/**
 	 * Update Widget Settings
@@ -276,14 +190,12 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['category'] = (int) $new_instance['category'];
 		$instance['layout'] = esc_attr( $new_instance['layout'] );
 		$instance['number'] = (int) $new_instance['number'];
-		$instance['excerpt_length'] = (int) $new_instance['excerpt_length'];
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
-		$instance['meta_category'] = ! empty( $new_instance['meta_category'] );
+		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
+
+		gridbox_flush_magazine_post_ids();
 
 		return $instance;
 	}
-
 
 	/**
 	 * Displays Widget Settings Form in the Backend
@@ -320,9 +232,8 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'layout' ); ?>"><?php esc_html_e( 'Grid Layout:', 'gridbox' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id( 'layout' ); ?>" name="<?php echo $this->get_field_name( 'layout' ); ?>">
-				<option <?php selected( $settings['layout'], 'two-columns-grid' ); ?> value="two-columns-grid" ><?php esc_html_e( 'Two Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'three-columns-grid' ); ?> value="three-columns-grid" ><?php esc_html_e( 'Three Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'four-columns-grid' ); ?> value="four-columns-grid" ><?php esc_html_e( 'Four Columns', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'two-columns' ); ?> value="two-columns" ><?php esc_html_e( 'Two Columns Grid', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'three-columns' ); ?> value="three-columns" ><?php esc_html_e( 'Three Columns Grid', 'gridbox' ); ?></option>
 			</select>
 		</p>
 
@@ -333,35 +244,14 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'excerpt_length' ); ?>"><?php esc_html_e( 'Excerpt Length:', 'gridbox' ); ?>
-				<input id="<?php echo $this->get_field_id( 'excerpt_length' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_length' ); ?>" type="text" value="<?php echo absint( $settings['excerpt_length'] ); ?>" size="6" />
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'gridbox' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'gridbox' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ); ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post categories', 'gridbox' ); ?>
+			<label for="<?php echo $this->get_field_id( 'excerpt' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['excerpt'] ); ?> id="<?php echo $this->get_field_id( 'excerpt' ); ?>" name="<?php echo $this->get_field_name( 'excerpt' ); ?>" />
+				<?php esc_html_e( 'Display post excerpt', 'gridbox' ); ?>
 			</label>
 		</p>
 
 		<?php
-
-	} // form()
+	}
 }
 
 /**
