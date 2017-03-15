@@ -204,5 +204,8 @@ require get_template_directory() . '/inc/template-tags.php';
 // Include support functions for Theme Addons.
 require get_template_directory() . '/inc/addons.php';
 
+// Include Magazine Functions.
+require get_template_directory() . '/inc/magazine.php';
+
 // Include Widget Files.
 require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';
