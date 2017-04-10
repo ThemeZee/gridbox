@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gridbox
@@ -1164,15 +1164,6 @@ textarea {
 	font-size: 1.25rem;
 }
 
-/* Fix Render Bug for Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.magazine-grid .magazine-grid-post {
-			margin-right: -1px;
-		}
-	}
-}
-
 /*--------------------------------------------------------------
 # 12.0 - Content Area
 --------------------------------------------------------------*/
@@ -1487,15 +1478,6 @@ body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta {
 	font-size: 1.25rem;
 }
 
-/* Fix Render Bug for Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.post-wrapper .post-column {
-			margin-right: -1px;
-		}
-	}
-}
-
 /* Theme Pagination */
 .pagination {
 	margin: 0 0 2.5em;
@@ -1691,15 +1673,6 @@ body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta {
 .featured-posts .grid-post .type-post .entry-title a:hover,
 .featured-posts .grid-post .type-post .entry-title a:active {
 	color: #ddd;
-}
-
-/* Fix Render Bug for Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.featured-posts .grid-post {
-			margin-right: -1px;
-		}
-	}
 }
 
 /*--------------------------------------------------------------
@@ -2687,4 +2660,31 @@ object {
 		display: block !important;
 	}
 
+}
+
+
+/*--------------------------------------------------------------
+# 20.0 - CSS Hacks for Safari
+--------------------------------------------------------------*/
+
+/* Fix Flexbox issues for Safari 6.1-10.0 */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.magazine-grid .magazine-grid-post,
+		.post-wrapper .post-column,
+		.featured-posts .grid-post {
+			margin-right: -1px;
+		}
+	}
+}
+
+/* Fix Flexbox issues for Safari 10.1+ */
+@media not all and (min-resolution:.001dpcm) {
+	@media {
+		.magazine-grid .magazine-grid-post,
+		.post-wrapper .post-column,
+		.featured-posts .grid-post {
+			margin-right: -1px;
+		}
+	}
 }
