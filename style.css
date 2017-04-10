@@ -708,6 +708,10 @@ textarea {
 	color: rgba(255,255,255,0.75);
 }
 
+.site-branding .custom-logo-link {
+	display: block;
+}
+
 .site-branding .custom-logo {
 	margin: 0 1em 0 0;
 	padding: 0;
