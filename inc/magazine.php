@@ -91,4 +91,5 @@ function gridbox_flush_magazine_post_ids() {
 }
 add_action( 'save_post', 'gridbox_flush_magazine_post_ids' );
 add_action( 'deleted_post', 'gridbox_flush_magazine_post_ids' );
+add_action( 'customize_save_after', 'gridbox_flush_magazine_post_ids' );
 add_action( 'switch_theme', 'gridbox_flush_magazine_post_ids' );

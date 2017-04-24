@@ -10,11 +10,14 @@
 // Get Theme Options from Database.
 $theme_options = gridbox_theme_options();
 
-// Get latest posts from database.
+// Get cached post ids.
+$post_ids = gridbox_get_magazine_post_ids( 'featured-posts', $theme_options['featured_category'], 5 );
+
+// Fetch posts from database.
 $query_arguments = array(
+	'post__in'       => $post_ids,
 	'posts_per_page' => 5,
-	'ignore_sticky_posts' => true,
-	'cat' => absint( $theme_options['featured_category'] ),
+	'no_found_rows'  => true,
 );
 $featured_query = new WP_Query( $query_arguments );
 
