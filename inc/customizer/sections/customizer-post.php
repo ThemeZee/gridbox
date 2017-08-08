@@ -116,22 +116,6 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		)
 	) );
 
-	// Featured Image Setting.
-	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
-		'default'           => true,
-		'type'           	=> 'option',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'gridbox_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'gridbox_theme_options[featured_image]', array(
-		'label'    => esc_html__( 'Display featured image on single posts', 'gridbox' ),
-		'section'  => 'gridbox_section_post',
-		'settings' => 'gridbox_theme_options[featured_image]',
-		'type'     => 'checkbox',
-		'priority' => 70,
-	) );
-
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_tags]', array(
 		'default'           => true,
 		'type'           	=> 'option',
@@ -144,7 +128,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'section'  => 'gridbox_section_post',
 		'settings' => 'gridbox_theme_options[meta_tags]',
 		'type'     => 'checkbox',
-		'priority' => 80,
+		'priority' => 70,
 	) );
 
 	$wp_customize->add_setting( 'gridbox_theme_options[post_navigation]', array(
@@ -159,7 +143,49 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'section'  => 'gridbox_section_post',
 		'settings' => 'gridbox_theme_options[post_navigation]',
 		'type'     => 'checkbox',
-		'priority' => 90,
+		'priority' => 80,
+	) );
+
+	// Add Featured Images Headline.
+	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
+		$wp_customize, 'gridbox_theme_options[featured_images]', array(
+			'label'    => esc_html__( 'Featured Images', 'gridbox' ),
+			'section'  => 'gridbox_section_post',
+			'settings' => array(),
+			'priority' => 90,
+		)
+	) );
+
+	// Add Setting and Control for featured images on blog and archives.
+	$wp_customize->add_setting( 'gridbox_theme_options[post_image_archives]', array(
+		'default'           => true,
+		'type'              => 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'gridbox_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[post_image_archives]', array(
+		'label'    => esc_html__( 'Display on blog and archives', 'gridbox' ),
+		'section'  => 'gridbox_section_post',
+		'settings' => 'gridbox_theme_options[post_image_archives]',
+		'type'     => 'checkbox',
+		'priority' => 100,
+	) );
+
+	// Add Setting and Control for featured images on single posts.
+	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
+		'default'           => true,
+		'type'              => 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'gridbox_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[featured_image]', array(
+		'label'    => esc_html__( 'Display on single posts', 'gridbox' ),
+		'section'  => 'gridbox_section_post',
+		'settings' => 'gridbox_theme_options[featured_image]',
+		'type'     => 'checkbox',
+		'priority' => 110,
 	) );
 }
 add_action( 'customize_register', 'gridbox_customize_register_post_settings' );
