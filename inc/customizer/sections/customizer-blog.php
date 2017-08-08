@@ -73,5 +73,31 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'type'     => 'textarea',
 		'priority' => 30,
 	) );
+
+	// Add Magazine Widgets Headline.
+	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
+		$wp_customize, 'gridbox_theme_options[blog_magazine_widgets_title]', array(
+			'label'    => esc_html__( 'Magazine Widgets', 'gridbox' ),
+			'section'  => 'gridbox_section_blog',
+			'settings' => array(),
+			'priority' => 40,
+		)
+	) );
+
+	// Add Setting and Control for Magazine widgets.
+	$wp_customize->add_setting( 'gridbox_theme_options[blog_magazine_widgets]', array(
+		'default'           => true,
+		'type'           	=> 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'gridbox_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[blog_magazine_widgets]', array(
+		'label'    => esc_html__( 'Display Magazine widgets on blog index', 'gridbox' ),
+		'section'  => 'gridbox_section_blog',
+		'settings' => 'gridbox_theme_options[blog_magazine_widgets]',
+		'type'     => 'checkbox',
+		'priority' => 50,
+	) );
 }
 add_action( 'customize_register', 'gridbox_customize_register_blog_settings' );
