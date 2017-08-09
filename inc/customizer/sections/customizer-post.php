@@ -14,7 +14,7 @@
  */
 function gridbox_customize_register_post_settings( $wp_customize ) {
 
-	// Add Sections for Post Settings.
+	// Add Section for Post Settings.
 	$wp_customize->add_section( 'gridbox_section_post', array(
 		'title'    => esc_html__( 'Post Settings', 'gridbox' ),
 		'priority' => 30,
@@ -37,19 +37,12 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'priority' => 10,
 	) );
 
-	// Add Post Meta Settings.
-	$wp_customize->add_setting( 'gridbox_theme_options[postmeta_headline]', array(
-		'default'           => '',
-		'type'              => 'option',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_attr',
-	) );
-
+	// Add Post Details Headline.
 	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 		$wp_customize, 'gridbox_theme_options[postmeta_headline]', array(
 			'label'    => esc_html__( 'Post Meta', 'gridbox' ),
 			'section'  => 'gridbox_section_post',
-			'settings' => 'gridbox_theme_options[postmeta_headline]',
+			'settings' => array(),
 			'priority' => 20,
 		)
 	) );
@@ -61,6 +54,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
+	// Add Meta Date setting and control.
 	$wp_customize->add_control( 'gridbox_theme_options[meta_date]', array(
 		'label'    => esc_html__( 'Display post date', 'gridbox' ),
 		'section'  => 'gridbox_section_post',
@@ -76,6 +70,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
+	// Add Meta Author setting and control.
 	$wp_customize->add_control( 'gridbox_theme_options[meta_author]', array(
 		'label'    => esc_html__( 'Display post author', 'gridbox' ),
 		'section'  => 'gridbox_section_post',
@@ -91,6 +86,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
+	// Add Meta Category setting and control.
 	$wp_customize->add_control( 'gridbox_theme_options[meta_category]', array(
 		'label'    => esc_html__( 'Display post categories', 'gridbox' ),
 		'section'  => 'gridbox_section_post',
@@ -99,23 +95,17 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'priority' => 50,
 	) );
 
-	// Add Single Post Settings.
-	$wp_customize->add_setting( 'gridbox_theme_options[single_post_headline]', array(
-		'default'           => '',
-		'type'              => 'option',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_attr',
-	) );
-
+	// Add Single Posts Headline.
 	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 		$wp_customize, 'gridbox_theme_options[single_post_headline]', array(
 			'label'    => esc_html__( 'Single Posts', 'gridbox' ),
 			'section'  => 'gridbox_section_post',
-			'settings' => 'gridbox_theme_options[single_post_headline]',
+			'settings' => array(),
 			'priority' => 60,
 		)
 	) );
 
+	// Add Meta Tags setting and control.
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_tags]', array(
 		'default'           => true,
 		'type'              => 'option',
@@ -131,6 +121,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'priority' => 70,
 	) );
 
+	// Add Post Navigation setting and control.
 	$wp_customize->add_setting( 'gridbox_theme_options[post_navigation]', array(
 		'default'           => true,
 		'type'              => 'option',

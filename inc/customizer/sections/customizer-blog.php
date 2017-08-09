@@ -14,14 +14,14 @@
  */
 function gridbox_customize_register_blog_settings( $wp_customize ) {
 
-	// Add Sections for Post Settings.
+	// Add Section for Blog Settings.
 	$wp_customize->add_section( 'gridbox_section_blog', array(
 		'title'    => esc_html__( 'Blog Settings', 'gridbox' ),
 		'priority' => 25,
 		'panel'    => 'gridbox_options_panel',
 	) );
 
-	// Add Post Layout Settings for archive posts.
+	// Add Blog Layout setting and control.
 	$wp_customize->add_setting( 'gridbox_theme_options[post_layout]', array(
 		'default'           => 'three-columns',
 		'type'              => 'option',
