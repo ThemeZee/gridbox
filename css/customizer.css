@@ -33,6 +33,10 @@
 	margin-bottom: 0;
 }
 
+#customize-control-gridbox_theme_options-blog_description textarea {
+	height: 5em;
+}
+
 #customize-control-gridbox_theme_options-upgrade div {
 	margin: 4px 0 32px;
 }

@@ -46,7 +46,7 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'gridbox_theme_options[blog_title]', array(
 		'default'           => '',
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'wp_kses_post',
 	) );
 
@@ -58,11 +58,16 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'priority' => 20,
 	) );
 
+	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[blog_title]', array(
+		'selector'        => '.blog-header .blog-title',
+		'render_callback' => 'gridbox_customize_partial_blog_title',
+	) );
+
 	// Add Blog Description setting and control.
 	$wp_customize->add_setting( 'gridbox_theme_options[blog_description]', array(
 		'default'           => '',
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'wp_kses_post',
 	) );
 
@@ -72,6 +77,11 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'settings' => 'gridbox_theme_options[blog_description]',
 		'type'     => 'textarea',
 		'priority' => 30,
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[blog_description]', array(
+		'selector'        => '.blog-header .blog-description',
+		'render_callback' => 'gridbox_customize_partial_blog_description',
 	) );
 
 	// Add Magazine Widgets Headline.
@@ -101,3 +111,19 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 	) );
 }
 add_action( 'customize_register', 'gridbox_customize_register_blog_settings' );
+
+/**
+ * Render the blog title for the selective refresh partial.
+ */
+function gridbox_customize_partial_blog_title() {
+	$theme_options = gridbox_theme_options();
+	echo wp_kses_post( $theme_options['blog_title'] );
+}
+
+/**
+ * Render the blog description for the selective refresh partial.
+ */
+function gridbox_customize_partial_blog_description() {
+	$theme_options = gridbox_theme_options();
+	echo wp_kses_post( $theme_options['blog_description'] );
+}
