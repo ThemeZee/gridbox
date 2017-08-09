@@ -167,7 +167,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
 		'default'           => true,
 		'type'              => 'option',
-		'transport'         => 'postMessage',
+		'transport'         => 'refresh',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
