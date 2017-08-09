@@ -18,14 +18,14 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_section( 'gridbox_section_post', array(
 		'title'    => esc_html__( 'Post Settings', 'gridbox' ),
 		'priority' => 30,
-		'panel' => 'gridbox_options_panel',
+		'panel'    => 'gridbox_options_panel',
 	) );
 
 	// Add Setting and Control for Excerpt Length.
 	$wp_customize->add_setting( 'gridbox_theme_options[excerpt_length]', array(
 		'default'           => 25,
-		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'type'              => 'option',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -40,15 +40,15 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	// Add Post Meta Settings.
 	$wp_customize->add_setting( 'gridbox_theme_options[postmeta_headline]', array(
 		'default'           => '',
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'esc_attr',
 	) );
 
 	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 		$wp_customize, 'gridbox_theme_options[postmeta_headline]', array(
-			'label' => esc_html__( 'Post Meta', 'gridbox' ),
-			'section' => 'gridbox_section_post',
+			'label'    => esc_html__( 'Post Meta', 'gridbox' ),
+			'section'  => 'gridbox_section_post',
 			'settings' => 'gridbox_theme_options[postmeta_headline]',
 			'priority' => 20,
 		)
@@ -56,7 +56,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_date]', array(
 		'default'           => true,
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
@@ -71,7 +71,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_author]', array(
 		'default'           => true,
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
@@ -86,7 +86,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_category]', array(
 		'default'           => true,
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
@@ -102,15 +102,15 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	// Add Single Post Settings.
 	$wp_customize->add_setting( 'gridbox_theme_options[single_post_headline]', array(
 		'default'           => '',
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'esc_attr',
 	) );
 
 	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 		$wp_customize, 'gridbox_theme_options[single_post_headline]', array(
-			'label' => esc_html__( 'Single Posts', 'gridbox' ),
-			'section' => 'gridbox_section_post',
+			'label'    => esc_html__( 'Single Posts', 'gridbox' ),
+			'section'  => 'gridbox_section_post',
 			'settings' => 'gridbox_theme_options[single_post_headline]',
 			'priority' => 60,
 		)
@@ -118,7 +118,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'gridbox_theme_options[meta_tags]', array(
 		'default'           => true,
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
@@ -133,7 +133,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'gridbox_theme_options[post_navigation]', array(
 		'default'           => true,
-		'type'           	=> 'option',
+		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
@@ -160,7 +160,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'gridbox_theme_options[post_image_archives]', array(
 		'default'           => true,
 		'type'              => 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
@@ -176,7 +176,7 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'gridbox_theme_options[featured_image]', array(
 		'default'           => true,
 		'type'              => 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'gridbox_sanitize_checkbox',
 	) );
 
@@ -186,6 +186,17 @@ function gridbox_customize_register_post_settings( $wp_customize ) {
 		'settings' => 'gridbox_theme_options[featured_image]',
 		'type'     => 'checkbox',
 		'priority' => 110,
+	) );
+
+	// Add Partial for Excerpt Length and Post Images on blog and archives.
+	$wp_customize->selective_refresh->add_partial( 'gridbox_blog_layout_partial', array(
+		'selector'         => '.site-main .post-wrapper',
+		'settings'         => array(
+			'gridbox_theme_options[excerpt_length]',
+			'gridbox_theme_options[post_image_archives]',
+		),
+		'render_callback'  => 'gridbox_customize_partial_blog_layout',
+		'fallback_refresh' => false,
 	) );
 }
 add_action( 'customize_register', 'gridbox_customize_register_post_settings' );

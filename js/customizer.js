@@ -55,6 +55,22 @@
 		} );
 	} );
 
+	// Blog Layout.
+	wp.customize( 'gridbox_theme_options[post_layout]', function( value ) {
+		value.bind( function( newval ) {
+			if ( 'two-columns' === newval ) {
+				$( 'body' ).addClass( 'post-layout-two-columns' );
+				$( 'body' ).removeClass( 'post-layout-three-columns post-layout-four-columns' );
+			} else if ( 'three-columns' === newval ) {
+				$( 'body' ).addClass( 'post-layout-three-columns' );
+				$( 'body' ).removeClass( 'post-layout-two-columns post-layout-four-columns' );
+			} else if ( 'four-columns' === newval ) {
+				$( 'body' ).addClass( 'post-layout-four-columns' );
+				$( 'body' ).removeClass( 'post-layout-two-columns post-layout-three-columns' );
+			}
+		} );
+	} );
+
 	// Blog Title textfield.
 	wp.customize( 'gridbox_theme_options[blog_title]', function( value ) {
 		value.bind( function( to ) {

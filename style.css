@@ -2703,8 +2703,12 @@ object {
 	border: 2px dashed #0085ba;
 }
 
-/* Add some space around the visual edit shortcut buttons. */
+/* Add some styling for visual edit shortcut buttons. */
 .magazine-widgets-placeholder .customize-partial-edit-shortcut button {
 	left: 15px;
 	top: 12px;
+}
+
+.customize-partial-edit-shortcut-gridbox_blog_layout_partial button {
+	top: 50px;
 }
