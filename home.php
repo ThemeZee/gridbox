@@ -23,16 +23,8 @@ endif;
 gridbox_magazine_widgets();
 
 // Display Blog Title.
-if ( '' !== $theme_options['blog_title'] ) : ?>
-
-	<header class="page-header clearfix">
-
-		<h1 class="blog-title page-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
-		<p class="blog-description"><?php echo wp_kses_post( $theme_options['blog_description'] ); ?></p>
-
-	</header>
-
-<?php endif; ?>
+gridbox_blog_title();
+?>
 
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
