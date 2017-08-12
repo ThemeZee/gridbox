@@ -33,6 +33,7 @@
 	<footer class="entry-footer">
 
 		<?php gridbox_entry_tags(); ?>
+		<?php do_action( 'gridbox_author_bio' ); ?>
 		<?php gridbox_post_navigation(); ?>
 
 	</footer><!-- .entry-footer -->
