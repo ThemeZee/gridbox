@@ -705,7 +705,7 @@ textarea {
 
 .site-title a:hover,
 .site-title a:active {
-	color: rgba(255,255,255,0.75);
+	color: rgba(255,255,255,0.6);
 }
 
 .site-branding .custom-logo {
@@ -773,12 +773,12 @@ textarea {
 	text-decoration: none;
 	font-size: 16px;
 	font-size: 1rem;
+	color: #fff;
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.4em 0 0 0.2em;
-	color: #fff;
 	content: '\f431';
 	vertical-align: top;
 	text-decoration: inherit;
@@ -787,7 +787,6 @@ textarea {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
 }
 
 .main-navigation-menu a:link,
@@ -796,8 +795,9 @@ textarea {
 	text-decoration: none;
 }
 
-.main-navigation-menu li a:hover {
-	color: rgba(255,255,255,0.75);
+.main-navigation-menu a:hover,
+.main-navigation-menu a:active {
+	color: rgba(255,255,255,0.6);
 }
 
 .main-navigation-menu ul {
@@ -806,7 +806,6 @@ textarea {
 	display: none;
 	margin: 0;
 	padding: 0;
-	border-top: 1px solid rgba(255,255,255,0.2);
 	background: #111133;
 	list-style-position: outside;
 	list-style-type: none;
@@ -821,21 +820,16 @@ textarea {
 	padding: 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.1);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	-webkit-transition: none;
 	transition: none;
 }
 
-.main-navigation-menu ul li:last-child a {
-	border-bottom: none;
-}
-
 .main-navigation-menu ul .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.2em 0 0 0.2em;
-	color: #fff;
 	content: '\f431';
 	vertical-align: top;
 	text-decoration: inherit;
@@ -848,16 +842,11 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.main-navigation-menu ul .menu-item-has-children > a:hover:after {
-	text-decoration: none;
-}
-
 .main-navigation-menu li ul ul {
 	top: 0;
 	left: 100%;
-	margin-top: -1px;
 	padding: 0;
-	border: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.1);
 }
 
 .main-navigation-menu li.menu-item-has-children:hover > ul,
@@ -870,14 +859,14 @@ textarea {
 	text-decoration: underline;
 }
 
-.main-navigation-menu ul li.current-menu-item > a:after {
+.main-navigation-menu li.current-menu-item > a:after {
 	text-decoration: none;
 }
 
 /* Mega Menu Styling */
 .mega-menu-content .mega-menu-widget ul li {
 	display: block;
-	border-top: 1px solid rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .mega-menu-content .mega-menu-widget ul li a {
@@ -907,6 +896,7 @@ textarea {
 	display: inline-block;
 	padding: 0.5em;
 	text-decoration: none;
+	color: #fff;
 }
 
 .social-icons-menu li a .screen-reader-text {
@@ -916,7 +906,6 @@ textarea {
 /* Add Genericons */
 .social-icons-menu li a:before {
 	display: inline-block;
-	color: #fff;
 	vertical-align: top;
 	text-decoration: inherit;
 	font-size: 16px;
@@ -1239,8 +1228,8 @@ textarea {
 
 /* Page Links */
 .page-links {
-	margin: 0;
-	word-spacing: 1em;
+	margin: 0 0 1.5em;
+	word-spacing: 0.75em;
 	font-weight: bold;
 }
 
@@ -1851,7 +1840,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta {
 }
 
 .site-footer {
-	color: rgba(255,255,255,0.75);
+	color: rgba(255,255,255,0.6);
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -1863,7 +1852,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta {
 
 .site-footer a:hover,
 .site-footer a:active {
-	color: rgba(255,255,255,0.75);
+	color: rgba(255,255,255,0.6);
 }
 
 .site-footer .site-info {
@@ -2186,14 +2175,20 @@ object {
 	.main-navigation-toggle {
 		display: inline-block;
 		float: right;
-		margin: 1em 0;
+		margin: 1em 0 0;
 		padding: 1em;
+		color: #fff;
+		background: none;
+	}
+
+	.main-navigation-toggle:focus {
+		color: #fff;
 		background: none;
 	}
 
 	.main-navigation-toggle:hover,
-	.main-navigation-toggle:focus,
 	.main-navigation-toggle:active {
+		color: rgba(255,255,255,0.6);
 		background: none;
 		cursor: pointer;
 	}
@@ -2201,7 +2196,6 @@ object {
 	.main-navigation-toggle:after {
 		display: inline-block;
 		float: left;
-		color: #fff;
 		content: '\f419';
 		vertical-align: middle;
 		text-decoration: inherit;
@@ -2212,17 +2206,13 @@ object {
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.main-navigation-toggle:hover:after {
-		color: rgba(255,255,255,0.75);
-	}
-
 	/* Main Navigation Menu */
 	.main-navigation-menu {
 		display: none;
 		float: left;
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 		width: 100%;
-		border-top: 1px solid rgba(255,255,255,0.2);
+		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu li {
@@ -2233,7 +2223,7 @@ object {
 		display: block;
 		clear: left;
 		padding: 1.2em;
-		border-bottom: 1px solid rgba(255,255,255,0.2);
+		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu ul {
@@ -2261,18 +2251,8 @@ object {
 		padding-left: 8em;
 	}
 
-	.main-navigation-menu ul li:last-child a {
-		border-bottom: 1px solid rgba(255,255,255,0.2);
-	}
-
 	.main-navigation-menu li ul ul {
 		border: none;
-		border-top: 1px solid rgba(255,255,255,0.2);
-	}
-
-	.main-navigation-menu li.current-menu-item > a {
-		border-bottom: 1px solid rgba(255,255,255,0.2);
-		text-decoration: underline;
 	}
 
 	/* Mobile Submenu Dropdowns */
@@ -2280,15 +2260,17 @@ object {
 		display: block;
 		float: right;
 		margin: 0;
-		padding: 0.8em 1.2em;
+		padding: 1em 1.2em;
+		color: #fff;
+		background: none;
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:hover {
+		color: rgba(255,255,255,0.6);
 		cursor: pointer;
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:before {
-		color: #fff;
 		content: '\f431';
 		vertical-align: middle;
 		text-decoration: inherit;
@@ -2303,12 +2285,8 @@ object {
 		content: '\f432';
 	}
 
-	.main-navigation-menu .submenu-dropdown-toggle:hover:before {
-		color: rgba(255,255,255,0.75);
-	}
-
 	.main-navigation-menu ul .submenu-dropdown-toggle {
-		padding: 0.5em 1em;
+		padding: 0.6em 1em;
 	}
 
 	.main-navigation-menu ul .submenu-dropdown-toggle:before {
@@ -2330,7 +2308,6 @@ object {
 	.mega-menu-item .mega-menu-six-columns > li {
 		width: 50%;
 	}
-
 }
 
 /*--------------------------------------------------------------
