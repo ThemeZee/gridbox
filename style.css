@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website.
-Version: 1.4.1
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gridbox
@@ -1884,6 +1884,9 @@ object {
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	color: #555;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -1896,7 +1899,7 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: 0.75em 0;
 }
 
 /*--------------------------------------------------------------
@@ -1908,6 +1911,9 @@ object {
 
 .gallery-item {
 	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 1em 1.5em 0 0;
 	width: 100%;
 	vertical-align: top;
 	text-align: center;
@@ -1947,6 +1953,9 @@ object {
 
 .gallery-caption {
 	display: block;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	color: #555;
 }
 
 /*--------------------------------------------------------------
@@ -2380,6 +2389,13 @@ object {
 		font-size: 2rem;
 	}
 
+	/* Gallery */
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
+		max-width: 25%;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2512,6 +2528,19 @@ object {
 		font-size: 1.5rem;
 	}
 
+	/* Gallery */
+	.gallery-item {
+		padding: 0.75em 1em 0 0;
+	}
+
+	.gallery-columns-4 .gallery-item,
+	.gallery-columns-5 .gallery-item,
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
+		max-width: 50%;
+	}
 }
 
 /*--------------------------------------------------------------
