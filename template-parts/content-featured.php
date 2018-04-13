@@ -20,7 +20,7 @@
 
 			else : ?>
 
-				<img src="<?php echo get_template_directory_uri(); ?>/images/default-featured-image.png" class="featured-image default-featured-image wp-post-image" />
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-featured-image.png" class="featured-image default-featured-image wp-post-image" />
 
 			<?php endif;?>
 

@@ -174,7 +174,7 @@ function gridbox_theme_info_page_css( $hook ) {
 	}
 
 	// Embed theme info css style.
-	wp_enqueue_style( 'gridbox-theme-info-css', get_template_directory_uri() . '/css/theme-info.css' );
+	wp_enqueue_style( 'gridbox-theme-info-css', get_template_directory_uri() . '/assets/css/theme-info.css' );
 
 }
 add_action( 'admin_enqueue_scripts', 'gridbox_theme_info_page_css' );
