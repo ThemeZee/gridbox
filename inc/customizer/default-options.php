@@ -8,6 +8,25 @@
  */
 
 /**
+* Get a single theme option
+*
+* @return mixed
+*/
+function gridbox_get_option( $option_name = '' ) {
+
+	// Get all Theme Options from Database.
+	$theme_options = gridbox_theme_options();
+
+	// Return single option.
+	if ( isset( $theme_options[ $option_name ] ) ) {
+		return $theme_options[ $option_name ];
+	}
+
+	return false;
+}
+
+
+/**
  * Get saved user settings from database or theme defaults
  *
  * @return array
@@ -19,7 +38,6 @@ function gridbox_theme_options() {
 
 	// Return theme options.
 	return $theme_options;
-
 }
 
 
@@ -40,6 +58,7 @@ function gridbox_default_options() {
 		'blog_title'            => '',
 		'blog_description'      => '',
 		'post_layout'           => 'three-columns',
+		'read_more_text'        => esc_html__( 'Read more', 'gridbox' ),
 		'blog_magazine_widgets' => true,
 		'excerpt_length'        => 25,
 		'meta_date'             => true,

@@ -296,13 +296,18 @@ if ( ! function_exists( 'gridbox_more_link' ) ) :
 	 */
 	function gridbox_more_link() {
 
-		// Get theme options from database.
-		$theme_options = gridbox_theme_options();
+		// Return early if there is no excerpt.
+		if ( ! gridbox_get_option( 'excerpt_length' ) > 0 ) {
+			return;
+		}
 
-		// Display read more button if there is excerpt.
-		if ( $theme_options['excerpt_length'] > 0 ) : ?>
+		// Get Read More Text.
+		$read_more = gridbox_get_option( 'read_more_text' );
 
-			<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+		if ( '' !== $read_more || is_customize_preview() ) :
+		?>
+
+			<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php echo esc_html( $read_more ); ?></a>
 
 		<?php
 		endif;
