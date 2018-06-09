@@ -144,7 +144,7 @@ function gridbox_customize_partial_blogdescription() {
  * Embed JS file to make Theme Customizer preview reload changes asynchronously.
  */
 function gridbox_customize_preview_js() {
-	wp_enqueue_script( 'gridbox-customizer-preview', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20170806', true );
+	wp_enqueue_script( 'gridbox-customizer-preview', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20180609', true );
 }
 add_action( 'customize_preview_init', 'gridbox_customize_preview_js' );
 
@@ -153,7 +153,7 @@ add_action( 'customize_preview_init', 'gridbox_customize_preview_js' );
  * Embed CSS styles for the theme options in the Customizer
  */
 function gridbox_customize_preview_css() {
-	wp_enqueue_style( 'gridbox-customizer-css', get_template_directory_uri() . '/assets/css/customizer.css', array(), '20170806' );
+	wp_enqueue_style( 'gridbox-customizer-css', get_template_directory_uri() . '/assets/css/customizer.css', array(), '20180609' );
 }
 add_action( 'customize_controls_print_styles', 'gridbox_customize_preview_css' );
 

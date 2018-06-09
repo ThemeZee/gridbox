@@ -21,33 +21,6 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'panel'    => 'gridbox_options_panel',
 	) );
 
-	// Add Blog Layout setting and control.
-	$wp_customize->add_setting( 'gridbox_theme_options[post_layout]', array(
-		'default'           => 'three-columns',
-		'type'              => 'option',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'gridbox_sanitize_select',
-		)
-	);
-	$wp_customize->add_control( 'gridbox_theme_options[post_layout]', array(
-		'label'    => esc_html__( 'Blog Layout', 'gridbox' ),
-		'section'  => 'gridbox_section_blog',
-		'settings' => 'gridbox_theme_options[post_layout]',
-		'type'     => 'select',
-		'priority' => 10,
-		'choices'  => array(
-			'two-columns'   => esc_html__( 'Two Columns', 'gridbox' ),
-			'three-columns' => esc_html__( 'Three Columns', 'gridbox' ),
-			'four-columns'  => esc_html__( 'Four Columns', 'gridbox' ),
-		),
-	) );
-
-	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[post_layout]', array(
-		'selector'         => '.site-main .post-wrapper',
-		'render_callback'  => 'gridbox_customize_partial_blog_layout',
-		'fallback_refresh' => false,
-	) );
-
 	// Add Blog Title setting and control.
 	$wp_customize->add_setting( 'gridbox_theme_options[blog_title]', array(
 		'default'           => '',
@@ -61,7 +34,7 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'section'  => 'gridbox_section_blog',
 		'settings' => 'gridbox_theme_options[blog_title]',
 		'type'     => 'text',
-		'priority' => 20,
+		'priority' => 10,
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[blog_title]', array(
@@ -83,7 +56,7 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'section'  => 'gridbox_section_blog',
 		'settings' => 'gridbox_theme_options[blog_description]',
 		'type'     => 'textarea',
-		'priority' => 30,
+		'priority' => 20,
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[blog_description]', array(
@@ -92,13 +65,72 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'fallback_refresh' => false,
 	) );
 
+	// Add Blog Layout setting and control.
+	$wp_customize->add_setting( 'gridbox_theme_options[post_layout]', array(
+		'default'           => 'three-columns',
+		'type'              => 'option',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'gridbox_sanitize_select',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[post_layout]', array(
+		'label'    => esc_html__( 'Blog Layout', 'gridbox' ),
+		'section'  => 'gridbox_section_blog',
+		'settings' => 'gridbox_theme_options[post_layout]',
+		'type'     => 'select',
+		'priority' => 30,
+		'choices'  => array(
+			'two-columns'   => esc_html__( 'Two Columns', 'gridbox' ),
+			'three-columns' => esc_html__( 'Three Columns', 'gridbox' ),
+			'four-columns'  => esc_html__( 'Four Columns', 'gridbox' ),
+		),
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'gridbox_theme_options[post_layout]', array(
+		'selector'         => '.site-main .post-wrapper',
+		'render_callback'  => 'gridbox_customize_partial_blog_layout',
+		'fallback_refresh' => false,
+	) );
+
+	// Add Setting and Control for Excerpt Length.
+	$wp_customize->add_setting( 'gridbox_theme_options[excerpt_length]', array(
+		'default'           => 25,
+		'type'              => 'option',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[excerpt_length]', array(
+		'label'    => esc_html__( 'Excerpt Length', 'gridbox' ),
+		'section'  => 'gridbox_section_blog',
+		'settings' => 'gridbox_theme_options[excerpt_length]',
+		'type'     => 'text',
+		'priority' => 40,
+	) );
+
+	// Add Setting and Control for Read More Text.
+	$wp_customize->add_setting( 'gridbox_theme_options[read_more_text]', array(
+		'default'           => esc_html__( 'Read more', 'gridbox' ),
+		'type'              => 'option',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'gridbox_theme_options[read_more_text]', array(
+		'label'    => esc_html__( 'Read More Text', 'gridbox' ),
+		'section'  => 'gridbox_section_blog',
+		'settings' => 'gridbox_theme_options[read_more_text]',
+		'type'     => 'text',
+		'priority' => 50,
+	) );
+
 	// Add Magazine Widgets Headline.
 	$wp_customize->add_control( new Gridbox_Customize_Header_Control(
 		$wp_customize, 'gridbox_theme_options[blog_magazine_widgets_title]', array(
 			'label'    => esc_html__( 'Magazine Widgets', 'gridbox' ),
 			'section'  => 'gridbox_section_blog',
 			'settings' => array(),
-			'priority' => 40,
+			'priority' => 60,
 		)
 	) );
 
@@ -115,7 +147,7 @@ function gridbox_customize_register_blog_settings( $wp_customize ) {
 		'section'  => 'gridbox_section_blog',
 		'settings' => 'gridbox_theme_options[blog_magazine_widgets]',
 		'type'     => 'checkbox',
-		'priority' => 50,
+		'priority' => 70,
 	) );
 }
 add_action( 'customize_register', 'gridbox_customize_register_blog_settings' );
