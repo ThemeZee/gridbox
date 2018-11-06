@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website.
-Version: 1.6
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gridbox
@@ -154,10 +154,6 @@ figure {
 hr {
 	box-sizing: content-box;
 	height: 0;
-}
-
-pre {
-	overflow: auto;
 }
 
 code,
@@ -337,11 +333,11 @@ address {
 
 pre {
 	overflow: auto;
-	margin-bottom: 1.6em;
-	padding: 1.6em;
+	margin-bottom: 1.5em;
+	padding: 1.5em;
 	max-width: 100%;
-	border: 1px solid #ddd;
-	background: #fff;
+	border: 1px solid #e5e5e5;
+	background: #f5f5f5;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -711,6 +707,7 @@ textarea {
 	font-size: 28px;
 	font-size: 1.75rem;
 	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	line-height: 1.6;
 }
 
 .site-title a:link,
@@ -1209,6 +1206,10 @@ textarea {
 .entry-content {
 	font-size: 17px;
 	font-size: 1.0625rem;
+}
+
+.entry-content a {
+	text-decoration: underline;
 }
 
 .wp-post-image {
