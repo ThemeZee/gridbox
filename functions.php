@@ -55,17 +55,17 @@ if ( ! function_exists( 'gridbox_setup' ) ) :
 
 		// Set up the WordPress core custom logo feature.
 		add_theme_support( 'custom-logo', apply_filters( 'gridbox_custom_logo_args', array(
-			'height' => 40,
-			'width' => 200,
+			'height'      => 40,
+			'width'       => 200,
 			'flex-height' => true,
-			'flex-width' => true,
+			'flex-width'  => true,
 		) ) );
 
 		// Set up the WordPress core custom header feature.
-		add_theme_support('custom-header', apply_filters( 'gridbox_custom_header_args', array(
+		add_theme_support( 'custom-header', apply_filters( 'gridbox_custom_header_args', array(
 			'header-text' => false,
-			'width'	=> 1920,
-			'height' => 480,
+			'width'       => 1920,
+			'height'      => 480,
 			'flex-height' => true,
 		) ) );
 
@@ -78,6 +78,34 @@ if ( ! function_exists( 'gridbox_setup' ) ) :
 		// Add Theme Support for Selective Refresh in Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Add custom color palette for Gutenberg.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html_x( 'Primary', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'primary',
+				'color' => apply_filters( 'gridbox_primary_color', '#4477aa' ),
+			),
+			array(
+				'name'  => esc_html_x( 'White', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html_x( 'Light Gray', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'light-gray',
+				'color' => '#f0f0f0',
+			),
+			array(
+				'name'  => esc_html_x( 'Dark Gray', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'dark-gray',
+				'color' => '#777777',
+			),
+			array(
+				'name'  => esc_html_x( 'Black', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'black',
+				'color' => '#222222',
+			),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'gridbox_setup' );
@@ -103,25 +131,24 @@ add_action( 'after_setup_theme', 'gridbox_content_width', 0 );
 function gridbox_widgets_init() {
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Sidebar', 'gridbox' ),
-		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on single posts and pages.', 'gridbox' ),
+		'name'          => esc_html__( 'Sidebar', 'gridbox' ),
+		'id'            => 'sidebar',
+		'description'   => esc_html__( 'Appears on single posts and pages.', 'gridbox' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-		'after_title' => '</h3></div>',
-	));
+		'after_widget'  => '</aside>',
+		'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
+	) );
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Magazine Homepage', 'gridbox' ),
-		'id' => 'magazine-homepage',
-		'description' => esc_html__( 'Appears on blog index and Magazine Homepage template. You can use the Magazine widgets here.', 'gridbox' ),
+		'name'          => esc_html__( 'Magazine Homepage', 'gridbox' ),
+		'id'            => 'magazine-homepage',
+		'description'   => esc_html__( 'Appears on blog index and Magazine Homepage template. You can use the Magazine widgets here.', 'gridbox' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-		'after_title' => '</h3></div>',
-	));
-
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
+	) );
 }
 add_action( 'widgets_init', 'gridbox_widgets_init' );
 
@@ -167,12 +194,19 @@ add_action( 'wp_enqueue_scripts', 'gridbox_scripts' );
  * Enqueue custom fonts.
  */
 function gridbox_custom_fonts() {
-
-	// Register and Enqueue Theme Fonts.
 	wp_enqueue_style( 'gridbox-custom-fonts', get_template_directory_uri() . '/assets/css/custom-fonts.css', array(), '20180413' );
-
 }
 add_action( 'wp_enqueue_scripts', 'gridbox_custom_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'gridbox_custom_fonts', 1 );
+
+
+/**
+ * Enqueue editor styles for the new Gutenberg Editor.
+ */
+function gridbox_block_editor_assets() {
+	wp_enqueue_style( 'gridbox-editor-styles', get_theme_file_uri( '/assets/css/gutenberg-styles.css' ), array(), '20181102', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'gridbox_block_editor_assets' );
 
 
 /**
