@@ -53,6 +53,10 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
     color: #4477aa;
 }
 
+.edit-post-visual-editor .editor-block-list__block .has-text-color a {
+    color: inherit;
+}
+
 .edit-post-visual-editor .editor-block-list__block pre {
 	overflow: auto;
 	padding: 1.5em;
@@ -216,6 +220,10 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
 # 4.0 - Text Colors
 --------------------------------------------------------------*/
 .has-primary-color {
+	color: #111133;
+}
+
+.has-secondary-color {
 	color: #4477aa;
 }
 
@@ -239,6 +247,10 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
 # 5.0 - Background Colors
 --------------------------------------------------------------*/
 .has-primary-background-color {
+	background-color: #111133;
+}
+
+.has-secondary-background-color {
 	background-color: #4477aa;
 }
 

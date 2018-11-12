@@ -26,6 +26,10 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 1.7.1 =
+* added secondary color for Gutenberg
+* fixed styling of Read More button
+
 = 1.7 =
 * added styling for Gutenberg blocks
 * added custom color palette for Gutenberg

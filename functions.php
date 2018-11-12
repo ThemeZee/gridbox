@@ -83,7 +83,12 @@ if ( ! function_exists( 'gridbox_setup' ) ) :
 			array(
 				'name'  => esc_html_x( 'Primary', 'Gutenberg Color Palette', 'gridbox' ),
 				'slug'  => 'primary',
-				'color' => apply_filters( 'gridbox_primary_color', '#4477aa' ),
+				'color' => apply_filters( 'gridbox_primary_color', '#111133' ),
+			),
+			array(
+				'name'  => esc_html_x( 'Secondary', 'Gutenberg Color Palette', 'gridbox' ),
+				'slug'  => 'secondary',
+				'color' => apply_filters( 'gridbox_secondary_color', '#4477aa' ),
 			),
 			array(
 				'name'  => esc_html_x( 'White', 'Gutenberg Color Palette', 'gridbox' ),
