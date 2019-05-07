@@ -111,6 +111,9 @@ if ( ! function_exists( 'gridbox_setup' ) ) :
 				'color' => '#222222',
 			),
 		) );
+
+		// Add support for responsive embed blocks.
+		add_theme_support( 'responsive-embeds' );
 	}
 endif;
 add_action( 'after_setup_theme', 'gridbox_setup' );
