@@ -397,9 +397,10 @@ function gridbox_footer_text() {
 
 	<span class="credit-link">
 		<?php
-		// translators: Theme Name
-		printf( esc_html__( 'WordPress Theme: %s by ThemeZee.', 'gridbox' ),
-			'<a href="https://themezee.com/themes/gridbox/" title="Gridbox WordPress Theme">Gridbox</a>'
+		// translators: Theme Name and Link to ThemeZee.
+		printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'gridbox' ),
+			esc_html__( 'Gridbox', 'gridbox' ),
+			'<a href="https://themezee.com/" target="_blank" rel="nofollow">ThemeZee</a>'
 		);
 		?>
 	</span>
