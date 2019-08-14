@@ -1162,6 +1162,156 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+## 11.3 - Magazine Blocks
+--------------------------------------------------------------*/
+:root {
+	--tz-column-gap: 2em;
+}
+
+.tz-magazine-block .tz-entry-title,
+.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title,
+.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
+	font-size: 16px;
+	font-size: 1.0rem;
+}
+
+.tz-magazine-block .tz-entry-meta {
+	margin: 0.25em 0;
+	font-size: 14px;
+    font-size: 0.875rem;
+}
+
+.tz-magazine-block .tz-meta-field {
+	margin-right: 0;
+}
+
+.tz-magazine-block .tz-meta-field a {
+	text-decoration: none;
+}
+
+.tz-magazine-block .tz-entry-content {
+	margin-top: 1em;
+	font-size: 17px;
+    font-size: 1.0625rem;
+}
+
+@media only screen and (min-width: 320px) {
+	.tz-magazine-block .tz-entry-title,
+	.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
+		font-size: 17px;
+		font-size: 1.0625rem;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.tz-magazine-block .tz-entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
+	.tz-magazine-vertical .tz-entry-title,
+	.tz-magazine-horizontal .tz-entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
+	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
+		font-size: 16px;
+		font-size: 1.0rem;
+	}
+
+	.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.tz-magazine-vertical .tz-entry-title,
+	.tz-magazine-horizontal .tz-entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.tz-magazine-block .tz-entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title,
+	.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+		font-size: 17px;
+		font-size: 1.0625rem;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	:root {
+		--tz-column-gap: 2.5em;
+	}
+
+	.tz-magazine-block .tz-entry-title,
+	.tz-magazine-vertical .tz-entry-title,
+	.tz-magazine-horizontal .tz-entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
+	.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
+	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title,
+	.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.tz-magazine-block .tz-entry-meta {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.tz-magazine-block .tz-entry-title,
+	.tz-magazine-vertical .tz-entry-title,
+	.tz-magazine-horizontal .tz-entry-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+
+	.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title,
+	.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+/*--------------------------------------------------------------
 # 12.0 - Content Area
 --------------------------------------------------------------*/
 
