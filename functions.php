@@ -218,6 +218,17 @@ add_action( 'enqueue_block_editor_assets', 'gridbox_block_editor_assets' );
 
 
 /**
+ * Make custom image sizes available in Gutenberg.
+ */
+function gridbox_add_image_size_names( $sizes ) {
+	return array_merge( $sizes, array(
+		'post-thumbnail' => esc_html__( 'Gridbox Single Post', 'gridbox' ),
+	) );
+}
+add_filter( 'image_size_names_choose', 'gridbox_add_image_size_names' );
+
+
+/**
  * Include Files
  */
 
