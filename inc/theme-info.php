@@ -47,7 +47,8 @@ function gridbox_theme_info_page() {
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/gridbox/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'gridbox' ); ?></a>
 				<a href="http://preview.themezee.com/?demo=gridbox&utm_source=theme-info&utm_campaign=gridbox" target="_blank"><?php esc_html_e( 'Theme Demo', 'gridbox' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/gridbox-documentation/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=gridbox&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'gridbox' ); ?></a>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'gridbox' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/changelogs/?action=themezee-changelog&type=theme&slug=gridbox', 'gridbox' ) ); ?>" target="_blank"><?php esc_html_e( 'Theme Changelog', 'gridbox' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/gridbox/reviews/', 'gridbox' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'gridbox' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -150,7 +151,7 @@ function gridbox_theme_info_page() {
 				<?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'gridbox' ),
 					$theme->display( 'Name' ),
 					'<a target="_blank" href="' . __( 'https://themezee.com/', 'gridbox' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=gridbox" title="ThemeZee">ThemeZee</a>',
-					'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/gridbox/reviews/?filter=5', 'gridbox' ) . '" title="' . esc_attr__( 'Review Gridbox', 'gridbox' ) . '">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'
+					'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/gridbox/reviews/', 'gridbox' ) . '" title="' . esc_attr__( 'Review Gridbox', 'gridbox' ) . '">' . esc_html__( 'rate it', 'gridbox' ) . '</a>'
 				); ?>
 			</p>
 
