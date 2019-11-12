@@ -26,6 +26,9 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 1.8.2 - 2019-11-12 =
+* added font display swap to default theme fonts
+
 = 1.8.1 - 2019-10-23 =
 * added improved Theme Info section to Customizer
 
