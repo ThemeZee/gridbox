@@ -47,12 +47,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# 1.0 - Normalize
+# - CSS Variables
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# - Normalize
 --------------------------------------------------------------*/
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
@@ -257,7 +261,7 @@ th {
 }
 
 /*--------------------------------------------------------------
-# 2.0 - Typography
+# - Typography
 --------------------------------------------------------------*/
 body,
 button,
@@ -369,15 +373,16 @@ big {
 }
 
 /*--------------------------------------------------------------
-# 3.0 - Elements
+# - Elements
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
 }
 
+/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -499,7 +504,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# 4.0 - Forms
+# - Forms
 --------------------------------------------------------------*/
 button,
 input[type="button"],
@@ -560,8 +565,9 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 5.0 - Accessibility
+# - Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	position: absolute !important;
@@ -594,7 +600,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 6.0 - Alignments
+# - Alignments
 --------------------------------------------------------------*/
 .alignleft {
 	float: left;
@@ -615,7 +621,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 7.0 - Clearings
+# - Clearings
 --------------------------------------------------------------*/
 .clearfix:before,
 .clearfix:after,
@@ -634,7 +640,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 8.0 - Layout Structure
+# - Site Layout
 --------------------------------------------------------------*/
 .site {
 	margin: 0;
@@ -676,7 +682,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 9.0 - Header
+# - Header
 --------------------------------------------------------------*/
 .site-header {
 	background: #111133;
@@ -717,7 +723,7 @@ textarea {
 
 .site-title a:hover,
 .site-title a:active {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .site-branding .custom-logo {
@@ -750,11 +756,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 10.0 - Navigation
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## 10.1 - Main Navigation
+# - Navigation
 --------------------------------------------------------------*/
 .primary-navigation {
 	float: right;
@@ -809,7 +811,7 @@ textarea {
 
 .main-navigation-menu a:hover,
 .main-navigation-menu a:active {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .main-navigation-menu ul {
@@ -832,7 +834,7 @@ textarea {
 	padding: 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	border-top: 1px solid rgba(255,255,255,0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	-webkit-transition: none;
@@ -858,7 +860,7 @@ textarea {
 	top: 0;
 	left: 100%;
 	padding: 0;
-	border-left: 1px solid rgba(255,255,255,0.1);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .main-navigation-menu li.menu-item-has-children:hover > ul,
@@ -878,7 +880,7 @@ textarea {
 /* Mega Menu Styling */
 .mega-menu-content .mega-menu-widget ul li {
 	display: block;
-	border-top: 1px solid rgba(255,255,255,0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mega-menu-content .mega-menu-widget ul li a {
@@ -887,7 +889,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## 10.2 - Social Icons Menu
+# - Social Icons Menu
 --------------------------------------------------------------*/
 .social-icons-menu {
 	margin: 0;
@@ -927,41 +929,119 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.social-icons-menu li a:before { content: '\f408'; } /* Default Icon */
-.social-icons-menu li a[href*="codepen.io"]:before  { content: '\f216'; }
-.social-icons-menu li a[href*="digg.com"]:before { content: '\f221'; }
-.social-icons-menu li a[href*="dribbble.com"]:before { content: '\f201'; }
-.social-icons-menu li a[href*="facebook.com"]:before { content: '\f204'; }
-.social-icons-menu li a[href*="flickr.com"]:before { content: '\f211'; }
-.social-icons-menu li a[href*="plus.google.com"]:before { content: '\f218'; }
-.social-icons-menu li a[href*="github.com"]:before { content: '\f200'; }
-.social-icons-menu li a[href*="instagram.com"]:before { content: '\f215'; }
-.social-icons-menu li a[href*="linkedin.com"]:before { content: '\f207'; }
-.social-icons-menu li a[href*="pinterest.com"]:before { content: '\f209'; }
-.social-icons-menu li a[href*="polldaddy.com"]:before { content: '\f217'; }
-.social-icons-menu li a[href*="getpocket.com"]:before { content: '\f224'; }
-.social-icons-menu li a[href*="reddit.com"]:before { content: '\f222'; }
-.social-icons-menu li a[href*="spotify.com"]:before { content: '\f515'; }
+.social-icons-menu li a:before {
+	content: '\f408';
+}
+
+/* Default Icon */
+.social-icons-menu li a[href*="codepen.io"]:before {
+	content: '\f216';
+}
+
+.social-icons-menu li a[href*="digg.com"]:before {
+	content: '\f221';
+}
+
+.social-icons-menu li a[href*="dribbble.com"]:before {
+	content: '\f201';
+}
+
+.social-icons-menu li a[href*="facebook.com"]:before {
+	content: '\f204';
+}
+
+.social-icons-menu li a[href*="flickr.com"]:before {
+	content: '\f211';
+}
+
+.social-icons-menu li a[href*="plus.google.com"]:before {
+	content: '\f218';
+}
+
+.social-icons-menu li a[href*="github.com"]:before {
+	content: '\f200';
+}
+
+.social-icons-menu li a[href*="instagram.com"]:before {
+	content: '\f215';
+}
+
+.social-icons-menu li a[href*="linkedin.com"]:before {
+	content: '\f207';
+}
+
+.social-icons-menu li a[href*="pinterest.com"]:before {
+	content: '\f209';
+}
+
+.social-icons-menu li a[href*="polldaddy.com"]:before {
+	content: '\f217';
+}
+
+.social-icons-menu li a[href*="getpocket.com"]:before {
+	content: '\f224';
+}
+
+.social-icons-menu li a[href*="reddit.com"]:before {
+	content: '\f222';
+}
+
+.social-icons-menu li a[href*="spotify.com"]:before {
+	content: '\f515';
+}
+
 .social-icons-menu li a[href*="skype.com"]:before,
-.social-icons-menu li a[href*="skype:"]:before { content: '\f220'; }
-.social-icons-menu li a[href*="stumbleupon.com"]:before { content: '\f223'; }
-.social-icons-menu li a[href*="tumblr.com"]:before { content: '\f214'; }
-.social-icons-menu li a[href*="twitch.tv"]:before { content: '\f516'; }
-.social-icons-menu li a[href*="twitter.com"]:before { content: '\f202'; }
-.social-icons-menu li a[href*="vimeo.com"]:before  { content: '\f212'; }
-.social-icons-menu li a[href*="wordpress.org"]:before { content: '\f205'; }
-.social-icons-menu li a[href*="wordpress.com"]:before { content: '\f205'; }
-.social-icons-menu li a[href*="youtube.com"]:before { content: '\f213'; }
+.social-icons-menu li a[href*="skype:"]:before {
+	content: '\f220';
+}
+
+.social-icons-menu li a[href*="stumbleupon.com"]:before {
+	content: '\f223';
+}
+
+.social-icons-menu li a[href*="tumblr.com"]:before {
+	content: '\f214';
+}
+
+.social-icons-menu li a[href*="twitch.tv"]:before {
+	content: '\f516';
+}
+
+.social-icons-menu li a[href*="twitter.com"]:before {
+	content: '\f202';
+}
+
+.social-icons-menu li a[href*="vimeo.com"]:before {
+	content: '\f212';
+}
+
+.social-icons-menu li a[href*="wordpress.org"]:before {
+	content: '\f205';
+}
+
+.social-icons-menu li a[href*="wordpress.com"]:before {
+	content: '\f205';
+}
+
+.social-icons-menu li a[href*="youtube.com"]:before {
+	content: '\f213';
+}
+
 .social-icons-menu li a[href*="newsletter"]:before,
-.social-icons-menu li a[href*="mailto"]:before { content: '\f410'; }
+.social-icons-menu li a[href*="mailto"]:before {
+	content: '\f410';
+}
+
 .social-icons-menu li a[href*="/feed"]:before,
 .social-icons-menu li a[href*="/feed/"]:before,
 .social-icons-menu li a[href*="?feed=rss2"]:before,
 .social-icons-menu li a[href*="feedburner.google.com"]:before,
-.social-icons-menu li a[href*="feedburner.com"]:before { content: '\f413'; }
+.social-icons-menu li a[href*="feedburner.com"]:before {
+	content: '\f413';
+}
 
 /*--------------------------------------------------------------
-# 11.0 - Widgets
+# - Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 2.5em 0;
@@ -1000,14 +1080,14 @@ textarea {
 }
 
 .widget-title a:link,
-.widget-title a:visited  {
+.widget-title a:visited {
 	color: #111133;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .widget-title a:hover,
-.widget-title a:active  {
+.widget-title a:active {
 	color: #4477aa;
 }
 
@@ -1162,7 +1242,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## 11.3 - Magazine Blocks
+# - Plugins // move below later
 --------------------------------------------------------------*/
 :root {
 	--tz-column-gap: 2em;
@@ -1183,7 +1263,7 @@ textarea {
 .tz-magazine-block .tz-entry-meta {
 	margin: 0.25em 0;
 	font-size: 14px;
-    font-size: 0.875rem;
+	font-size: 0.875rem;
 }
 
 .tz-magazine-block .tz-meta-field {
@@ -1197,7 +1277,7 @@ textarea {
 .tz-magazine-block .tz-entry-content {
 	margin-top: 1em;
 	font-size: 17px;
-    font-size: 1.0625rem;
+	font-size: 1.0625rem;
 }
 
 @media only screen and (min-width: 320px) {
@@ -1312,15 +1392,11 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 12.0 - Content Area
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## 12.1 - Posts and Pages
+# - Posts and pages
 --------------------------------------------------------------*/
 .type-post,
 .type-page,
-.type-attachment  {
+.type-attachment {
 	margin: 0 0 2.5em 0;
 	max-width: 100%;
 }
@@ -1383,7 +1459,7 @@ textarea {
 }
 
 .more-link:link,
-.more-link:visited  {
+.more-link:visited {
 	color: #fff;
 }
 
@@ -1436,8 +1512,8 @@ textarea {
 body.date-hidden .type-post .entry-meta .meta-date,
 body.author-hidden .type-post .entry-meta .meta-author,
 body.categories-hidden .type-post .entry-meta .meta-category {
-	 position: absolute;
-	 clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
 body.author-hidden.categories-hidden .type-post .entry-meta .meta-date:after,
@@ -1543,7 +1619,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 .post-navigation .nav-links a:link,
-.post-navigation .nav-links a:visited  {
+.post-navigation .nav-links a:visited {
 	color: #fff;
 }
 
@@ -1700,7 +1776,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 /* Breadcrumbs */
 .breadcrumbs {
 	margin: 0;
-	border-bottom: 1px solid rgba(0,0,0,0.05);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .breadcrumbs-container {
@@ -1736,20 +1812,44 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	content: "\00bb"; /* Raquo */
 }
 
-.trail-separator-slash .trail-items li::after { content: "\002F"; }
-.trail-separator-dash .trail-items li::after { content: "\2013"; }
-.trail-separator-bull .trail-items li::after { content: "\2022"; }
-.trail-separator-arrow-bracket .trail-items li::after { content: "\003e"; }
-.trail-separator-raquo .trail-items li::after { content: "\00bb"; }
-.trail-separator-single-arrow .trail-items li::after { content: "\2192"; }
-.trail-separator-double-arrow .trail-items li::after { content: "\21D2"; }
+.trail-separator-slash .trail-items li::after {
+	content: "\002F";
+}
+
+.trail-separator-dash .trail-items li::after {
+	content: "\2013";
+}
+
+.trail-separator-bull .trail-items li::after {
+	content: "\2022";
+}
+
+.trail-separator-arrow-bracket .trail-items li::after {
+	content: "\003e";
+}
+
+.trail-separator-raquo .trail-items li::after {
+	content: "\00bb";
+}
+
+.trail-separator-single-arrow .trail-items li::after {
+	content: "\2192";
+}
+
+.trail-separator-double-arrow .trail-items li::after {
+	content: "\21D2";
+}
 
 .breadcrumbs .trail-items li:last-of-type::after {
 	display: none;
 }
 
 /*--------------------------------------------------------------
-# 13.0 - Featured Posts
+# - Archives and Blog Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# - Featured Posts
 --------------------------------------------------------------*/
 .featured-posts-wrap {
 	margin: 0 0 2.5em;
@@ -1796,7 +1896,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 .featured-posts .grid-post .type-post:hover .image-overlay {
-	background: rgba(0,0,0,0.1);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .featured-posts .grid-post .type-post .post-content {
@@ -1831,7 +1931,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 /*--------------------------------------------------------------
-# 14.0 - Gutenberg Blocks
+# - Blocks
 --------------------------------------------------------------*/
 
 /* Audio */
@@ -1872,8 +1972,8 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .wp-block-pullquote {
 	margin-bottom: 1.5em;
 	padding: 1.5em 0;
-    border-bottom: 4px solid #222;
-    border-top: 4px solid #222;
+	border-bottom: 4px solid #222;
+	border-top: 4px solid #222;
 }
 
 .wp-block-pullquote blockquote {
@@ -1900,11 +2000,11 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 
 /* Image */
 .wp-block-image .alignleft {
-    margin-right: 1.5em;
+	margin-right: 1.5em;
 }
 
 .wp-block-image .alignright {
-    margin-left: 1.5em;
+	margin-left: 1.5em;
 }
 
 /* Captions */
@@ -1916,7 +2016,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	color: #555;
 	font-size: 15px;
 	font-size: 0.9375rem;
-    text-align: center;
+	text-align: center;
 }
 
 /* Latest Posts */
@@ -1981,9 +2081,8 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 /*--------------------------------------------------------------
-# 15.0 - Comments
+# - Comments
 --------------------------------------------------------------*/
-
 .comments-area {
 	margin: 0 0 2.5em;
 }
@@ -2116,7 +2215,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 .reply .comment-reply-link:link,
-.reply .comment-reply-link:visited  {
+.reply .comment-reply-link:visited {
 	color: #fff;
 }
 
@@ -2159,14 +2258,14 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 /*--------------------------------------------------------------
-# 16.0 - Footer
+# - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
 	background: #111133;
 }
 
 .site-footer {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -2178,7 +2277,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 
 .site-footer a:hover,
 .site-footer a:active {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .site-footer .site-info {
@@ -2186,7 +2285,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 }
 
 /*--------------------------------------------------------------
-# 17.0 - Media
+# - Media - switch with footer
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -2285,11 +2384,11 @@ object {
 }
 
 /*--------------------------------------------------------------
-# 18.0 - Media Queries
+# - Plugins
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## 18.1 - Desktop X-Large ( < 1200px )
+# - Media Queries
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
 	.container {
@@ -2347,7 +2446,6 @@ object {
 		font-size: 32px;
 		font-size: 2rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2404,7 +2502,6 @@ object {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2469,7 +2566,6 @@ object {
 	}
 
 	/*** Mobile Main Navigation ***/
-
 	/* Reset */
 	.primary-navigation {
 		float: none;
@@ -2523,7 +2619,7 @@ object {
 
 	.main-navigation-toggle:hover,
 	.main-navigation-toggle:active {
-		color: rgba(255,255,255,0.6);
+		color: rgba(255, 255, 255, 0.6);
 		background: none;
 		cursor: pointer;
 	}
@@ -2547,7 +2643,7 @@ object {
 		float: left;
 		margin-bottom: 2em;
 		width: 100%;
-		border-bottom: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.main-navigation-menu li {
@@ -2558,7 +2654,7 @@ object {
 		display: block;
 		clear: left;
 		padding: 1.2em;
-		border-top: 1px solid rgba(255,255,255,0.1);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.main-navigation-menu ul {
@@ -2601,7 +2697,7 @@ object {
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:hover {
-		color: rgba(255,255,255,0.6);
+		color: rgba(255, 255, 255, 0.6);
 		cursor: pointer;
 	}
 
@@ -2630,7 +2726,7 @@ object {
 
 	/* Mega Menu Styling */
 	.mega-menu-item .mega-menu-content {
-		border-bottom: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.mega-menu-item .mega-menu-two-columns > li,
@@ -2662,7 +2758,6 @@ object {
 		width: 100%;
 		border-top: 2px solid #eee;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2763,7 +2858,6 @@ object {
 	.mega-menu-item .mega-menu-six-columns > li {
 		width: 100%;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2905,11 +2999,26 @@ object {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
-# 19.0 - Theme Option Styles
+## - Media Queries for Typography
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## - Media Queries for Layout
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## - Media Queries for Navigation
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## - Media Queries for Media
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# - Theme Options
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -2929,7 +3038,6 @@ object {
 	.sidebar-left .content-single {
 		padding-left: 2em;
 	}
-
 }
 
 @media only screen and (max-width: 55em) {
@@ -2938,7 +3046,6 @@ object {
 		padding: 0;
 		width: 100%;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2963,7 +3070,7 @@ object {
 		display: none;
 	}
 
-	.sticky-header.admin-bar .site-header  {
+	.sticky-header.admin-bar .site-header {
 		top: 32px;
 	}
 
@@ -2986,33 +3093,6 @@ object {
 @media only screen and (min-width: 60.001em) {
 	.main-navigation-menu {
 		display: block !important;
-	}
-
-}
-
-/*--------------------------------------------------------------
-# 21.0 - CSS Hacks for Safari
---------------------------------------------------------------*/
-
-/* Fix Flexbox issues for Safari 6.1-10.0 */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.magazine-grid .magazine-grid-post,
-		.post-wrapper .post-column,
-		.featured-posts .grid-post {
-			margin-right: -1px;
-		}
-	}
-}
-
-/* Fix Flexbox issues for Safari 10.1+ */
-@media not all and (min-resolution:.001dpcm) {
-	@media {
-		.magazine-grid .magazine-grid-post,
-		.post-wrapper .post-column,
-		.featured-posts .grid-post {
-			margin-right: -1px;
-		}
 	}
 }
 
@@ -3044,3 +3124,27 @@ object {
 .customize-partial-edit-shortcut-gridbox_blog_layout_partial button {
 	top: 50px;
 }
+
+/* Fix Flexbox issues for Safari 6.1-10.0 
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.magazine-grid .magazine-grid-post,
+		.post-wrapper .post-column,
+		.featured-posts .grid-post {
+			margin-right: -1px;
+		}
+	}
+}
+*/
+
+/* Fix Flexbox issues for Safari 10.1+
+@media not all and (min-resolution:.001dpcm) {
+	@media {
+		.magazine-grid .magazine-grid-post,
+		.post-wrapper .post-column,
+		.featured-posts .grid-post {
+			margin-right: -1px;
+		}
+	}
+}
+*/
