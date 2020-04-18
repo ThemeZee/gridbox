@@ -1,0 +1,76 @@
+/* Archive Title */
+.page-header {
+	margin-bottom: 2.5em;
+}
+
+.page-header .blog-description,
+.page-header .archive-description {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.page-header .blog-description,
+.page-header .archive-description p {
+	margin: 0.5em 0 0;
+}
+
+/* Archive Posts Styling */
+.post-wrapper .type-post .entry-content {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.post-wrapper .type-post .entry-excerpt p {
+	margin: 0.5em 0 1em;
+}
+
+.post-wrapper .type-post .entry-meta {
+	margin-bottom: 0.5em;
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+/* Archive Posts Columns */
+.post-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -2.5em;
+}
+
+.post-wrapper .post-column {
+	box-sizing: border-box;
+	padding-right: 2.5em;
+}
+
+/* Two Column Layout */
+.post-layout-two-columns .post-wrapper .post-column {
+	width: 50%;
+}
+
+.post-layout-two-columns .post-wrapper .type-post .entry-title {
+	font-size: 32px;
+	font-size: 2rem;
+}
+
+/* Three Column Layout */
+.post-layout-three-columns .post-wrapper .post-column {
+	width: 33.3333333333333%;
+}
+
+.post-layout-three-columns .post-wrapper .type-post .entry-title {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+/* Four Column Layout */
+.post-layout-four-columns .post-wrapper .post-column {
+	width: 25%;
+}
+
+.post-layout-four-columns .post-wrapper .type-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}

@@ -1,0 +1,29 @@
+/* Read more Link */
+.more-link {
+	display: inline-block;
+	margin: 0;
+	padding: 0.3em 0.8em;
+	background: #111133;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	font-size: 0.875rem;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.more-link:link,
+.more-link:visited  {
+	color: #fff;
+}
+
+.more-link:hover,
+.more-link:active {
+	background: #4477aa;
+}
+
+.entry-content .more-link {
+	text-decoration: none;
+}

@@ -1,0 +1,27 @@
+/* Theme Pagination */
+.pagination {
+	margin: 0 0 2.5em;
+}
+
+.pagination a,
+.pagination .current {
+	display: inline-block;
+	margin: 0 2px 2px 0;
+	padding: 0.4em 0.9em;
+	background: #111133;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination a:link,
+.pagination a:visited {
+	color: #fff;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.pagination a:hover,
+.pagination .current {
+	background: #4477aa;
+}

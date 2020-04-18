@@ -1,0 +1,96 @@
+/* Entry Meta */
+.entry-meta {
+	margin: 0.25em 0 0;
+	color: #888;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.entry-meta a:link,
+.entry-meta a:visited {
+	color: #888;
+}
+
+.entry-meta a:hover,
+.entry-meta a:active {
+	color: #444;
+}
+
+.entry-meta span::after {
+	margin-left: 0.2em;
+	content: "\002F";
+}
+
+.entry-meta span:last-child::after {
+	display: none;
+}
+
+/* Hide post meta if they are deactivated in settings */
+body.date-hidden .type-post .entry-meta .meta-date,
+body.author-hidden .type-post .entry-meta .meta-author,
+body.categories-hidden .type-post .entry-meta .meta-category {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+body.author-hidden.categories-hidden .type-post .entry-meta .meta-date::after,
+body.categories-hidden .type-post .entry-meta .meta-author::after {
+	display: none;
+}
+
+body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry-meta {
+	display: none;
+}
+
+/* Entry Tags & Tagcloud Widget */
+.entry-tags {
+	margin: 0 0 2em;
+}
+
+.widget_tag_cloud .tagcloud,
+.entry-tags .meta-tags {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.widget_tag_cloud .tagcloud::before,
+.widget_tag_cloud .tagcloud::after,
+.entry-tags .meta-tags::before,
+.entry-tags .meta-tags::after {
+	display: table;
+	content: "";
+}
+
+.widget_tag_cloud .tagcloud::after,
+.entry-tags .meta-tags::after {
+	clear: both;
+}
+
+.widget_tag_cloud .tagcloud a,
+.entry-tags .meta-tags a {
+	display: inline-block;
+	float: left;
+	margin: 0 2px 2px 0;
+	padding: 0.2em 0.5em 0.3em;
+	background: #4477aa;
+	text-decoration: none;
+	font-size: 14px !important;
+	font-size: 0.875rem !important;
+}
+
+.widget_tag_cloud .tagcloud a:link,
+.widget_tag_cloud .tagcloud a:visited,
+.entry-tags .meta-tags a:link,
+.entry-tags .meta-tags a:visited {
+	color: #fff;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.widget_tag_cloud .tagcloud a:hover,
+.widget_tag_cloud .tagcloud a:active,
+.entry-tags .meta-tags a:hover,
+.entry-tags .meta-tags a:active {
+	background: #111133;
+	color: #fff;
+}
