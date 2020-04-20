@@ -1,7 +1,4 @@
-
-/*--------------------------------------------------------------
-## 19.1 - Sidebar Left Layout
---------------------------------------------------------------*/
+/* Sidebar Left Layout */
 .sidebar-left .content-single {
 	float: right;
 	padding-right: 0;
@@ -28,9 +25,7 @@
 
 }
 
-/*--------------------------------------------------------------
-## 19.2 - Sticky Header
---------------------------------------------------------------*/
+/* Sticky Header */
 @media only screen and (min-width: 60.001em) {
 	.sticky-header .site-header {
 		position: fixed;
@@ -65,9 +60,7 @@
 	}
 }
 
-/*--------------------------------------------------------------
-22.0 Customizer Preview
---------------------------------------------------------------*/
+/* Customizer Preview */
 .magazine-widgets-placeholder {
 	position: relative;
 }
