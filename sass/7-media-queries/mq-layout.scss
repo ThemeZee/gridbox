@@ -1,0 +1,136 @@
+@media only screen and (max-width: 80em) {
+	.container {
+		padding-right: 2em;
+		padding-left: 2em;
+	}
+
+	.site-content {
+		padding-top: 2em;
+	}
+
+	.content-single {
+		padding-right: 2em;
+	}
+
+	.widget,
+	.page-header,
+	.type-post,
+	.type-page,
+	.type-attachment,
+	.pagination,
+	.comments-area {
+		margin-bottom: 2em;
+	}
+
+	/* Post Columns */
+	.post-wrapper,
+	.magazine-grid {
+		margin-right: -2em;
+	}
+
+	.post-wrapper .post-column,
+	.magazine-grid .magazine-grid-post {
+		padding-right: 2em;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.header-bar {
+		padding: 0 1.25em;
+	}
+
+	/* Post Columns */
+	.post-layout-four-columns .post-wrapper .post-column,
+	.magazine-four-columns-grid .magazine-grid-post {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 55em) {
+	.content-single {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.sidebar {
+		float: none;
+		margin: 0;
+		padding: 2em 0 0;
+		width: 100%;
+		border-top: 2px solid #eee;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+
+	/* Post Columns */
+	.post-layout-three-columns .post-wrapper .post-column {
+		width: 50%;
+	}
+
+	.magazine-three-columns-grid .magazine-grid-post {
+		width: 100%;
+	}
+
+	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
+		float: left;
+		margin: 0 2em 0 0;
+		max-width: 50%;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	.container {
+		padding-right: 1.5em;
+		padding-left: 1.5em;
+	}
+
+	.site-content {
+		padding-top: 1.5em;
+	}
+
+	.widget,
+	.page-header,
+	.type-post,
+	.type-page,
+	.type-attachment,
+	.pagination,
+	.comments-area {
+		margin-bottom: 1.5em;
+	}
+
+	/* Post Columns */
+	.post-wrapper,
+	.magazine-grid {
+		display: block;
+		margin-right: 0;
+	}
+
+	.post-wrapper .post-column,
+	.magazine-grid .magazine-grid-post {
+		display: block;
+		padding-right: 0;
+	}
+
+	.post-layout-two-columns .post-wrapper .post-column,
+	.post-layout-three-columns .post-wrapper .post-column,
+	.post-layout-four-columns .post-wrapper .post-column,
+	.magazine-two-columns-grid .magazine-grid-post,
+	.magazine-three-columns-grid .magazine-grid-post,
+	.magazine-four-columns-grid .magazine-grid-post {
+		width: 100%;
+	}
+
+	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
+		float: none;
+		margin: 0 0 0.5em;
+		max-width: 100%;
+	}
+}

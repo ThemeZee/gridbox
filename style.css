@@ -2375,7 +2375,153 @@ object {
 }
 
 /*--------------------------------------------------------------
-# - Media Queries
+# - Media Queries for Typography
+--------------------------------------------------------------*/
+@media only screen and (max-width: 70em) {
+	.archive-title,
+	.page-title,
+	.entry-title,
+	.widget-magazine-posts .widget-header .widget-title {
+		font-size: 36px;
+		font-size: 2.25rem;
+	}
+
+	.page-header .blog-description,
+	.page-header .archive-description,
+	.widget-magazine-posts .widget-header .category-description {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.archive-title,
+	.page-title,
+	.entry-title,
+	.widget-magazine-posts .widget-header .widget-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+
+	.page-header .blog-description,
+	.page-header .archive-description,
+	.widget-magazine-posts .widget-header .category-description {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.archive-title,
+	.page-title,
+	.entry-title,
+	.widget-magazine-posts .widget-header .widget-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	.archive-title,
+	.page-title,
+	.entry-title,
+	.widget-magazine-posts .widget-header .widget-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 20em) {
+	.site-branding .site-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.archive-title,
+	.page-title,
+	.entry-title,
+	.widget-magazine-posts .widget-header .widget-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+/*--------------------------------------------------------------
+# - Media Queries for Layout
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
 	.container {
@@ -2417,101 +2563,11 @@ object {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
-
-	/* Featured Posts */
-	.featured-posts-wrap {
-		margin: 0 0 2em;
-	}
-
-	.featured-posts .grid-post .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
-	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
-	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
 }
 
-/*--------------------------------------------------------------
-## 18.2 - Desktop Large ( < 1120px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 70em) {
-	.archive-title,
-	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 36px;
-		font-size: 2.25rem;
-	}
-
-	.page-header .blog-description,
-	.page-header .archive-description,
-	.widget-magazine-posts .widget-header .category-description {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
-	/* Featured Posts */
-	.featured-posts .grid-post .type-post .post-content {
-		right: 1em;
-		bottom: 1em;
-		left: 1em;
-	}
-
-	.featured-posts .grid-post .type-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
-	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
-	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
-		font-size: 28px;
-		font-size: 1.75rem;
-	}
-}
-
-/*--------------------------------------------------------------
-## 18.3 - Desktop Small ( < 960px )
---------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 	.header-bar {
 		padding: 0 1.25em;
-	}
-
-	.archive-title,
-	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
-
-	.page-header .blog-description,
-	.page-header .archive-description,
-	.widget-magazine-posts .widget-header .category-description {
-		font-size: 16px;
-		font-size: 1rem;
 	}
 
 	/* Post Columns */
@@ -2519,40 +2575,94 @@ object {
 	.magazine-four-columns-grid .magazine-grid-post {
 		width: 50%;
 	}
+}
 
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
+@media only screen and (max-width: 55em) {
+	.content-single {
+		float: none;
+		padding: 0;
+		width: 100%;
 	}
 
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
+	.sidebar {
+		float: none;
+		margin: 0;
+		padding: 2em 0 0;
+		width: 100%;
+		border-top: 2px solid #eee;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	/* Post Columns */
+	.post-layout-three-columns .post-wrapper .post-column {
+		width: 50%;
 	}
 
-	/* Featured Posts */
-	.featured-posts .grid-post .type-post .post-content {
-		right: 0.5em;
-		bottom: 0.5em;
-		left: 0.5em;
+	.magazine-three-columns-grid .magazine-grid-post {
+		width: 100%;
 	}
 
-	.featured-posts .grid-post .type-post .entry-title {
-		font-size: 18px;
-		font-size: 1.125rem;
+	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
+		float: left;
+		margin: 0 2em 0 0;
+		max-width: 50%;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	.container {
+		padding-right: 1.5em;
+		padding-left: 1.5em;
 	}
 
-	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
-	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
+	.site-content {
+		padding-top: 1.5em;
 	}
 
-	/*** Mobile Main Navigation ***/
+	.widget,
+	.page-header,
+	.type-post,
+	.type-page,
+	.type-attachment,
+	.pagination,
+	.comments-area {
+		margin-bottom: 1.5em;
+	}
+
+	/* Post Columns */
+	.post-wrapper,
+	.magazine-grid {
+		display: block;
+		margin-right: 0;
+	}
+
+	.post-wrapper .post-column,
+	.magazine-grid .magazine-grid-post {
+		display: block;
+		padding-right: 0;
+	}
+
+	.post-layout-two-columns .post-wrapper .post-column,
+	.post-layout-three-columns .post-wrapper .post-column,
+	.post-layout-four-columns .post-wrapper .post-column,
+	.magazine-two-columns-grid .magazine-grid-post,
+	.magazine-three-columns-grid .magazine-grid-post,
+	.magazine-four-columns-grid .magazine-grid-post {
+		width: 100%;
+	}
+
+	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
+		float: none;
+		margin: 0 0 0.5em;
+		max-width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+# - Media Queries for Navigation
+--------------------------------------------------------------*/
+@media only screen and (max-width: 60em) {
 	/* Reset */
 	.primary-navigation {
 		float: none;
@@ -2564,9 +2674,7 @@ object {
 		float: none;
 	}
 
-	.main-navigation-menu ul,
-	.mega-menu-item .mega-menu-content,
-	.mega-menu-item .mega-menu-content .mega-menu-widget {
+	.main-navigation-menu ul {
 		position: static;
 		top: auto;
 		left: auto;
@@ -2584,8 +2692,8 @@ object {
 		margin: 0;
 	}
 
-	.main-navigation-menu > .menu-item-has-children > a:after,
-	.main-navigation-menu ul .menu-item-has-children > a:after {
+	.main-navigation-menu > .menu-item-has-children > a::after,
+	.main-navigation-menu ul .menu-item-has-children > a::after {
 		display: none;
 	}
 
@@ -2688,7 +2796,7 @@ object {
 		cursor: pointer;
 	}
 
-	.main-navigation-menu .submenu-dropdown-toggle:before {
+	.main-navigation-menu .submenu-dropdown-toggle::before {
 		content: '\f431';
 		vertical-align: middle;
 		text-decoration: inherit;
@@ -2699,7 +2807,7 @@ object {
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.main-navigation-menu .submenu-dropdown-toggle.active:before {
+	.main-navigation-menu .submenu-dropdown-toggle.active::before {
 		content: '\f432';
 	}
 
@@ -2707,75 +2815,86 @@ object {
 		padding: 0.6em 1em;
 	}
 
-	.main-navigation-menu ul .submenu-dropdown-toggle:before {
+	.main-navigation-menu ul .submenu-dropdown-toggle::before {
 		font-size: 24px;
 	}
+}
 
-	/* Mega Menu Styling */
-	.mega-menu-item .mega-menu-content {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+@media only screen and (max-width: 20em) {
+	.main-navigation-toggle::after {
+		font-size: 24px;
 	}
+}
 
-	.mega-menu-item .mega-menu-two-columns > li,
-	.mega-menu-item .mega-menu-three-columns > li,
-	.mega-menu-item .mega-menu-five-columns > li {
-		width: 100%;
-	}
-
-	.mega-menu-item .mega-menu-four-columns > li,
-	.mega-menu-item .mega-menu-six-columns > li {
-		width: 50%;
+/* Ensure navigation is visible on desktop view */
+@media only screen and (min-width: 60.001em) {
+	.main-navigation-menu {
+		display: block !important;
 	}
 }
 
 /*--------------------------------------------------------------
-## 18.4 - Tablet Large ( < 880px )
+# - Media Queries for Featured Posts
 --------------------------------------------------------------*/
-@media only screen and (max-width: 55em) {
-	.content-single {
-		float: none;
-		padding: 0;
-		width: 100%;
+@media only screen and (max-width: 80em) {
+	/* Featured Posts */
+	.featured-posts-wrap {
+		margin: 0 0 2em;
 	}
 
-	.sidebar {
-		float: none;
-		margin: 0;
-		padding: 2em 0 0;
-		width: 100%;
-		border-top: 2px solid #eee;
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 32px;
+		font-size: 2rem;
 	}
 }
 
-/*--------------------------------------------------------------
-## 18.5 - Tablet Medium ( < 800px )
---------------------------------------------------------------*/
+@media only screen and (max-width: 70em) {
+	/* Featured Posts */
+	.featured-posts .grid-post .type-post .post-content {
+		right: 1em;
+		bottom: 1em;
+		left: 1em;
+	}
+
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	/* Featured Posts */
+	.featured-posts .grid-post .type-post .post-content {
+		right: 0.5em;
+		bottom: 0.5em;
+		left: 0.5em;
+	}
+
+	.featured-posts .grid-post .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title,
+	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+}
+
 @media only screen and (max-width: 50em) {
-	/* Post Columns */
-	.post-layout-three-columns .post-wrapper .post-column {
-		width: 50%;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
-	}
-
-	.magazine-three-columns-grid .magazine-grid-post {
-		width: 100%;
-	}
-
-	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
-		float: left;
-		margin: 0 2em 0 0;
-		max-width: 50%;
-	}
-
 	/* Featured Posts */
 	.featured-posts .grid-post,
 	.featured-posts .grid-post:nth-child(2) {
@@ -2796,38 +2915,9 @@ object {
 		font-size: 32px;
 		font-size: 2rem;
 	}
-
-	/* Gallery */
-	.gallery-columns-6 .gallery-item,
-	.gallery-columns-7 .gallery-item,
-	.gallery-columns-8 .gallery-item,
-	.gallery-columns-9 .gallery-item {
-		max-width: 25%;
-	}
 }
 
-/*--------------------------------------------------------------
-## 18.7 - Mobile Extra Large ( < 640px )
---------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-	.archive-title,
-	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 28px;
-		font-size: 1.75rem;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
 	/* Featured Posts */
 	.featured-posts .grid-post .type-post .entry-title,
 	.featured-posts .grid-post:nth-child(2) .type-post .entry-title {
@@ -2839,88 +2929,9 @@ object {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
-
-	/* Mega Menu Styling */
-	.mega-menu-item .mega-menu-four-columns > li,
-	.mega-menu-item .mega-menu-six-columns > li {
-		width: 100%;
-	}
 }
 
-/*--------------------------------------------------------------
-## 18.9 - Mobile Medium ( < 480px )
---------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
-	.container {
-		padding-right: 1.5em;
-		padding-left: 1.5em;
-	}
-
-	.site-content {
-		padding-top: 1.5em;
-	}
-
-	.widget,
-	.page-header,
-	.type-post,
-	.type-page,
-	.type-attachment,
-	.pagination,
-	.comments-area {
-		margin-bottom: 1.5em;
-	}
-
-	.archive-title,
-	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
-	.alignright, .alignleft {
-		float: none;
-		margin: 1em 0;
-	}
-
-	/* Post Columns */
-	.post-wrapper,
-	.magazine-grid {
-		display: block;
-		margin-right: 0;
-	}
-
-	.post-wrapper .post-column,
-	.magazine-grid .magazine-grid-post {
-		display: block;
-		padding-right: 0;
-	}
-
-	.post-layout-two-columns .post-wrapper .post-column,
-	.post-layout-three-columns .post-wrapper .post-column,
-	.post-layout-four-columns .post-wrapper .post-column,
-	.magazine-two-columns-grid .magazine-grid-post,
-	.magazine-three-columns-grid .magazine-grid-post,
-	.magazine-four-columns-grid .magazine-grid-post {
-		width: 100%;
-	}
-
-	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
-		float: none;
-		margin: 0 0 0.5em;
-		max-width: 100%;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
 	/* Featured Posts */
 	.featured-posts-wrap {
 		margin: 0 0 1.5em;
@@ -2933,6 +2944,35 @@ object {
 	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 20em) {
+	/* Featured Post */
+	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+/*--------------------------------------------------------------
+# - Media Queries for Media
+--------------------------------------------------------------*/
+@media only screen and (max-width: 50em) {
+	/* Gallery */
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
+		max-width: 25%;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	.alignright,
+	.alignleft {
+		float: none;
+		margin: 1em 0;
 	}
 
 	/* Gallery */
@@ -2949,60 +2989,6 @@ object {
 		max-width: 50%;
 	}
 }
-
-/*--------------------------------------------------------------
-## 18.10 - Mobile Small ( < 320px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 20em) {
-	.site-branding .site-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-
-	.main-navigation-toggle:after {
-		font-size: 24px;
-	}
-
-	.archive-title,
-	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 20px;
-		font-size: 1.25rem;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
-	}
-
-	/* Featured Post */
-	.featured-posts .grid-post:nth-child(1) .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
-	}
-}
-
-/*--------------------------------------------------------------
-## - Media Queries for Typography
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## - Media Queries for Layout
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## - Media Queries for Navigation
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## - Media Queries for Media
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # - Theme Options
@@ -3069,17 +3055,6 @@ object {
 @media only screen and (max-width: 60em) {
 	.sticky-header {
 		padding-top: 0 !important;
-	}
-}
-
-/*--------------------------------------------------------------
-# 20.0 - Media Query Fixes
---------------------------------------------------------------*/
-
-/* Ensure navigation is visible on desktop view */
-@media only screen and (min-width: 60.001em) {
-	.main-navigation-menu {
-		display: block !important;
 	}
 }
 
