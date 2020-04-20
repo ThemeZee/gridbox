@@ -35,14 +35,14 @@
 }
 
 .widget-title a:link,
-.widget-title a:visited  {
+.widget-title a:visited {
 	color: #111133;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .widget-title a:hover,
-.widget-title a:active  {
+.widget-title a:active {
 	color: #4477aa;
 }
 
@@ -50,10 +50,6 @@
 .widget select {
 	max-width: 100%;
 }
-
-/*--------------------------------------------------------------
-## 11.1 - Default Widgets
---------------------------------------------------------------*/
 
 /* Theme Search Widget */
 .search-form {
@@ -103,95 +99,4 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-/*--------------------------------------------------------------
-## 11.2 - Magazine Posts Widgets
---------------------------------------------------------------*/
-
-/* Magazine Homepage Widget Area */
-.widget-magazine-posts {
-	margin-bottom: 0;
-}
-
-.widget-magazine-posts .widget-header {
-	margin-bottom: 1.5em;
-	border: none;
-}
-
-.widget-magazine-posts .widget-header .widget-title {
-	padding: 0;
-	text-transform: none;
-	font-size: 40px;
-	font-size: 2.5rem;
-}
-
-.widget-magazine-posts .widget-header .category-description {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
-.widget-magazine-posts .widget-header .category-description p {
-	margin: 0.5em 0 2em;
-}
-
-/* Magazine Posts Styling */
-.widget-magazine-posts .type-post .entry-content {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-.widget-magazine-posts .type-post .entry-excerpt p {
-	margin: 0.5em 0 1em;
-}
-
-.widget-magazine-posts .type-post .entry-meta {
-	margin-bottom: 0.5em;
-	font-size: 14px;
-	font-size: 0.875rem;
-}
-
-/* Magazine Posts Grid */
-.magazine-grid {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-right: -2.5em;
-}
-
-.magazine-grid .magazine-grid-post {
-	box-sizing: border-box;
-	padding-right: 2.5em;
-}
-
-/* Two Column Grid Layout */
-.magazine-two-columns-grid .magazine-grid-post {
-	width: 50%;
-}
-
-.magazine-two-columns-grid .type-post .entry-title {
-	font-size: 32px;
-	font-size: 2rem;
-}
-
-/* Three Column Grid Layout */
-.magazine-three-columns-grid .magazine-grid-post {
-	width: 33.3333333333333%;
-}
-
-.magazine-three-columns-grid .type-post .entry-title {
-	font-size: 24px;
-	font-size: 1.5rem;
-}
-
-/* Four Column Grid Layout */
-.magazine-four-columns-grid .magazine-grid-post {
-	width: 25%;
-}
-
-.magazine-four-columns-grid .type-post .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
 }
