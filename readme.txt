@@ -26,6 +26,10 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 1.9 - 2020-04-21 =
+* added Retina Logo option
+* restructured Sass files and CSS sections
+
 = 1.8.4 - 2020-04-06 =
 * added new wp_body_open action hook
 * improved Block Editor styling for WordPress 5.4
