@@ -51,7 +51,7 @@ add_action( 'customize_register', 'gridbox_customize_register_options' );
  * Embed JS file to make Theme Customizer preview reload changes asynchronously.
  */
 function gridbox_customize_preview_js() {
-	wp_enqueue_script( 'gridbox-customizer-preview', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20200410', true );
+	wp_enqueue_script( 'gridbox-customizer-preview', get_template_directory_uri() . '/assets/js/customize-preview.js', array( 'customize-preview' ), '20200410', true );
 }
 add_action( 'customize_preview_init', 'gridbox_customize_preview_js' );
 
