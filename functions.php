@@ -186,7 +186,15 @@ function gridbox_scripts() {
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js.
-	wp_enqueue_script( 'gridbox-jquery-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20170127' );
+	if ( has_nav_menu( 'primary' ) ) {
+		wp_enqueue_script( 'gridbox-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '20191114', true );
+		$gridbox_l10n = array(
+			'expand'   => esc_html__( 'Expand child menu', 'gridbox' ),
+			'collapse' => esc_html__( 'Collapse child menu', 'gridbox' ),
+			'icon'     => gridbox_get_svg( 'expand' ),
+		);
+		wp_localize_script( 'gridbox-navigation', 'gridboxScreenReaderText', $gridbox_l10n );
+	}
 
 	// Register and enqueue sticky-header.js.
 	if ( true == $theme_options['sticky_header'] ) {
