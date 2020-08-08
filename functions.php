@@ -198,7 +198,7 @@ function gridbox_scripts() {
 
 	// Register and enqueue sticky-header.js.
 	if ( true == $theme_options['sticky_header'] ) {
-		wp_enqueue_script( 'gridbox-jquery-sticky-header', get_template_directory_uri() . '/assets/js/sticky-header.js', array( 'jquery' ), '20170127' );
+		wp_enqueue_script( 'gridbox-jquery-sticky-header', get_template_directory_uri() . '/assets/js/sticky-header.js', array( 'jquery' ), '20200808' );
 	}
 
 	// Register Comment Reply Script for Threaded Comments.
