@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridbox\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2019-10-22 12:55+0200\n"
+"POT-Creation-Date: 2020-08-18 14:07+0200\n"
 "PO-Revision-Date: 2016-09-16 12:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -100,11 +100,19 @@ msgid ""
 "Magazine widgets here."
 msgstr ""
 
-#: functions.php:225
+#: functions.php:192
+msgid "Expand child menu"
+msgstr ""
+
+#: functions.php:193
+msgid "Collapse child menu"
+msgstr ""
+
+#: functions.php:236
 msgid "Gridbox Single Post"
 msgstr ""
 
-#: header.php:26
+#: header.php:27
 msgid "Skip to content"
 msgstr ""
 
@@ -194,31 +202,15 @@ msgstr ""
 msgid "Learn more about %s Pro"
 msgstr ""
 
-#: inc/customizer/customizer.php:39 inc/theme-info.php:78
+#: inc/customizer/customizer.php:40 inc/theme-info.php:78
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:44
+#: inc/customizer/customizer.php:45
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/customizer.php:68
-msgid "Display Site Title"
-msgstr ""
-
-#: inc/customizer/customizer.php:83
-msgid "Display Tagline"
-msgstr ""
-
-#: inc/customizer/customizer.php:98
-msgid "Header Image Link"
-msgstr ""
-
-#: inc/customizer/customizer.php:113
-msgid "Hide header image on front page"
-msgstr ""
-
-#: inc/customizer/default-options.php:61
+#: inc/customizer/default-options.php:62
 #: inc/customizer/sections/customizer-blog.php:113
 msgid "Read more"
 msgstr ""
@@ -367,6 +359,30 @@ msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:159
 msgid "Display image on single posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:34
+msgid "Retina Logo"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:50
+msgid "Scale down logo image for retina displays"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:65
+msgid "Display Site Title"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:80
+msgid "Display Tagline"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:95
+msgid "Header Image Link"
+msgstr ""
+
+#: inc/customizer/sections/customizer-website.php:110
+msgid "Hide header image on front page"
 msgstr ""
 
 #: inc/magazine.php:47
@@ -575,4 +591,12 @@ msgstr ""
 
 #: template-parts/content-page.php:25 template-parts/content-single.php:27
 msgid "Pages:"
+msgstr ""
+
+#: template-parts/header/site-navigation.php:19
+msgid "Menu"
+msgstr ""
+
+#: template-parts/header/site-navigation.php:24
+msgid "Primary Menu"
 msgstr ""
