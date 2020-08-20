@@ -26,6 +26,9 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 2.0.1 - 2020-08-20 =
+* fixed default font for main navigation menu
+
 = 2.0 - 2020-08-18 =
 Changed implementation, styles and scripts of main navigation menu
 Important Update: Please read https://themezee.com/2020/08/updates-for-improved-navigation-menus/
