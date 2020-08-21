@@ -26,6 +26,9 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 2.0.2 - 2020-08-21 =
+* added svgxuse polyfill to display SVG icons in Internet Explorer
+
 = 2.0.1 - 2020-08-20 =
 * fixed default font for main navigation menu
 
