@@ -187,7 +187,7 @@ function gridbox_scripts() {
 
 	// Register and enqueue navigation.min.js.
 	if ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) {
-		wp_enqueue_script( 'gridbox-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '20200818', true );
+		wp_enqueue_script( 'gridbox-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '20200822', true );
 		$gridbox_l10n = array(
 			'expand'   => esc_html__( 'Expand child menu', 'gridbox' ),
 			'collapse' => esc_html__( 'Collapse child menu', 'gridbox' ),
