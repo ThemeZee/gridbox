@@ -62,6 +62,11 @@ function gridbox_body_classes( $classes ) {
 		$classes[] = 'categories-hidden';
 	}
 
+	// Check for AMP pages.
+	if ( gridbox_is_amp() ) {
+		$classes[] = 'is-amp-page';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'gridbox_body_classes' );

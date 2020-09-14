@@ -36,6 +36,9 @@ function gridbox_theme_addons_setup() {
 		'posts_per_page' => 6,
 	) );
 
+	// Add theme support for AMP.
+	add_theme_support( 'amp' );
+
 }
 add_action( 'after_setup_theme', 'gridbox_theme_addons_setup' );
 
@@ -74,10 +77,37 @@ add_action( 'wp_enqueue_scripts', 'gridbox_theme_addons_scripts' );
  * Custom render function for Infinite Scroll.
  */
 function gridbox_infinite_scroll_render() {
-
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'template-parts/content' );
 	}
+}
 
+
+/**
+ * Checks if AMP page is rendered.
+ */
+function gridbox_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
+
+/**
+ * Adds amp support for menu toggle.
+ */
+function gridbox_amp_menu_toggle() {
+	if ( gridbox_is_amp() ) {
+		echo "[aria-expanded]=\"primaryMenuExpanded? 'true' : 'false'\" ";
+		echo 'on="tap:AMP.setState({primaryMenuExpanded: !primaryMenuExpanded})"';
+	}
+}
+
+
+/**
+ * Adds amp support for mobile dropdown navigation menu.
+ */
+function gridbox_amp_menu_is_toggled() {
+	if ( gridbox_is_amp() ) {
+		echo "[class]=\"'main-navigation' + ( primaryMenuExpanded ? ' toggled-on' : '' )\"";
+	}
 }

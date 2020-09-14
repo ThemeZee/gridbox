@@ -2,7 +2,7 @@
 /**
  * Main Navigation
  *
- * @version 1.0
+ * @version 1.1
  * @package Gridbox
  */
 ?>
@@ -11,7 +11,7 @@
 
 	<?php do_action( 'gridbox_header_search' ); ?>
 
-	<button class="primary-menu-toggle menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+	<button class="primary-menu-toggle menu-toggle" aria-controls="primary-menu" aria-expanded="false" <?php gridbox_amp_menu_toggle(); ?>>
 		<?php
 		echo gridbox_get_svg( 'menu' );
 		echo gridbox_get_svg( 'close' );
@@ -21,7 +21,7 @@
 
 	<div class="primary-navigation">
 
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gridbox' ); ?>">
+		<nav id="site-navigation" class="main-navigation" role="navigation" <?php gridbox_amp_menu_is_toggled(); ?> aria-label="<?php esc_attr_e( 'Primary Menu', 'gridbox' ); ?>">
 
 			<?php
 			wp_nav_menu(
