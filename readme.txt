@@ -26,6 +26,10 @@ For more information about Gridbox please go to https://themezee.com/themes/grid
 
 == Changelog ==
 
+= 2.1.1 - 2020-10-05 =
+* added AMP dropdown toggles for sub menus
+* added CSS variables for typography styling
+
 = 2.1 - 2020-09-16 =
 * added support for the official AMP plugin
 
