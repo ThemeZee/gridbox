@@ -59,6 +59,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # - CSS Variables
 --------------------------------------------------------------*/
+:root {
+	--text-font: "Roboto", arial, helvetica, sans-serif;
+	--title-font: "Roboto Slab", arial, helvetica, sans-serif;
+	--navi-font: "Roboto", arial, helvetica, sans-serif;
+	--widget-title-font: "Roboto Slab", arial, helvetica, sans-serif;
+	--title-font-weight: bold;
+	--navi-font-weight: normal;
+	--widget-title-font-weight: bold;
+	--title-text-transform: none;
+	--navi-text-transform: none;
+	--widget-title-text-transform: uppercase;
+	--text-line-height: 1.6;
+	--title-line-height: 1.6;
+}
 
 /*--------------------------------------------------------------
 # - Normalize
@@ -281,8 +295,10 @@ textarea {
 	color: #222;
 	font-size: 16px;
 	font-size: 1rem;
-	font-family: 'Roboto', Tahoma, Arial;
+	font-family: "Roboto", arial, helvetica, sans-serif;
+	font-family: var(--text-font);
 	line-height: 1.6;
+	line-height: var(--text-line-height);
 }
 
 h1,
@@ -725,11 +741,16 @@ textarea {
 	padding: 0;
 	color: #fff;
 	text-decoration: none;
-	font-weight: bold;
 	font-size: 28px;
 	font-size: 1.75rem;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: "Roboto Slab", arial, helvetica, sans-serif;
+	font-family: var(--title-font);
+	font-weight: bold;
+	font-weight: var(--title-font-weight);
+	text-transform: none;
+	text-transform: var(--title-text-transform);
 	line-height: 1.6;
+	line-height: var(--title-line-height);
 }
 
 .site-title a:link,
@@ -786,7 +807,12 @@ textarea {
 	list-style: none;
 	font-size: 16px;
 	font-size: 1rem;
-	font-family: 'Roboto', Tahoma, Arial;
+	font-family: "Roboto", arial, helvetica, sans-serif;
+	font-family: var(--navi-font);
+	font-weight: normal;
+	font-weight: var(--navi-font-weight);
+	text-transform: none;
+	text-transform: var(--navi-text-transform);
 }
 
 .main-navigation > ul {
@@ -1136,10 +1162,16 @@ textarea {
 	color: #111133;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	font-weight: bold;
 	font-size: 40px;
 	font-size: 2.5rem;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: "Roboto Slab", arial, helvetica, sans-serif;
+	font-family: var(--title-font);
+	font-weight: bold;
+	font-weight: var(--title-font-weight);
+	text-transform: none;
+	text-transform: var(--title-text-transform);
+	line-height: 1.6;
+	line-height: var(--title-line-height);
 }
 
 .entry-title a:link,
@@ -1749,11 +1781,16 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	margin: 0;
 	padding: 0 0 0 0.8em;
 	color: #111133;
-	text-transform: uppercase;
-	font-weight: bold;
 	font-size: 16px;
 	font-size: 1rem;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: "Roboto Slab", arial, helvetica, sans-serif;
+	font-family: var(--widget-title-font);
+	font-weight: bold;
+	font-weight: var(--widget-title-font-weight);
+	text-transform: uppercase;
+	text-transform: var(--widget-title-text-transform);
+	line-height: 1.6;
+	line-height: var(--title-line-height);
 }
 
 .widget ul {
@@ -1946,11 +1983,16 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	margin: 0;
 	padding: 0 0 0 0.8em;
 	color: #111133;
-	text-transform: uppercase;
-	font-weight: bold;
 	font-size: 16px;
 	font-size: 1rem;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: "Roboto Slab", arial, helvetica, sans-serif;
+	font-family: var(--widget-title-font);
+	font-weight: bold;
+	font-weight: var(--widget-title-font-weight);
+	text-transform: uppercase;
+	text-transform: var(--widget-title-text-transform);
+	line-height: 1.6;
+	line-height: var(--title-line-height);
 }
 
 /* Comment List */
