@@ -16,25 +16,24 @@ body {
 blockquote {
 	margin: 0 0 1.5em;
 	padding-left: 1.25em;
-	border-left: 4px solid #222;
-	color: #777;
+	border-left: 4px solid;
+	@include border-color(--dark-border-color);
+	@include color(--medium-text-color);
 	font-style: italic;
-	font-size: 18px;
-	font-size: 1.125rem;
+	@include font-size(18);
 }
 
 blockquote cite,
 blockquote small {
 	display: block;
 	margin-top: 1em;
-	color: #303030;
-	font-size: 16px;
-	font-size: 1rem;
+	@include color(--text-color);
+	@include font-size(16);
 	line-height: 1.75;
 }
 
-blockquote cite:before,
-blockquote small:before {
+blockquote cite::before,
+blockquote small::before {
 	content: "\2014\00a0";
 }
 
@@ -52,7 +51,7 @@ hr {
 	margin-bottom: 1.5em;
 	height: 1px;
 	border: 0;
-	background-color: #222;
+	@include background(--text-color);
 }
 
 ul,
@@ -102,19 +101,19 @@ td {
 }
 
 a {
-	color: #4477aa;
+	@include color(--link-color);
 	text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: #4477aa;
+	@include color(--link-color);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #111133;
+	@include color(--link-hover-color);
 }
 
 a:focus {
