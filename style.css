@@ -81,7 +81,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	--navi-border-color: rgba(255, 255, 255, 0.1);
 	--title-color: #111133;
 	--title-hover-color: #4477aa;
-	--widget-title-color: #2a4861;
+	--widget-title-color: #111133;
+	--widget-title-hover-color: #4477aa;
+	--widget-title-border-color: #111133;
 	--footer-background-color: #111133;
 	--footer-text-color: rgba(255, 255, 255, 0.6);
 	--footer-link-color: #fff;
@@ -1869,14 +1871,15 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 2.5em 0;
-	color: #333;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .widget-header {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid;
+	border-color: #111133;
+	border-color: var(--widget-title-border-color);
 }
 
 .widget-title {
@@ -1884,6 +1887,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	margin: 0;
 	padding: 0 0 0 0.8em;
 	color: #111133;
+	color: var(--widget-title-color);
 	font-size: 16px;
 	font-size: 1rem;
 	font-family: "Roboto Slab", arial, helvetica, sans-serif;
@@ -1911,6 +1915,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .widget-title a:link,
 .widget-title a:visited {
 	color: #111133;
+	color: var(--widget-title-color);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -1918,6 +1923,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .widget-title a:hover,
 .widget-title a:active {
 	color: #4477aa;
+	color: var(--widget-title-hover-color);
 }
 
 /* Make sure select elements fit in widgets. */
@@ -2077,7 +2083,9 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .comments-header,
 .comment-reply-title {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid;
+	border-color: #111133;
+	border-color: var(--widget-title-border-color);
 }
 
 .comments-header .comments-title,
@@ -2086,6 +2094,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	margin: 0;
 	padding: 0 0 0 0.8em;
 	color: #111133;
+	color: var(--widget-title-color);
 	font-size: 16px;
 	font-size: 1rem;
 	font-family: "Roboto Slab", arial, helvetica, sans-serif;
@@ -2180,12 +2189,12 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	float: right;
 }
 
-.comment-navigation .nav-previous a:before {
+.comment-navigation .nav-previous a::before {
 	margin-right: 3px;
 	content: "\00AB";
 }
 
-.comment-navigation .nav-next a:after {
+.comment-navigation .nav-next a::after {
 	margin-left: 4px;
 	content: "\00BB";
 }
@@ -2194,8 +2203,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	display: inline-block;
 	margin: 0;
 	padding: 0.2em 0.6em;
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -2208,11 +2219,15 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .reply .comment-reply-link:link,
 .reply .comment-reply-link:visited {
 	color: #fff;
+	color: var(--button-text-color);
 }
 
 .reply .comment-reply-link:hover,
 .reply .comment-reply-link:active {
-	background: #4477aa;
+	background-color: #4477aa;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 /* Comment Form */
@@ -2275,7 +2290,8 @@ object {
 	max-width: 100%;
 	font-size: 15px;
 	font-size: 0.9375rem;
-	color: #555;
+	color: #666;
+	color: var(--medium-text-color);
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -2344,7 +2360,8 @@ object {
 	display: block;
 	font-size: 15px;
 	font-size: 0.9375rem;
-	color: #555;
+	color: #666;
+	color: var(--medium-text-color);
 }
 
 /*--------------------------------------------------------------
@@ -2385,14 +2402,18 @@ object {
 /* Breadcrumbs */
 .breadcrumbs {
 	margin: 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	border-bottom: 1px solid;
+	border-color: #ddd;
+	border-color: var(--light-border-color);
 }
 
 .breadcrumbs-container {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
-	background: #fff;
+	background-color: #fff;
+	background-color: var(--page-background-color);
 	color: #222;
+	color: var(--text-color);
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -2466,7 +2487,7 @@ object {
 
 .tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
 	font-size: 16px;
-	font-size: 1.0rem;
+	font-size: 1rem;
 }
 
 .tz-magazine-block .tz-entry-meta {
@@ -2516,7 +2537,7 @@ object {
 
 	.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
 		font-size: 16px;
-		font-size: 1.0rem;
+		font-size: 1rem;
 	}
 
 	.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
@@ -2931,8 +2952,11 @@ object {
 		left: -999em;
 		top: 100%;
 		z-index: 99999;
-		background: #111133;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		background-color: #111133;
+		background-color: var(--header-background-color);
+		border-top: 1px solid;
+		border-color: rgba(255, 255, 255, 0.1);
+		border-color: var(--navi-border-color);
 	}
 
 	.main-navigation ul li:hover > ul,
@@ -2976,6 +3000,7 @@ object {
 		width: 13px;
 		height: 13px;
 		fill: #fff;
+		fill: var(--navi-color);
 		transition: fill 0.15s ease;
 	}
 
@@ -2994,6 +3019,7 @@ object {
 
 	.main-navigation ul .menu-item-has-children > a:hover > .icon {
 		fill: rgba(255, 255, 255, 0.6);
+		fill: var(--navi-hover-color);
 	}
 }
 

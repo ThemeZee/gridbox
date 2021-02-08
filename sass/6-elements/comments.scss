@@ -7,7 +7,8 @@
 .comments-header,
 .comment-reply-title {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid;
+	@include border-color(--widget-title-border-color);
 }
 
 .comments-header .comments-title,
@@ -15,7 +16,7 @@
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
-	color: #111133;
+	@include color(--widget-title-color);
 	@include font-size(16);
 	@include font-family(--widget-title-font);
 	@include font-weight(--widget-title-font-weight);
@@ -105,12 +106,12 @@
 	float: right;
 }
 
-.comment-navigation .nav-previous a:before {
+.comment-navigation .nav-previous a::before {
 	margin-right: 3px;
 	content: "\00AB";
 }
 
-.comment-navigation .nav-next a:after {
+.comment-navigation .nav-next a::after {
 	margin-left: 4px;
 	content: "\00BB";
 }
@@ -119,8 +120,8 @@
 	display: inline-block;
 	margin: 0;
 	padding: 0.2em 0.6em;
-	background: #111133;
-	color: #fff;
+	@include background(--button-color);
+	@include color(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -131,13 +132,14 @@
 }
 
 .reply .comment-reply-link:link,
-.reply .comment-reply-link:visited  {
-	color: #fff;
+.reply .comment-reply-link:visited {
+	@include color(--button-text-color);
 }
 
 .reply .comment-reply-link:hover,
 .reply .comment-reply-link:active {
-	background: #4477aa;
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }
 
 /* Comment Form */

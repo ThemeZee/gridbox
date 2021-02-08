@@ -1,20 +1,20 @@
 .widget {
 	margin: 0 0 2.5em 0;
-	color: #333;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .widget-header {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid;
+	@include border-color(--widget-title-border-color);
 }
 
 .widget-title {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
-	color: #111133;
+	@include color(--widget-title-color);
 	@include font-size(16);
 	@include font-family(--widget-title-font);
 	@include font-weight(--widget-title-font-weight);
@@ -36,14 +36,14 @@
 
 .widget-title a:link,
 .widget-title a:visited {
-	color: #111133;
+	@include color(--widget-title-color);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .widget-title a:hover,
 .widget-title a:active {
-	color: #4477aa;
+	@include color(--widget-title-hover-color);
 }
 
 /* Make sure select elements fit in widgets. */
