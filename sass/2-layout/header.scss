@@ -1,5 +1,5 @@
 .site-header {
-	background: #111133;
+	@include background(--header-background-color);
 }
 
 .header-main {
@@ -27,7 +27,7 @@
 	display: inline-block;
 	margin: 0.25rem 0;
 	padding: 0;
-	color: #fff;
+	@include color(--site-title-color);
 	text-decoration: none;
 	@include font-size(28);
 	@include font-family(--title-font);
@@ -38,12 +38,12 @@
 
 .site-title a:link,
 .site-title a:visited {
-	color: #fff;
+	@include color(--site-title-color);
 }
 
 .site-title a:hover,
 .site-title a:active {
-	color: rgba(255,255,255,0.6);
+	@include color(--site-title-hover-color);
 }
 
 .site-branding .custom-logo {
@@ -59,7 +59,7 @@
 	margin: -0.2em 0 0.6em;
 	font-size: 14px;
 	font-size: 0.875rem;
-	color: #fff;
+	@include color(--site-title-color);
 }
 
 /* Custom Header Image */

@@ -1,21 +1,21 @@
 .footer-wrap {
-	background: #111133;
+	@include background(--footer-background-color);
 }
 
 .site-footer {
-	color: rgba(255,255,255,0.6);
+	@include color(--footer-text-color);
 	font-size: 14px;
 	font-size: 0.875rem;
 }
 
 .site-footer a:link,
 .site-footer a:visited {
-	color: #fff;
+	@include color(--footer-link-color);
 }
 
 .site-footer a:hover,
 .site-footer a:active {
-	color: rgba(255,255,255,0.6);
+	@include color(--footer-link-hover-color);
 }
 
 .site-footer .site-info {
