@@ -1,19 +1,19 @@
 /* Entry Meta */
 .entry-meta {
 	margin: 0.25em 0 0;
-	color: #888;
+	@include color(--light-text-color);
 	font-size: 16px;
 	font-size: 1rem;
 }
 
 .entry-meta a:link,
 .entry-meta a:visited {
-	color: #888;
+	@include color(--light-text-color);
 }
 
 .entry-meta a:hover,
 .entry-meta a:active {
-	color: #444;
+	@include color(--text-color);
 }
 
 .entry-meta span::after {
@@ -72,7 +72,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	float: left;
 	margin: 0 2px 2px 0;
 	padding: 0.2em 0.5em 0.3em;
-	background: #4477aa;
+	@include background(--button-hover-color);
 	text-decoration: none;
 	font-size: 14px !important;
 	font-size: 0.875rem !important;
@@ -82,7 +82,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .widget_tag_cloud .tagcloud a:visited,
 .entry-tags .meta-tags a:link,
 .entry-tags .meta-tags a:visited {
-	color: #fff;
+	@include color(--button-hover-text-color);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -91,6 +91,6 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .widget_tag_cloud .tagcloud a:active,
 .entry-tags .meta-tags a:hover,
 .entry-tags .meta-tags a:active {
-	background: #111133;
-	color: #fff;
+	@include background(--button-color);
+	@include color(--button-text-color);
 }

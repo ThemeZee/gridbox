@@ -79,8 +79,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	--navi-color: #fff;
 	--navi-hover-color: rgba(255, 255, 255, 0.6);
 	--navi-border-color: rgba(255, 255, 255, 0.1);
-	--title-color: #202020;
-	--title-hover-color: #e36355;
+	--title-color: #111133;
+	--title-hover-color: #4477aa;
 	--widget-title-color: #2a4861;
 	--footer-background-color: #111133;
 	--footer-text-color: rgba(255, 255, 255, 0.6);
@@ -1230,6 +1230,7 @@ textarea {
 	margin: 0;
 	padding: 0;
 	color: #111133;
+	color: var(--title-color);
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	font-size: 40px;
@@ -1247,6 +1248,7 @@ textarea {
 .entry-title a:link,
 .entry-title a:visited {
 	color: #111133;
+	color: var(--title-color);
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
@@ -1255,6 +1257,7 @@ textarea {
 .entry-title a:hover,
 .entry-title a:active {
 	color: #4477aa;
+	color: var(--title-hover-color);
 }
 
 .entry-content {
@@ -1280,19 +1283,22 @@ textarea {
 /* Entry Meta */
 .entry-meta {
 	margin: 0.25em 0 0;
-	color: #888;
+	color: #999;
+	color: var(--light-text-color);
 	font-size: 16px;
 	font-size: 1rem;
 }
 
 .entry-meta a:link,
 .entry-meta a:visited {
-	color: #888;
+	color: #999;
+	color: var(--light-text-color);
 }
 
 .entry-meta a:hover,
 .entry-meta a:active {
-	color: #444;
+	color: #222;
+	color: var(--text-color);
 }
 
 .entry-meta span::after {
@@ -1351,7 +1357,8 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	float: left;
 	margin: 0 2px 2px 0;
 	padding: 0.2em 0.5em 0.3em;
-	background: #4477aa;
+	background-color: #4477aa;
+	background-color: var(--button-hover-color);
 	text-decoration: none;
 	font-size: 14px !important;
 	font-size: 0.875rem !important;
@@ -1362,6 +1369,7 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .entry-tags .meta-tags a:link,
 .entry-tags .meta-tags a:visited {
 	color: #fff;
+	color: var(--button-hover-text-color);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -1370,8 +1378,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .widget_tag_cloud .tagcloud a:active,
 .entry-tags .meta-tags a:hover,
 .entry-tags .meta-tags a:active {
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 }
 
 /* Read more Link */
@@ -1379,8 +1389,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	display: inline-block;
 	margin: 0;
 	padding: 0.3em 0.8em;
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1393,11 +1405,15 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .more-link:link,
 .more-link:visited {
 	color: #fff;
+	color: var(--button-text-color);
 }
 
 .more-link:hover,
 .more-link:active {
-	background: #4477aa;
+	background-color: #4477aa;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 .entry-content .more-link {
@@ -1433,8 +1449,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	display: inline-block;
 	margin: 0 0 3px;
 	padding: 0.3em 0.8em;
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1447,11 +1465,15 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .post-navigation .nav-links a:link,
 .post-navigation .nav-links a:visited {
 	color: #fff;
+	color: var(--button-text-color);
 }
 
 .post-navigation .nav-links a:hover,
 .post-navigation .nav-links a:active {
-	background: #4477aa;
+	background-color: #4477aa;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 /*--------------------------------------------------------------
@@ -1545,8 +1567,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	display: inline-block;
 	margin: 0 2px 2px 0;
 	padding: 0.4em 0.9em;
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 	text-align: center;
 	text-decoration: none;
 }
@@ -1554,13 +1578,17 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 .pagination a:link,
 .pagination a:visited {
 	color: #fff;
+	color: var(--button-text-color);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .pagination a:hover,
 .pagination .current {
-	background: #4477aa;
+	background-color: #4477aa;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 /* Infinite Scroll Pagination */
@@ -1584,8 +1612,10 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 	display: inline-block;
 	margin: 0 0 2.5em;
 	padding: 0.3em 0.8em;
-	background: #111133;
+	background-color: #111133;
+	background-color: var(--button-color);
 	color: #fff;
+	color: var(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1597,6 +1627,9 @@ body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry
 
 .infinite-scroll #infinite-handle span:hover {
 	background-color: #4477aa;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 /*--------------------------------------------------------------

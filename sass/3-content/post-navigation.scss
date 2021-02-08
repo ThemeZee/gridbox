@@ -27,8 +27,8 @@
 	display: inline-block;
 	margin: 0 0 3px;
 	padding: 0.3em 0.8em;
-	background: #111133;
-	color: #fff;
+	@include background(--button-color);
+	@include color(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -40,10 +40,11 @@
 
 .post-navigation .nav-links a:link,
 .post-navigation .nav-links a:visited {
-	color: #fff;
+	@include color(--button-text-color);
 }
 
 .post-navigation .nav-links a:hover,
 .post-navigation .nav-links a:active {
-	background: #4477aa;
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }

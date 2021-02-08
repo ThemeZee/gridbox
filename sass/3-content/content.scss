@@ -11,7 +11,7 @@
 	display: inline;
 	margin: 0;
 	padding: 0;
-	color: #111133;
+	@include color(--title-color);
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	@include font-size(40);
@@ -23,7 +23,7 @@
 
 .entry-title a:link,
 .entry-title a:visited {
-	color: #111133;
+	@include color(--title-color);
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
@@ -31,12 +31,11 @@
 
 .entry-title a:hover,
 .entry-title a:active {
-	color: #4477aa;
+	@include color(--title-hover-color);
 }
 
 .entry-content {
-	font-size: 17px;
-	font-size: 1.0625rem;
+	@include font-size(17);
 }
 
 .entry-content a {

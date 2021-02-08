@@ -19,8 +19,8 @@
 	display: inline-block;
 	margin: 0 0 2.5em;
 	padding: 0.3em 0.8em;
-	background: #111133;
-	color: #fff;
+	@include background(--button-color);
+	@include color(--button-text-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -31,5 +31,6 @@
 }
 
 .infinite-scroll #infinite-handle span:hover {
-	background-color: #4477aa;
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }
