@@ -216,15 +216,23 @@ Copyright: 2012-2015 Automattic, Inc., https://automattic.com/
 License: Distributed under the terms of the MIT License (http://opensource.org/licenses/MIT)
 Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 
-4. Roboto Font - https://www.google.com/fonts/specimen/Roboto
+4. svgxuse - https://github.com/Keyamoon/svgxuse
+License: Licensed under MIT license (https://github.com/Keyamoon/svgxuse/blob/master/license)
+Copyright: 2017 IcoMoon.io
+
+5. WPTT Webfont Loader - https://github.com/WPTT/webfont-loader
+License: Distributed under the terms of the MIT License (https://github.com/WPTT/webfont-loader/blob/master/LICENSE)
+Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
+
+6. Roboto Font - https://www.google.com/fonts/specimen/Roboto
 License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 Copyright: 2015 Christian Robertson
 
-5. Roboto Slab Font - https://www.google.com/fonts/specimen/Roboto+Slab
+7. Roboto Slab Font - https://www.google.com/fonts/specimen/Roboto+Slab
 License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 Copyright: 2015 Christian Robertson
 
-6. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
+8. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
 
 Image 1: https://pixabay.com/en/still-life-teddy-white-read-book-1037378/
 License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
