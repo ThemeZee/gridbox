@@ -18,14 +18,14 @@ function gridbox_gutenberg_support() {
 
 	// Define block color palette.
 	$color_palette = apply_filters( 'gridbox_color_palette', array(
-		'primary_color'    => '#cc5555',
-		'secondary_color'  => '#5d7b94',
-		'tertiary_color'   => '#90aec7',
-		'accent_color'     => '#60945d',
-		'highlight_color'  => '#915d94',
-		'light_gray_color' => '#f0f0f0',
+		'primary_color'    => '#4477aa',
+		'secondary_color'  => '#114477',
+		'tertiary_color'   => '#111133',
+		'accent_color'     => '#117744',
+		'highlight_color'  => '#aa445e',
+		'light_gray_color' => '#dddddd',
 		'gray_color'       => '#999999',
-		'dark_gray_color'  => '#303030',
+		'dark_gray_color'  => '#222222',
 	) );
 
 	// Add theme support for block color palette.
