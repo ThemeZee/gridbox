@@ -5,19 +5,20 @@
 
 .related-posts-header {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid;
+	@include border-color(--widget-title-border-color);
 }
 
 .related-posts-title {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
-	color: #111133;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 16px;
-	font-size: 1rem;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	@include color(--widget-title-color);
+	@include font-size(16);
+	@include font-family(--widget-title-font);
+	@include font-weight(--widget-title-font-weight);
+	@include text-transform(--widget-title-text-transform);
+	@include line-height(--title-line-height);
 }
 
 ul.related-posts-list {
@@ -231,7 +232,7 @@ ul.related-posts-list {
 
 @media only screen and (max-width: 20em) {
 	.related-posts .entry-meta .meta-date,
-	.related-posts .entry-meta .meta-author  {
+	.related-posts .entry-meta .meta-author {
 		display: block;
 		margin: 0;
 	}
