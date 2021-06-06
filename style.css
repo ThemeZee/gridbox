@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/gridbox/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Gridbox is a clean and solid WordPress theme featuring a three-column grid-layout for posts. The theme works out of the box and does not require any complicated setup. It is perfectly suited for a simple magazine, blog or portfolio website.
-Version: 2.3
+Version: 2.3.1
 Requires at least: 5.2
 Tested up to: 5.7
 Requires PHP: 5.6
@@ -2912,6 +2912,11 @@ ul.related-posts-list {
 }
 
 .tzwb-social-icons .social-icons-menu {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0;
+	padding: 0;
+	border: none;
 	list-style: none;
 	line-height: 1;
 }
@@ -2921,15 +2926,12 @@ ul.related-posts-list {
 }
 
 .tzwb-social-icons .social-icons-menu li a {
+	display: flex;
 	padding: 0.75em;
 	background-color: #4477aa;
 	background-color: var(--button-hover-color);
 	color: #fff;
 	color: var(--button-hover-text-color);
-}
-
-.tzwb-social-icons .social-icons-menu li a::before {
-	font-size: 24px;
 }
 
 .tzwb-social-icons .social-icons-menu li a:hover {
@@ -2938,6 +2940,14 @@ ul.related-posts-list {
 	color: #fff;
 	color: var(--button-text-color);
 	text-decoration: none;
+}
+
+.tzwb-social-icons .social-icons-menu .icon {
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	fill: currentColor;
 }
 
 /*--------------------------------------------------------------
