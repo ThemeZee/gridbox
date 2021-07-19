@@ -3593,28 +3593,6 @@ ul.related-posts-list {
 }
 
 /* Customizer Preview */
-.magazine-widgets-placeholder {
-	position: relative;
-}
-
-.magazine-widgets-placeholder .magazine-widgets-placeholder-title {
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin: 0;
-	padding: 1em 1em 1em 55px;
-	color: #0085ba;
-	border: 2px dashed #0085ba;
-}
-
-/* Add some styling for visual edit shortcut buttons. */
-.magazine-widgets-placeholder .customize-partial-edit-shortcut button {
-	left: 15px;
-	top: 12px;
-}
-
 .customize-partial-edit-shortcut-gridbox_blog_layout_partial button {
 	top: 50px;
 }
