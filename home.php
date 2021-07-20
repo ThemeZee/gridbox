@@ -22,6 +22,8 @@ endif;
 // Display Magazine Homepage Widgets.
 gridbox_magazine_widgets();
 
+do_action( 'gridbox_before_blog' );
+
 // Display Blog Title.
 gridbox_blog_title();
 ?>

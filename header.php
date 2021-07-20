@@ -22,11 +22,15 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 
+	<?php do_action( 'gridbox_before_site' ); ?>
+
 	<div id="page" class="hfeed site">
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gridbox' ); ?></a>
 
 		<?php do_action( 'gridbox_header_bar' ); ?>
+
+		<?php do_action( 'gridbox_before_header' ); ?>
 
 		<header id="masthead" class="site-header clearfix" role="banner">
 
@@ -45,6 +49,8 @@
 			</div><!-- .header-main -->
 
 		</header><!-- #masthead -->
+
+		<?php do_action( 'gridbox_after_header' ); ?>
 
 		<?php gridbox_header_image(); ?>
 
