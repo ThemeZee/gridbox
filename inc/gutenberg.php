@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'gridbox_gutenberg_support' );
 function gridbox_block_editor_assets() {
 
 	// Enqueue Editor Styling.
-	wp_enqueue_style( 'gridbox-editor-styles', get_theme_file_uri( '/assets/css/gutenberg-styles.css' ), array(), '20210306', 'all' );
+	wp_enqueue_style( 'gridbox-editor-styles', get_theme_file_uri( '/assets/css/editor-styles.css' ), array(), '20210306', 'all' );
 
 	// Enqueue Page Template Switcher Editor plugin.
 	#wp_enqueue_script( 'gridbox-page-template-switcher', get_theme_file_uri( '/assets/js/page-template-switcher.js' ), array( 'wp-blocks', 'wp-element', 'wp-edit-post' ), '20210306' );
