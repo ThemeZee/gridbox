@@ -7,6 +7,7 @@
 .comments-header,
 .comment-reply-title {
 	margin: 0 0 1.25em 0;
+	@include font-size(16);
 	border-left: 6px solid;
 	@include border-color(--widget-title-border-color);
 }
