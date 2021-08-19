@@ -10,7 +10,8 @@
 	@include border-color(--widget-title-border-color);
 }
 
-.widget-title {
+.widget-title,
+.is-style-widget-title {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
@@ -20,6 +21,12 @@
 	@include font-weight(--widget-title-font-weight);
 	@include text-transform(--widget-title-text-transform);
 	@include line-height(--title-line-height);
+}
+
+.is-style-widget-title {
+	display: block;
+	border-left: 6px solid;
+	@include border-color(--widget-title-border-color);
 }
 
 .widget ul {
