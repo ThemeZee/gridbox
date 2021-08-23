@@ -50,10 +50,10 @@
 
 		</header><!-- #masthead -->
 
-		<?php do_action( 'gridbox_after_header' ); ?>
-
 		<?php gridbox_header_image(); ?>
 
 		<?php gridbox_breadcrumbs(); ?>
+
+		<?php do_action( 'gridbox_after_header' ); ?>
 
 		<div id="content" class="site-content container clearfix">
