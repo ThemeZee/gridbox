@@ -150,7 +150,7 @@ function gridbox_scripts() {
 
 	// Register and enqueue navigation.min.js.
 	if ( ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) && ! gridbox_is_amp() ) {
-		wp_enqueue_script( 'gridbox-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array(), '20211104', true );
+		wp_enqueue_script( 'gridbox-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array(), '20220224', true );
 		$gridbox_l10n = array(
 			'expand'   => esc_html__( 'Expand child menu', 'gridbox' ),
 			'collapse' => esc_html__( 'Collapse child menu', 'gridbox' ),
