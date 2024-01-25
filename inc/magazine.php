@@ -9,8 +9,8 @@
 
 
 /**
-* Displays Magazine widget area
-*/
+ * Displays Magazine widget area
+ */
 function gridbox_magazine_widgets() {
 
 	// Get theme options from database.
@@ -61,7 +61,7 @@ if ( ! function_exists( 'gridbox_magazine_widget_title' ) ) :
 
 			// Set URL and Title for Category.
 			$category_title = sprintf( esc_html__( 'View all posts from category %s', 'gridbox' ), get_cat_name( $category_id ) );
-			$category_url = get_category_link( $category_id );
+			$category_url   = get_category_link( $category_id );
 
 			// Set Widget Title with link to category archive.
 			$widget_title = '<a class="category-archive-link" href="' . esc_url( $category_url ) . '" title="' . esc_attr( $category_title ) . '">' . $widget_title . '</a>';
@@ -73,24 +73,24 @@ endif;
 
 
 /**
-* Function to change excerpt length for posts in category posts widgets
-*
-* @param int $length Length of excerpt in number of words.
-* @return int
-*/
+ * Function to change excerpt length for posts in category posts widgets
+ *
+ * @param int $length Length of excerpt in number of words.
+ * @return int
+ */
 function gridbox_magazine_posts_excerpt_length( $length ) {
 	return 20; // Number of words.
 }
 
 
 /**
-* Get Magazine Post IDs
-*
-* @param String $cache_id        Magazine Widget Instance.
-* @param int    $category        Category ID.
-* @param int    $number_of_posts Number of posts.
-* @return array Post IDs
-*/
+ * Get Magazine Post IDs
+ *
+ * @param String $cache_id        Magazine Widget Instance.
+ * @param int    $category        Category ID.
+ * @param int    $number_of_posts Number of posts.
+ * @return array Post IDs
+ */
 function gridbox_get_magazine_post_ids( $cache_id, $category, $number_of_posts ) {
 
 	$cache_id = sanitize_key( $cache_id );
@@ -106,7 +106,7 @@ function gridbox_get_magazine_post_ids( $cache_id, $category, $number_of_posts )
 			'ignore_sticky_posts' => true,
 			'no_found_rows'       => true,
 		);
-		$query = new WP_Query( $query_arguments );
+		$query           = new WP_Query( $query_arguments );
 
 		// Create an array of all post ids.
 		$post_ids[ $cache_id ] = $query->posts;
@@ -120,10 +120,10 @@ function gridbox_get_magazine_post_ids( $cache_id, $category, $number_of_posts )
 
 
 /**
-* Delete Cached Post IDs
-*
-* @return void
-*/
+ * Delete Cached Post IDs
+ *
+ * @return void
+ */
 function gridbox_flush_magazine_post_ids() {
 	delete_transient( 'gridbox_magazine_post_ids' );
 }

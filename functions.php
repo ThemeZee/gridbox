@@ -43,31 +43,46 @@ if ( ! function_exists( 'gridbox_setup' ) ) :
 		register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'gridbox' ) );
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
-		add_theme_support( 'html5', array(
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'gridbox_custom_background_args', array( 'default-color' => 'ffffff' ) ) );
 
 		// Set up the WordPress core custom logo feature.
-		add_theme_support( 'custom-logo', apply_filters( 'gridbox_custom_logo_args', array(
-			'height'      => 40,
-			'width'       => 200,
-			'flex-height' => true,
-			'flex-width'  => true,
-		) ) );
+		add_theme_support(
+			'custom-logo',
+			apply_filters(
+				'gridbox_custom_logo_args',
+				array(
+					'height'      => 40,
+					'width'       => 200,
+					'flex-height' => true,
+					'flex-width'  => true,
+				)
+			)
+		);
 
 		// Set up the WordPress core custom header feature.
-		add_theme_support( 'custom-header', apply_filters( 'gridbox_custom_header_args', array(
-			'header-text' => false,
-			'width'       => 1920,
-			'height'      => 480,
-			'flex-height' => true,
-		) ) );
+		add_theme_support(
+			'custom-header',
+			apply_filters(
+				'gridbox_custom_header_args',
+				array(
+					'header-text' => false,
+					'width'       => 1920,
+					'height'      => 480,
+					'flex-height' => true,
+				)
+			)
+		);
 
 		// Add Theme Support for wooCommerce.
 		add_theme_support( 'woocommerce' );
@@ -104,25 +119,29 @@ add_action( 'after_setup_theme', 'gridbox_content_width', 0 );
  */
 function gridbox_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'gridbox' ),
-		'id'            => 'sidebar',
-		'description'   => esc_html__( 'Appears on single posts and pages.', 'gridbox' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
-		'after_title'   => '</h3></div>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'gridbox' ),
+			'id'            => 'sidebar',
+			'description'   => esc_html__( 'Appears on single posts and pages.', 'gridbox' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title'   => '</h3></div>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Magazine Homepage', 'gridbox' ),
-		'id'            => 'magazine-homepage',
-		'description'   => esc_html__( 'Appears on blog index and Magazine Homepage template. You can use the Magazine widgets here.', 'gridbox' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
-		'after_title'   => '</h3></div>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Magazine Homepage', 'gridbox' ),
+			'id'            => 'magazine-homepage',
+			'description'   => esc_html__( 'Appears on blog index and Magazine Homepage template. You can use the Magazine widgets here.', 'gridbox' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title'   => '</h3></div>',
+		)
+	);
 }
 add_action( 'widgets_init', 'gridbox_widgets_init' );
 
@@ -178,8 +197,8 @@ add_action( 'wp_enqueue_scripts', 'gridbox_scripts' );
 
 
 /**
-* Enqueue theme fonts.
-*/
+ * Enqueue theme fonts.
+ */
 function gridbox_theme_fonts() {
 	$fonts_url = gridbox_get_fonts_url();
 
@@ -216,9 +235,12 @@ function gridbox_get_fonts_url() {
  * Make custom image sizes available in Gutenberg.
  */
 function gridbox_add_image_size_names( $sizes ) {
-	return array_merge( $sizes, array(
-		'post-thumbnail' => esc_html__( 'Gridbox Single Post', 'gridbox' ),
-	) );
+	return array_merge(
+		$sizes,
+		array(
+			'post-thumbnail' => esc_html__( 'Gridbox Single Post', 'gridbox' ),
+		)
+	);
 }
 add_filter( 'image_size_names_choose', 'gridbox_add_image_size_names' );
 

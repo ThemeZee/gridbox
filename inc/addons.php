@@ -18,23 +18,32 @@ function gridbox_theme_addons_setup() {
 	add_theme_support( 'themezee-mega-menu', array( 'primary', 'secondary' ) );
 
 	// Add theme support for Widget Bundle.
-	add_theme_support( 'themezee-widget-bundle', array(
-		'thumbnail_size' => array( 90, 65 ),
-	) );
+	add_theme_support(
+		'themezee-widget-bundle',
+		array(
+			'thumbnail_size' => array( 90, 65 ),
+		)
+	);
 
 	// Add theme support for Related Posts.
-	add_theme_support( 'themezee-related-posts', array(
-		'thumbnail_size' => array( 480, 320 ),
-	) );
+	add_theme_support(
+		'themezee-related-posts',
+		array(
+			'thumbnail_size' => array( 480, 320 ),
+		)
+	);
 
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
-		'container'      => 'post-wrapper',
-		'footer_widgets' => 'footer',
-		'wrapper'        => false,
-		'render'         => 'gridbox_infinite_scroll_render',
-		'posts_per_page' => 6,
-	) );
+	add_theme_support(
+		'infinite-scroll',
+		array(
+			'container'      => 'post-wrapper',
+			'footer_widgets' => 'footer',
+			'wrapper'        => false,
+			'render'         => 'gridbox_infinite_scroll_render',
+			'posts_per_page' => 6,
+		)
+	);
 
 	// Add theme support for AMP.
 	add_theme_support( 'amp' );
