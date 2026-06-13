@@ -103,7 +103,8 @@
 }
 
 /* Post and Page Title */
-body.block-editor-page .editor-post-title__block .editor-post-title__input {
+body.block-editor-page .editor-post-title__block .editor-post-title__input,
+.editor-styles-wrapper .editor-post-title__input {
 	color: #111133;
 	color: var(--title-color);
 	font-size: 40px;
@@ -119,35 +120,40 @@ body.block-editor-page .editor-post-title__block .editor-post-title__input {
 }
 
 @media only screen and (max-width: 1120px) {
-	body.block-editor-page .editor-post-title__block .editor-post-title__input {
+	body.block-editor-page .editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .editor-post-title__input {
 		font-size: 36px;
 		font-size: 2.25rem;
 	}
 }
 
 @media only screen and (max-width: 960px) {
-	body.block-editor-page .editor-post-title__block .editor-post-title__input {
+	body.block-editor-page .editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .editor-post-title__input {
 		font-size: 32px;
 		font-size: 2rem;
 	}
 }
 
 @media only screen and (max-width: 640px) {
-	body.block-editor-page .editor-post-title__block .editor-post-title__input {
+	body.block-editor-page .editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .editor-post-title__input {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
 }
 
 @media only screen and (max-width: 480px) {
-	body.block-editor-page .editor-post-title__block .editor-post-title__input {
+	body.block-editor-page .editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .editor-post-title__input {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
 }
 
 @media only screen and (max-width: 320px) {
-	body.block-editor-page .editor-post-title__block .editor-post-title__input {
+	body.block-editor-page .editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .editor-post-title__input {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
@@ -171,7 +177,8 @@ body.gridbox-page-title-hidden.block-editor-page .edit-post-visual-editor .edit-
 --------------------------------------------------------------*/
 
 /* Typography */
-.edit-post-visual-editor__content-area .editor-styles-wrapper {
+.edit-post-visual-editor__content-area .editor-styles-wrapper,
+.editor-styles-wrapper {
 	color: #222;
 	color: var(--text-color);
 	font-size: 16px;
@@ -196,7 +203,8 @@ body.gridbox-page-title-hidden.block-editor-page .edit-post-visual-editor .edit-
 }
 
 @media only screen and (min-width: 640px) {
-	.edit-post-visual-editor__content-area .editor-styles-wrapper {
+	.edit-post-visual-editor__content-area .editor-styles-wrapper,
+	.editor-styles-wrapper {
 		font-size: 17px;
 		font-size: 1.0625rem;
 	}
